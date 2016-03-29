@@ -1,11 +1,7 @@
 import urllib.request
-import urllib.error
 import urllib.parse
-import urllib.request
-import urllib.parse
-import urllib.error
+#  import urllib.error
 import simplejson
-
 seachstr = 'car'
 
 for x in range(5):
