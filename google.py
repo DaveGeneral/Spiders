@@ -4,7 +4,7 @@ import simplejson
 seachstr = 'car'
 
 for x in range(5):
-    print "page:%s"%(x+1)
+    print "page:%s" % (x+1)
     page = x * 4
 
     url =('https://ajax.googleapis.com/ajax/services/search/web'
