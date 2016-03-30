@@ -1,16 +1,9 @@
-import re
 import urllib.request
+
+import bs4
 
 
 class DouBanSpider(object):
-
-    """
-    Attributes:
-        page: 用于表示当前所处的抓取页面
-        cur_url: 用于表示当前争取抓取页面的url
-        datas: 存储处理好的抓取到的电影名称
-        _top_num: 用于记录当前的top号码
-    """
 
     def __init__(self):
         self.page = 1
@@ -23,10 +16,9 @@ class DouBanSpider(object):
         print("豆瓣电影爬虫准备就绪, 准备爬取数据...")
 
     def get_page(self, cur_page):
-        url = self.cur_url
         try:
-            my_page = urllib.request.urlopen(url.format(
-                page=(cur_page - 1) * 25)).read().decode("utf-8")
+            my_page = urllib.request.urlopen(
+                "https://movie.douban.com/top250?start=225&filter=").read()
         except urllib.error.URLError as e:
             if hasattr(e, "code"):
                 print("The server couldn't fulfill the request.")
@@ -38,19 +30,23 @@ class DouBanSpider(object):
 
     def find_title(self, my_page):
         temp_data = []
-        movie_items = re.findall(
-            r'<span.*?class="title">(.*?)</span>', my_page, re.S)
-        for index, item in enumerate(movie_items):
-            if item.find("&nbsp") == -1:
-                temp_data.append("Top" + str(self._top_num) + " " + item)
-                self._top_num += 1
-        self.datas.extend(temp_data)
+        soup_title = bs4.BeautifulSoup(my_page, "lxml")
+        movie_title = soup_title.select(".title")
+        soup_rating = bs4.BeautifulSoup(my_page, "lxml")
+        movie_rating = soup_rating.select(".rating_num")
+        count = 0
+        movie_title, temp_data = temp_data, movie_title
+        for x in temp_data:
+            if x.string.find('/') == -1:
+                count += 1
+                movie_title.append(x)
+        print(count)
+        for i in range(count):
+            print(movie_title[i].string, movie_rating[i].string)
+        #  print(movie_rating)
+        self.datas.extend(["the end flag"])
 
     def start_spider(self, pageNum):
-        """
-
-        爬虫入口, 并控制爬虫抓取页面的范围
-        """
         while self.page <= pageNum:
             my_page = self.get_page(self.page)
             self.find_title(my_page)
