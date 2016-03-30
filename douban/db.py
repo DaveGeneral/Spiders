@@ -46,7 +46,7 @@ class DouBanSpider(object):
                 self._top_num += 1
         self.datas.extend(temp_data)
 
-    def start_spider(self,pageNum):
+    def start_spider(self, pageNum):
         """
 
         爬虫入口, 并控制爬虫抓取页面的范围
