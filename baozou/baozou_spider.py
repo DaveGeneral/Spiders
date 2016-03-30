@@ -7,7 +7,7 @@ import urllib.request
 import bs4
 
 path = os.getcwd()
-path = os.path.join(path, 'baozou')
+path = os.path.join(path, 'temp')
 if not os.path.exists(path):
     os.mkdir(path)
 
