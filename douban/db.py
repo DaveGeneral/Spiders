@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
 import re
 import urllib.request
-import urllib.error
-import urllib.parse
 
 
 class DouBanSpider(object):
@@ -27,19 +23,6 @@ class DouBanSpider(object):
         print("豆瓣电影爬虫准备就绪, 准备爬取数据...")
 
     def get_page(self, cur_page):
-        """
-
-        根据当前页码爬取网页HTML
-
-        Args:
-            cur_page: 表示当前所抓取的网站页码
-
-        Returns:
-            返回抓取到整个页面的HTML(unicode编码)
-
-        Raises:
-            URLError:url引发的异常
-        """
         url = self.cur_url
         try:
             my_page = urllib.request.urlopen(url.format(
@@ -54,14 +37,6 @@ class DouBanSpider(object):
         return my_page
 
     def find_title(self, my_page):
-        """
-
-        通过返回的整个网页HTML, 正则匹配前100的电影名称
-
-
-        Args:
-            my_page: 传入页面的HTML文本用于正则匹配
-        """
         temp_data = []
         movie_items = re.findall(
             r'<span.*?class="title">(.*?)</span>', my_page, re.S)
@@ -71,12 +46,12 @@ class DouBanSpider(object):
                 self._top_num += 1
         self.datas.extend(temp_data)
 
-    def start_spider(self):
+    def start_spider(self,pageNum):
         """
 
         爬虫入口, 并控制爬虫抓取页面的范围
         """
-        while self.page <= 4:
+        while self.page <= pageNum:
             my_page = self.get_page(self.page)
             self.find_title(my_page)
             self.page += 1
@@ -92,7 +67,7 @@ def main():
         ###############################
     """)
     my_spider = DouBanSpider()
-    my_spider.start_spider()
+    my_spider.start_spider(1)
     for item in my_spider.datas:
         print(item)
     print("豆瓣爬虫爬取结束...")
