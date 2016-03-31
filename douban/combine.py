@@ -4,6 +4,8 @@ from collections import OrderedDict
 
 import json
 
+import re
+
 import requests
 
 
@@ -28,8 +30,12 @@ class DouBanSpider(object):
         return rank
 
     def get_title(self, soup):
-        temp = soup.select(".title")
-        title = [x.string for x in temp if x.string.find('/') == -1]
+        temp = soup.select(".hd")
+        title = []
+        for x in temp:
+            lines = x.select("a span")
+            name = ''.join(re.sub(r'\s+', ' ', s.string) for s in lines)
+            title.append(name)
         return title
 
     def get_rating(self, soup):
