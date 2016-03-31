@@ -44,11 +44,11 @@ class DouBanSpider(object):
         rating = [x.string for x in temp]
         return rating
 
-    def get_reviewNum(self, soup):
+    def get_reviewnum(self, soup):
         temp = soup.select(".star span")
-        reviewNum = [temp[i].string for i in range(
+        reviewnum = [temp[i].string for i in range(
             len(temp)) if (i + 1) % 4 == 0]
-        return reviewNum
+        return reviewnum
 
     def get_summary(self, soup):
         temp = soup.select('.bd')[1:]
@@ -85,7 +85,7 @@ class DouBanSpider(object):
         rank = self.get_rank(soup)
         name = self.get_name(soup)
         rating = self.get_rating(soup)
-        reviewNum = self.get_reviewNum(soup)
+        reviewnum = self.get_reviewnum(soup)
         address = self.get_address(soup)
         imgurl = self.get_imgurl(soup)
         summary = self.get_summary(soup)
@@ -95,7 +95,7 @@ class DouBanSpider(object):
             dic = collections.OrderedDict([("Rank:", rank[i]),
                                            ("Name:", name[i]),
                                            ("Rating:", rating[i]),
-                                           ("Review Number:", reviewNum[i]),
+                                           ("Review Number:", reviewnum[i]),
                                            ("Summary:", summary[i]),
                                            ("Comment:", comment[i]),
                                            ("Address:", address[i]),
