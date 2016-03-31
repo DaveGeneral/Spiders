@@ -43,16 +43,32 @@ class DouBanSpider(object):
         rating = [x.string for x in temp]
         return rating
 
-    def get_comment(self, soup):
+    def get_review(self, soup):
         temp = soup.select(".star span")
-        comment = [temp[i].string for i in range(
+        review = [temp[i].string for i in range(
             len(temp)) if (i + 1) % 4 == 0]
-        return comment
+        return review
+
+    def get_address(self, soup):
+        temp = soup.select(".pic a")
+        address = [x['href'] for x in temp]
+        return address
 
     def get_imgurl(self, soup):
         temp = soup.select(".pic a img")
         imgurl = [x['src'] for x in temp]
         return imgurl
+
+    def get_summary(self, soup):
+        temp = soup.select('.bd')[1:]
+        summary = []
+        for x in temp:
+            m = x.select('.inq')
+            if x.select('.inq'):
+                summary.append(m[0].string)
+            else:
+                summary.append("")
+        return summary
 
     def get_content(self, my_page):
         temp_data = []
@@ -60,14 +76,17 @@ class DouBanSpider(object):
         rank = self.get_rank(soup)
         title = self.get_title(soup)
         rating = self.get_rating(soup)
-        comment = self.get_comment(soup)
+        review = self.get_review(soup)
+        address = self.get_address(soup)
         imgurl = self.get_imgurl(soup)
+        summary = self.get_summary(soup)
         count = len(title)
         for i in range(count):
             dic = OrderedDict([("Rank:", rank[i]), ("Title:", title[i]),
-                               ("Rating:", rating[i]), ("Comment", comment[i]),
-                               ("Image Url:", imgurl[i])])
-            print(json.dumps(dic, ensure_ascii=False, indent=4))
+                               ("Rating:", rating[
+                                   i]), ("Review Number:", review[i]), ("Address:", address[i]),
+                               ("Image Url:", imgurl[i]), ("Summary:", summary[i])])
+            print(json.dumps(dic, indent=4, ensure_ascii=False))
         self.datas.extend(temp_data)
 
     def start_spider(self, pagenum):
