@@ -34,8 +34,8 @@ class DouBanSpider(object):
         name = []
         for x in temp:
             lines = x.select("a span")
-            name = ''.join(re.sub(r'\s+', ' ', s.string) for s in lines)
-            name.append(name)
+            t = ''.join(re.sub(r'\s+', ' ', s.string) for s in lines)
+            name.append(t)
         return name
 
     def get_rating(self, soup):
@@ -61,9 +61,11 @@ class DouBanSpider(object):
 
     def get_summary(self, soup):
         temp = soup.select('.bd')[1:]
+        print(len(temp))
         summary = []
         for x in temp:
-            s = x.findall("p", {"class": ""})
+            s = x.findAll("p", {"class": ""})
+            print(s)
             for y in s[0].stripped_strings:
                 summary.append(y)
         return summary
