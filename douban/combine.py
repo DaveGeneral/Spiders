@@ -99,13 +99,13 @@ class DouBanSpider(object):
                                ("Summary:", summary[i]),
                                ("Comment:", comment[i]),
                                ("Address:", address[i]),
-                               ("Image Url:", imgurl[i])]
+                               ("Image Url:", imgurl[i])])
             print(json.dumps(dic, indent=4, ensure_ascii=False))
         self.datas.extend(temp_data)
 
     def start_spider(self, pagenum):
         while self.page <= pagenum:
-            my_page=self.get_page(self.page)
+            my_page = self.get_page(self.page)
             self.get_content(my_page)
             self.page += 1
 
@@ -118,7 +118,7 @@ def main():
         ###############################
     """)
     print("Douban Movie Crawler Begins\n")
-    my_spider=DouBanSpider()
+    my_spider = DouBanSpider()
     my_spider.start_spider(1)
     print("\nDouban Movie Crawler Ends.\n")
 
