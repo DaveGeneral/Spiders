@@ -29,25 +29,25 @@ class DouBanSpider(object):
         rank = [x.string for x in temp]
         return rank
 
-    def get_title(self, soup):
+    def get_name(self, soup):
         temp = soup.select(".hd")
-        title = []
+        name = []
         for x in temp:
             lines = x.select("a span")
             name = ''.join(re.sub(r'\s+', ' ', s.string) for s in lines)
-            title.append(name)
-        return title
+            name.append(name)
+        return name
 
     def get_rating(self, soup):
         temp = soup.select(".rating_num")
         rating = [x.string for x in temp]
         return rating
 
-    def get_review(self, soup):
+    def get_reviewNum(self, soup):
         temp = soup.select(".star span")
-        review = [temp[i].string for i in range(
+        reviewNum = [temp[i].string for i in range(
             len(temp)) if (i + 1) % 4 == 0]
-        return review
+        return reviewNum
 
     def get_address(self, soup):
         temp = soup.select(".pic a")
@@ -63,32 +63,43 @@ class DouBanSpider(object):
         temp = soup.select('.bd')[1:]
         summary = []
         for x in temp:
+            s = x.findall("p", {"class": ""})
+            for y in s[0].stripped_strings:
+                summary.append(y)
+        return summary
+
+    def get_comment(self, soup):
+        temp = soup.select('.bd')[1:]
+        comment = []
+        for x in temp:
             m = x.select('.inq')
             if x.select('.inq'):
-                summary.append(m[0].string)
+                comment.append(m[0].string)
             else:
-                summary.append("")
-        return summary
+                comment.append("")
+        return comment
 
     def get_content(self, my_page):
         temp_data = []
         soup = bs4.BeautifulSoup(my_page, "lxml")
         rank = self.get_rank(soup)
-        title = self.get_title(soup)
+        name = self.get_name(soup)
         rating = self.get_rating(soup)
-        review = self.get_review(soup)
+        reviewNum = self.get_reviewNum(soup)
         address = self.get_address(soup)
         imgurl = self.get_imgurl(soup)
         summary = self.get_summary(soup)
-        count = len(title)
+        comment = self.get_comment(soup)
+        count = len(name)
         for i in range(count):
             dic = OrderedDict([("Rank:", rank[i]),
-                               ("Title:", title[i]),
+                               ("Name:", name[i]),
                                ("Rating:", rating[i]),
-                               ("Review Number:", review[i]),
+                               ("Review Number:", reviewNum[i]),
                                ("Address:", address[i]),
                                ("Image Url:", imgurl[i]),
-                               ("Summary:", summary[i])])
+                               ("Summary:", summary[i]),
+                               ("Comment:", comment[i])])
             print(json.dumps(dic, indent=4, ensure_ascii=False))
         self.datas.extend(temp_data)
 
