@@ -117,9 +117,9 @@ def main():
                Author: Ke Yi
         ###############################
     """)
-    print("Douban Movie Crawler Begins\n")
+    print("Douban Movie Crawler Begins...\n")
     my_spider = DouBanSpider()
-    my_spider.start_spider(1)
+    my_spider.start_spider(10)
     print("\nDouban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':
