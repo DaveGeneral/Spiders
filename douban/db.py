@@ -1,11 +1,18 @@
 import MySQLdb
 
+class DoubanDB(object):
+
+
+    def __init__(self):
+        pass
+
+
 conn = MySQLdb.connect(host="localhost", user="spider",
                        passwd="pwd123456", port=3306,
                        db='Movie', charset="utf8")
 cur = conn.cursor()
-cur.execute("DROP TABLE IF EXISTS Top250")
-sql = """CREATE TABLE Top250(
+cur.execute("DROP TABLE IF EXISTS Douban")
+sql = """CREATE TABLE Douban(
          Rank INT NOT NULL,
          Name VARCHAR(100) NOT NULL,
          Rating FLOAT NOT NULL,
@@ -13,7 +20,7 @@ sql = """CREATE TABLE Top250(
          ImgUrl VARCHAR(100) NOT NULL)"""
 
 cur.execute(sql)
-sql = """INSERT INTO Top250(
+sql = """INSERT INTO Douban(
 Rank, Name, Rating, Comment, ImgUrl)
 VALUES ("10", 'taowang', '8.6', '201424 人评价', "www.google.com");"""
 try:
@@ -24,7 +31,7 @@ except:
     conn.rollback()
 
 try:
-    cur.execute("SELECT * FROM Top250;")
+    cur.execute("SELECT * FROM Douban;")
     lines = cur.fetchall()
     for row in lines:
         rank = row[0]
