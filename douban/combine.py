@@ -61,13 +61,11 @@ class DouBanSpider(object):
 
     def get_summary(self, soup):
         temp = soup.select('.bd')[1:]
-        print(len(temp))
         summary = []
         for x in temp:
             s = x.findAll("p", {"class": ""})
-            print(s)
-            for y in s[0].stripped_strings:
-                summary.append(y)
+            t = "".join([y + "   " for y in s[0].stripped_strings]).strip()
+            summary.append(t)
         return summary
 
     def get_comment(self, soup):
@@ -98,16 +96,16 @@ class DouBanSpider(object):
                                ("Name:", name[i]),
                                ("Rating:", rating[i]),
                                ("Review Number:", reviewNum[i]),
-                               ("Address:", address[i]),
-                               ("Image Url:", imgurl[i]),
                                ("Summary:", summary[i]),
-                               ("Comment:", comment[i])])
+                               ("Comment:", comment[i]),
+                               ("Address:", address[i]),
+                               ("Image Url:", imgurl[i])]
             print(json.dumps(dic, indent=4, ensure_ascii=False))
         self.datas.extend(temp_data)
 
     def start_spider(self, pagenum):
         while self.page <= pagenum:
-            my_page = self.get_page(self.page)
+            my_page=self.get_page(self.page)
             self.get_content(my_page)
             self.page += 1
 
@@ -120,7 +118,7 @@ def main():
         ###############################
     """)
     print("Douban Movie Crawler Begins\n")
-    my_spider = DouBanSpider()
+    my_spider=DouBanSpider()
     my_spider.start_spider(1)
     print("\nDouban Movie Crawler Ends.\n")
 
