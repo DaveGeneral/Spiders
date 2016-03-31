@@ -67,14 +67,14 @@ class DouBanSpider(object):
 def main():
     print("""
         ###############################
-            Douban Top250 Movies
-              Author: Ke Yi
+             Douban Top250 Movies
+               Author: Ke Yi
         ###############################
     """)
-    print("Douban Movie Crawler Begins")
+    print("Douban Movie Crawler Begins\n")
     my_spider = DouBanSpider()
-    my_spider.start_spider(1)
-    print("Douban Movie Crawler Ends.")
+    my_spider.start_spider(10)
+    print("Douban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':
     main()
