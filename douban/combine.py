@@ -15,14 +15,15 @@ class DouBanSpider(object):
         self.page = 1
         self.datas = []
 
-    def get_page(self, cur_page):
+    def retrieve_page(self, cur_page):
         url = "https://movie.douban.com/top250?start=%s&filter=" % (
             str((cur_page - 1) * 25))
         try:
-            my_page = requests.get(url).text
+            page_text = requests.get(url).text
+            soup = bs4.BeautifulSoup(page_text, "lxml")
         except Exception:
             print("Error happens! Please check your requests.")
-        return my_page
+        return soup
 
     def get_rank(self, soup):
         temp = soup.select(".pic em")
@@ -49,16 +50,6 @@ class DouBanSpider(object):
             len(temp)) if (i + 1) % 4 == 0]
         return reviewNum
 
-    def get_address(self, soup):
-        temp = soup.select(".pic a")
-        address = [x['href'] for x in temp]
-        return address
-
-    def get_imgurl(self, soup):
-        temp = soup.select(".pic a img")
-        imgurl = [x['src'] for x in temp]
-        return imgurl
-
     def get_summary(self, soup):
         temp = soup.select('.bd')[1:]
         summary = []
@@ -79,9 +70,18 @@ class DouBanSpider(object):
                 comment.append("")
         return comment
 
-    def get_content(self, my_page):
+    def get_address(self, soup):
+        temp = soup.select(".pic a")
+        address = [x['href'] for x in temp]
+        return address
+
+    def get_imgurl(self, soup):
+        temp = soup.select(".pic a img")
+        imgurl = [x['src'] for x in temp]
+        return imgurl
+
+    def retrieve_content(self, soup):
         temp_data = []
-        soup = bs4.BeautifulSoup(my_page, "lxml")
         rank = self.get_rank(soup)
         name = self.get_name(soup)
         rating = self.get_rating(soup)
@@ -105,8 +105,8 @@ class DouBanSpider(object):
 
     def start_spider(self, pagenum):
         while self.page <= pagenum:
-            my_page = self.get_page(self.page)
-            self.get_content(my_page)
+            my_soup = self.retrieve_page(self.page)
+            self.retrieve_content(my_soup)
             self.page += 1
 
 
@@ -119,7 +119,7 @@ def main():
     """)
     print("Douban Movie Crawler Begins...\n")
     my_spider = DouBanSpider()
-    my_spider.start_spider(10)
+    my_spider.start_spider(10)  # The Top 250 movies include 10 pages
     print("\nDouban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':
