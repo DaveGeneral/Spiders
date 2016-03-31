@@ -1,4 +1,6 @@
-import bs4 import collections
+import bs4
+
+import collections
 
 import json
 
