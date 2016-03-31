@@ -1,5 +1,11 @@
 import bs4
 
+from collections import OrderedDict
+
+import json
+
+import re
+
 import requests
 
 
@@ -7,66 +13,114 @@ class DouBanSpider(object):
 
     def __init__(self):
         self.page = 1
-        self.cur_url = (
-            "http://movie.douban.com/top250?"
-            "start={page}&filter=&type="
-        )
         self.datas = []
-        self._top_num = 1
-        print("豆瓣电影爬虫准备就绪, 准备爬取数据...")
 
-    def get_page(self, cur_page):
+    def retrieve_page(self, cur_page):
+        url = "https://movie.douban.com/top250?start=%s&filter=" % (
+            str((cur_page - 1) * 25))
         try:
-            my_page = requests.get(
-                "https://movie.douban.com/top250?start=225&filter=").text
+            page_text = requests.get(url).text
+            soup = bs4.BeautifulSoup(page_text, "lxml")
         except Exception:
             print("Error happens! Please check your requests.")
-        return my_page
+        return soup
 
-    def find_title(self, my_page):
+    def get_rank(self, soup):
+        temp = soup.select(".pic em")
+        rank = [x.string for x in temp]
+        return rank
+
+    def get_name(self, soup):
+        temp = soup.select(".hd")
+        name = []
+        for x in temp:
+            lines = x.select("a span")
+            t = ''.join(re.sub(r'\s+', ' ', s.string) for s in lines)
+            name.append(t)
+        return name
+
+    def get_rating(self, soup):
+        temp = soup.select(".rating_num")
+        rating = [x.string for x in temp]
+        return rating
+
+    def get_reviewNum(self, soup):
+        temp = soup.select(".star span")
+        reviewNum = [temp[i].string for i in range(
+            len(temp)) if (i + 1) % 4 == 0]
+        return reviewNum
+
+    def get_summary(self, soup):
+        temp = soup.select('.bd')[1:]
+        summary = []
+        for x in temp:
+            s = x.findAll("p", {"class": ""})
+            t = "".join([y + "   " for y in s[0].stripped_strings]).strip()
+            summary.append(t)
+        return summary
+
+    def get_comment(self, soup):
+        temp = soup.select('.bd')[1:]
+        comment = []
+        for x in temp:
+            m = x.select('.inq')
+            if x.select('.inq'):
+                comment.append(m[0].string)
+            else:
+                comment.append("")
+        return comment
+
+    def get_address(self, soup):
+        temp = soup.select(".pic a")
+        address = [x['href'] for x in temp]
+        return address
+
+    def get_imgurl(self, soup):
+        temp = soup.select(".pic a img")
+        imgurl = [x['src'] for x in temp]
+        return imgurl
+
+    def retrieve_content(self, soup):
         temp_data = []
-        soup = bs4.BeautifulSoup(my_page, "lxml")
-        movie_title = soup.select(".title")
-        movie_rating = soup.select(".rating_num")
-        movie_rank = soup.select(".pic em")
-        movie_review = soup.select(".star span")
-        movie_img = soup.select(".pic a img")
-        movie_review, temp_data = temp_data, movie_review
-        for i in range(len(temp_data)):
-            if(i + 1) % 4 == 0:
-                movie_review.append(temp_data[i])
-        count = 0
-        temp_data = []
-        movie_title, temp_data = temp_data, movie_title
-        for x in temp_data:
-            if x.string.find('/') == -1:
-                count += 1
-                movie_title.append(x)
+        rank = self.get_rank(soup)
+        name = self.get_name(soup)
+        rating = self.get_rating(soup)
+        reviewNum = self.get_reviewNum(soup)
+        address = self.get_address(soup)
+        imgurl = self.get_imgurl(soup)
+        summary = self.get_summary(soup)
+        comment = self.get_comment(soup)
+        count = len(name)
         for i in range(count):
-            print(movie_rank[i].string, movie_title[
-                  i].string, movie_rating[i].string,
-                  movie_review[i].string, movie_img[i]['src'])
+            dic = OrderedDict([("Rank:", rank[i]),
+                               ("Name:", name[i]),
+                               ("Rating:", rating[i]),
+                               ("Review Number:", reviewNum[i]),
+                               ("Summary:", summary[i]),
+                               ("Comment:", comment[i]),
+                               ("Address:", address[i]),
+                               ("Image Url:", imgurl[i])])
+            print(json.dumps(dic, indent=4, ensure_ascii=False))
         self.datas.extend(temp_data)
 
     def start_spider(self, pagenum):
         while self.page <= pagenum:
-            my_page = self.get_page(self.page)
-            self.find_title(my_page)
+            my_soup = self.retrieve_page(self.page)
+            self.retrieve_content(my_soup)
             self.page += 1
 
 
 def main():
     print("""
         ###############################
-            一个简单的豆瓣电影前100爬虫
-            Author: Andrew_liu
-            Version: 0.0.1
-            Date: 2014-12-04
+             Douban Top250 Movies
+               Author: Ke Yi
         ###############################
     """)
+    print("Douban Movie Crawler Begins...\n")
     my_spider = DouBanSpider()
-    my_spider.start_spider(1)
-    print("豆瓣爬虫爬取结束...")
+    my_spider.start_spider(10)  # The Top 250 movies include 10 pages
+    print("\nDouban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':
     main()
