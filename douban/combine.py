@@ -82,10 +82,13 @@ class DouBanSpider(object):
         summary = self.get_summary(soup)
         count = len(title)
         for i in range(count):
-            dic = OrderedDict([("Rank:", rank[i]), ("Title:", title[i]),
-                               ("Rating:", rating[
-                                   i]), ("Review Number:", review[i]), ("Address:", address[i]),
-                               ("Image Url:", imgurl[i]), ("Summary:", summary[i])])
+            dic = OrderedDict([("Rank:", rank[i]),
+                               ("Title:", title[i]),
+                               ("Rating:", rating[i]),
+                               ("Review Number:", review[i]),
+                               ("Address:", address[i]),
+                               ("Image Url:", imgurl[i]),
+                               ("Summary:", summary[i])])
             print(json.dumps(dic, indent=4, ensure_ascii=False))
         self.datas.extend(temp_data)
 
