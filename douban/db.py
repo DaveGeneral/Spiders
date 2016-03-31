@@ -1,7 +1,8 @@
 import MySQLdb
 
 conn = MySQLdb.connect(host="localhost", user="spider",
-                       passwd="pwd123456", port=3306, db='Movie', charset="utf8")
+                       passwd="pwd123456", port=3306,
+                       db='Movie', charset="utf8")
 cur = conn.cursor()
 cur.execute("DROP TABLE IF EXISTS Top250")
 sql = """CREATE TABLE Top250(
