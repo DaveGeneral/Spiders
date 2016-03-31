@@ -1,6 +1,6 @@
 import bs4
 
-from collections import OrderedDict
+import collections
 
 import json
 
@@ -92,14 +92,14 @@ class DouBanSpider(object):
         comment = self.get_comment(soup)
         count = len(name)
         for i in range(count):
-            dic = OrderedDict([("Rank:", rank[i]),
-                               ("Name:", name[i]),
-                               ("Rating:", rating[i]),
-                               ("Review Number:", reviewNum[i]),
-                               ("Summary:", summary[i]),
-                               ("Comment:", comment[i]),
-                               ("Address:", address[i]),
-                               ("Image Url:", imgurl[i])])
+            dic = collections.OrderedDict([("Rank:", rank[i]),
+                                           ("Name:", name[i]),
+                                           ("Rating:", rating[i]),
+                                           ("Review Number:", reviewNum[i]),
+                                           ("Summary:", summary[i]),
+                                           ("Comment:", comment[i]),
+                                           ("Address:", address[i]),
+                                           ("Image Url:", imgurl[i])])
             print(json.dumps(dic, indent=4, ensure_ascii=False))
         self.datas.extend(temp_data)
 
