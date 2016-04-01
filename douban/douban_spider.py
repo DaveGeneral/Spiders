@@ -11,7 +11,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 out = "output.json"
-f = open(out, 'w')
+filename = open(out, 'w')
 
 
 class DouBanSpider(object):
@@ -108,6 +108,7 @@ class DouBanSpider(object):
                                                ("Address", address[i]),
                                                ("Image_URL", imgurl[i])])
             dic[rank[i]] = content
+            #  print(content)
 
     def start_spider(self, pagenum):
         my_dic = collections.OrderedDict()
@@ -115,7 +116,9 @@ class DouBanSpider(object):
             my_soup = self.retrieve_page(self.page)
             self.retrieve_content(my_soup, my_dic)
             self.page += 1
-        f.write(json.dumps(my_dic, indent=4, ensure_ascii=False, sort_keys=False))
+        raw_data = json.dumps(
+            my_dic, indent=4, ensure_ascii=False, sort_keys=False)
+        filename.write(raw_data)
         return self.datas
 
 
@@ -183,6 +186,7 @@ class DoubanDB(object):
         self.tb_create(my_cursor)
         for x in datas:
             self.tb_insert(my_conn, my_cursor, x)
+        #  print results from mysql database
         #  self.tb_retrieve(my_cursor)
         my_cursor.close()
         my_conn.close()
@@ -201,14 +205,20 @@ def main():
     my_spider = DouBanSpider()
     # The Top 250 movies include 10 pages
     my_data = my_spider.start_spider(10)
-    f.close()
+    filename.close()
     print("Data has been written to %s successfully!" % (out))
     print("Douban Movie Crawler Ends.\n")
     print("Douban Movie Database Insertion Begins...")
     my_database = DoubanDB()
     my_database.start_db(my_data)
     print("Douban Movie Database Insertion Ends.\n")
-
+    #  print results from json file
+    """
+    with open('output.json') as data_file:
+        data = json.load(data_file, object_pairs_hook=collections.OrderedDict)
+        mydata = json.dumps(data, indent=4, ensure_ascii=False)
+    print(mydata)
+    """
 
 if __name__ == '__main__':
     main()
