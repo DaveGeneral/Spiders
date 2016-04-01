@@ -15,8 +15,11 @@ class DoubanDB(object):
         self.db_name = "Movie"
         self.tb_name = "Douban"
 
-    def tb_create(self, cursor):
+    def tb_drop(self, cursor):
         cursor.execute("DROP TABLE IF EXISTS " + self.tb_name + ";")
+        return
+
+    def tb_create(self, cursor):
         sql = (
             "CREATE TABLE " + self.tb_name +
             "(Rank VARCHAR(10) NOT NULL,"
@@ -31,18 +34,17 @@ class DoubanDB(object):
         cursor.execute(sql)
         return
 
-    def tb_insert(self, conn, cursor):
+    def tb_insert(self, conn, cursor, raw):
         sql = (
             "INSERT INTO " + self.tb_name +
             "(Rank, Name, Rating, Review_Number, Summary, Comment, Address, Image_URL)"
             "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');"
-            % ('444', 'taowang', '9.6', '201424 人评价', "sumar", "cmt", "add", "www.google.com")
+            % (raw[0], raw[1], raw[2], raw[3], raw[4], raw[5], raw[6], raw[7])
         )
         try:
             cursor.execute(sql)
             conn.commit()
         except:
-            # Rollback in case there is any error
             conn.rollback()
         return
 
@@ -62,12 +64,16 @@ class DoubanDB(object):
                                   passwd=self.password, port=self.port,
                                   db=self.db_name, charset="utf8")
         my_cursor = my_conn.cursor()
+        self.tb_drop(my_cursor)
         self.tb_create(my_cursor)
-        self.tb_insert(my_conn, my_cursor)
+        for x in datas:
+            self.tb_insert(my_conn, my_cursor, x)
         self.tb_retrieve(my_cursor)
         my_cursor.close()
         my_conn.close()
 
 
+my_data = [['444', 'taowang', '9.6', '201424 人评价',
+            "sumar", "cmt", "add", "www.baidu.com"], ['555', 'taowang', '9.6', '201424 人评价', "sumar", "cmt", "add", "www.google.com"]]
 my_database = DoubanDB()
-my_database.start_db(1)
+my_database.start_db(my_data)
