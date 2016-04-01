@@ -1,18 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import bs4
-
 import collections
-
 import json
-
 import MySQLdb
-
 import re
-
 import requests
-
-
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -68,7 +61,8 @@ class DouBanSpider(object):
         summary = []
         for x in temp:
             s = x.findAll("p", {"class": ""})
-            lines = "".join([row + "   " for row in s[0].stripped_strings]).strip()
+            lines = "".join(
+                [row + "   " for row in s[0].stripped_strings]).strip()
             summary.append(lines)
         return summary
 
@@ -112,7 +106,8 @@ class DouBanSpider(object):
                                            ("Comment", comment[i]),
                                            ("Address", address[i]),
                                            ("Image_URL", imgurl[i])])
-            f.write(json.dumps(dic, indent=4, ensure_ascii=False))
+            f.write(json.dumps([{"Rank": rank[i]}, dic],
+                               indent=4, ensure_ascii=False))
             #  print(json.dumps(dic, indent=4, ensure_ascii=False))
 
     def start_spider(self, pagenum):
