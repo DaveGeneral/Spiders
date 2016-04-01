@@ -95,11 +95,11 @@ class DouBanSpider(object):
             dic = collections.OrderedDict([("Rank:", rank[i]),
                                            ("Name:", name[i]),
                                            ("Rating:", rating[i]),
-                                           ("Review Number:", reviewnum[i]),
+                                           ("Review_Number:", reviewnum[i]),
                                            ("Summary:", summary[i]),
                                            ("Comment:", comment[i]),
                                            ("Address:", address[i]),
-                                           ("Image Url:", imgurl[i])])
+                                           ("Image_URL:", imgurl[i])])
             print(json.dumps(dic, indent=4, ensure_ascii=False))
         self.datas.extend(temp_data)
 
