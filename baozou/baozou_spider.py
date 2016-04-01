@@ -1,17 +1,16 @@
-#  Env python3+
-
-import os
-
-import urllib.request
-
 import bs4
+import os
+import shutil
+import urllib.request
 
 path = os.getcwd()
 path = os.path.join(path, 'temp')
-if not os.path.exists(path):
-    os.mkdir(path)
+if os.path.exists(path):
+    shutil.rmtree(path)
+os.mkdir(path)
 
 page_sum = 5
+img_startnum = 1
 url = "http://baozoumanhua.com/gif/month/page/"
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
                          'AppleWebKit/537.11'
@@ -24,26 +23,31 @@ headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
            'Accept-Language': 'en-US,en;q=0.8',
            'Connection': 'keep-alive'}
 
+print("""
+    ###############################
 
-imgnum = 1
+         BaoZou Gif Crawler
+           Author: Ke Yi
+
+    ###############################
+""")
 
 for count in range(page_sum):
     req = urllib.request.Request(
         url=url + str(count + 1),
         headers=headers
     )
-    print("url: ", req.full_url)
     content = urllib.request.urlopen(req).read()
     soup = bs4.BeautifulSoup(content, "lxml")
     img_content = soup.findAll('img', src=True, style="width:460px;")
     url_list = [img['src'] for img in img_content]
-    print("File number in this page: %s" % (len(url_list)))
+    print("\nFile number in page %s: %s" % (req.full_url, len(url_list)))
     for i in range(url_list.__len__()):
         try:
             imgurl = url_list[i]
-            imgname = str(imgnum).zfill(4)
+            imgname = str(img_startnum).zfill(4)
             filename = path + os.sep + imgname + ".gif"
-            imgnum += 1
+            img_startnum += 1
             print(filename)
             urllib.request.urlretrieve(imgurl, filename)
         except Exception as e:
