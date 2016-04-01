@@ -95,7 +95,7 @@ class DouBanSpider(object):
         summary = self.get_summary(soup)
         comment = self.get_comment(soup)
         count = len(name)
-        dic = []
+        dic = collections.OrderedDict()
         for i in range(count):
             self.datas.append([rank[i], name[i], rating[i], reviewnum[
                               i], summary[i], comment[i], address[i], imgurl[i]])
@@ -107,9 +107,8 @@ class DouBanSpider(object):
                                                ("Comment", comment[i]),
                                                ("Address", address[i]),
                                                ("Image_URL", imgurl[i])])
-            dic["Rank" + rank[i]] = content
-        f.write(json.dumps(dic, indent=4, ensure_ascii=False))
-        #  print(json.dumps(dic, indent=4, ensure_ascii=False))
+            dic[i+1] = content
+        f.write(json.dumps(dic, indent=4, ensure_ascii=False, sort_keys=False))
 
     def start_spider(self, pagenum):
         while self.page <= pagenum:
