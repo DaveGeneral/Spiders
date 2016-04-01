@@ -99,15 +99,15 @@ class DouBanSpider(object):
         for i in range(count):
             self.datas.append([rank[i], name[i], rating[i], reviewnum[
                               i], summary[i], comment[i], address[i], imgurl[i]])
-            temp = collections.OrderedDict([("Rank", rank[i]),
-                                           ("Name", name[i]),
-                                           ("Rating", rating[i]),
-                                           ("Review_Number", reviewnum[i]),
-                                           ("Summary", summary[i]),
-                                           ("Comment", comment[i]),
-                                           ("Address", address[i]),
-                                           ("Image_URL", imgurl[i])])
-            dic.append(temp)
+            content = collections.OrderedDict([("Rank", rank[i]),
+                                               ("Name", name[i]),
+                                               ("Rating", rating[i]),
+                                               ("Review_Number", reviewnum[i]),
+                                               ("Summary", summary[i]),
+                                               ("Comment", comment[i]),
+                                               ("Address", address[i]),
+                                               ("Image_URL", imgurl[i])])
+            dic["Rank" + rank[i]] = content
         f.write(json.dumps(dic, indent=4, ensure_ascii=False))
         #  print(json.dumps(dic, indent=4, ensure_ascii=False))
 
