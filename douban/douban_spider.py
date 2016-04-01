@@ -10,7 +10,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-out = "output.txt"
+out = "output.json"
 f = open(out, 'w')
 
 
