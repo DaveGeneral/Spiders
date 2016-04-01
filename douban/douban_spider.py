@@ -9,7 +9,6 @@ import requests
 import warnings
 
 warnings.filterwarnings("ignore")
-
 out = "output.json"
 filename = open(out, 'w')
 
@@ -98,8 +97,8 @@ class DouBanSpider(object):
         count = len(name)
         for i in range(count):
             self.datas.append([rank[i], name[i], rating[i],
-                               reviewnum[i], summary[i], comment[i],
-                               address[i], imgurl[i]])
+                               reviewnum[i], summary[i],
+                               comment[i], address[i], imgurl[i]])
             content = collections.OrderedDict([("Rank", rank[i]),
                                                ("Name", name[i]),
                                                ("Rating", rating[i]),
@@ -157,8 +156,8 @@ class DoubanDB(object):
         clean = [re.sub(r"'", "''", x) for x in raw]
         sql = (
             "INSERT INTO " + self.tb_name +
-            "(Rank, Name, Rating, Review_Number,"
-            " Summary, Comment, Address, Image_URL)"
+            "(Rank, Name, Rating, Review_Number, "
+            "Summary, Comment, Address, Image_URL)"
             "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');"
             % (clean[0], clean[1], clean[2], clean[3],
                 clean[4], clean[5], clean[6], clean[7])
