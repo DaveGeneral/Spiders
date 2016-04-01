@@ -1,8 +1,7 @@
 import json
-with open('xe.json') as data_file:
+with open('output.json') as data_file:
     data = json.load(data_file)
-    mydata = json.dumps(data, indent=2)
-print(data)
+    mydata = json.dumps(data, indent=4, ensure_ascii=False)
 print(len(data))
-print(data['rank1']['name'])
+print(data['5']['Comment'])
 print(mydata)

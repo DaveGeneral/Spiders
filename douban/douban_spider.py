@@ -19,6 +19,7 @@ class DouBanSpider(object):
     def __init__(self):
         self.page = 1
         self.datas = []
+        self.dic = collections.OrderedDict()
 
     def retrieve_page(self, cur_page):
         url = "https://movie.douban.com/top250?start=%s&filter=" % (
@@ -85,7 +86,7 @@ class DouBanSpider(object):
         imgurl = [x['src'] for x in temp]
         return imgurl
 
-    def retrieve_content(self, soup):
+    def retrieve_content(self, soup, dic):
         rank = self.get_rank(soup)
         name = self.get_name(soup)
         rating = self.get_rating(soup)
@@ -95,7 +96,6 @@ class DouBanSpider(object):
         summary = self.get_summary(soup)
         comment = self.get_comment(soup)
         count = len(name)
-        dic = collections.OrderedDict()
         for i in range(count):
             self.datas.append([rank[i], name[i], rating[i], reviewnum[
                               i], summary[i], comment[i], address[i], imgurl[i]])
@@ -107,14 +107,15 @@ class DouBanSpider(object):
                                                ("Comment", comment[i]),
                                                ("Address", address[i]),
                                                ("Image_URL", imgurl[i])])
-            dic[i+1] = content
-        f.write(json.dumps(dic, indent=4, ensure_ascii=False, sort_keys=False))
+            dic[rank[i]] = content
 
     def start_spider(self, pagenum):
+        my_dic = collections.OrderedDict()
         while self.page <= pagenum:
             my_soup = self.retrieve_page(self.page)
-            self.retrieve_content(my_soup)
+            self.retrieve_content(my_soup, my_dic)
             self.page += 1
+        f.write(json.dumps(my_dic, indent=4, ensure_ascii=False, sort_keys=False))
         return self.datas
 
 
@@ -200,6 +201,7 @@ def main():
     my_spider = DouBanSpider()
     # The Top 250 movies include 10 pages
     my_data = my_spider.start_spider(10)
+    f.close()
     print("Data has been written to %s successfully!" % (out))
     print("Douban Movie Crawler Ends.\n")
     print("Douban Movie Database Insertion Begins...")
