@@ -1,14 +1,17 @@
 import multiprocessing as mul
 import os
 from math import factorial
+import timeit
 
 
 def get_factorial(num, pid=0):
     if pid:
-        print('pid is', os.getpid())
+        pass
     return factorial(num)
-f_10 = get_factorial(10, pid=1)
-
+#  f_10 = get_factorial(10, pid=1)
+t = timeit.Timer('get_factorial(10, pid=1)',
+                 'from __main__ import get_factorial')
+print(t.timeit())
 print("Separate1")
 
 
