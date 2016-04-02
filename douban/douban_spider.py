@@ -86,6 +86,7 @@ class DouBanSpider(object):
         return imgurl
 
     def retrieve_content(self, soup, dic):
+        instart = time.time()
         rank = self.get_rank(soup)
         name = self.get_name(soup)
         rating = self.get_rating(soup)
@@ -109,6 +110,8 @@ class DouBanSpider(object):
                                                ("Image_URL", imgurl[i])])
             dic[rank[i]] = content
             #  print(content)
+        instop = time.time()
+        print("The retrieve_content costs:", instop - instart)
 
     def write_out(self, dic):
         out = "output.json"
@@ -123,6 +126,7 @@ class DouBanSpider(object):
         tstart = time.time()
         while self.page <= pagenum:
             my_soup = self.retrieve_page(self.page)
+            print("Interception:", time.time() - tstart)
             self.retrieve_content(my_soup, my_dic)
             self.page += 1
         tstop = time.time()
