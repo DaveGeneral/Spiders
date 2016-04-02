@@ -1,5 +1,4 @@
 import multiprocessing as mul
-import os
 from math import factorial
 import timeit
 
@@ -20,7 +19,9 @@ def f_list_serial(num, pid=0):
     for n in range(1, num + 1):
         results.append(get_factorial(n, pid=pid))
     return results
-results = f_list_serial(5, pid=1)
+t = timeit.Timer('f_list_serial(5, pid=1)',
+                 'from __main__ import f_list_serial')
+print(t.timeit())
 
 print("Separate2")
 
@@ -38,4 +39,6 @@ def f_list_para_apply_async(num, pid=0, pool=None):
         results.append(result.get())
     return results
 
-r = f_list_para_apply_async(10, pid=1)
+t = timeit.Timer('f_list_para_apply_async(5, pid=1)',
+                 'from __main__ import f_list_para_apply_async')
+print(t.timeit(100))
