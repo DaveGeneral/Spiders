@@ -8,9 +8,9 @@ import re
 import requests
 import warnings
 
+import time
+
 warnings.filterwarnings("ignore")
-out = "output.json"
-filename = open(out, 'w')
 
 
 class DouBanSpider(object):
@@ -110,15 +110,24 @@ class DouBanSpider(object):
             dic[rank[i]] = content
             #  print(content)
 
+    def write_out(self, dic):
+        out = "output.json"
+        raw_data = json.dumps(
+            dic, indent=4, ensure_ascii=False, sort_keys=False)
+        with open(out, 'w') as f:
+            f.write(raw_data)
+        print("Data has been written to %s successfully!" % (out))
+
     def start_spider(self, pagenum):
         my_dic = collections.OrderedDict()
+        tstart = time.time()
         while self.page <= pagenum:
             my_soup = self.retrieve_page(self.page)
             self.retrieve_content(my_soup, my_dic)
             self.page += 1
-        raw_data = json.dumps(
-            my_dic, indent=4, ensure_ascii=False, sort_keys=False)
-        filename.write(raw_data)
+        tstop = time.time()
+        print("Crawler time:", tstop - tstart)
+        self.write_out(my_dic)
         return self.datas
 
 
@@ -207,8 +216,6 @@ def main():
     my_spider = DouBanSpider()
     # The Top 250 movies include 10 pages
     my_data = my_spider.start_spider(10)
-    filename.close()
-    print("Data has been written to %s successfully!" % (out))
     print("Douban Movie Crawler Ends.\n")
     print("Douban Movie Database Insertion Begins...")
     my_database = DoubanDB()
