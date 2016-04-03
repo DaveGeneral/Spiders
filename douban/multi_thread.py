@@ -4,7 +4,6 @@ import re
 import requests
 import threading
 import queue
-import time
 import bs4
 
 _DATA = []
@@ -26,16 +25,6 @@ proxies = {
     "http": "http://10.10.1.10:3128",
     "https": "http://10.10.1.10:1080",
 }
-
-
-class MyThread(threading.Thread):
-
-    def __init__(self, func):
-        super(MyThread, self).__init__()  # 调用父类的构造函数
-        self.func = func  # 传入线程函数逻辑
-
-    def run(self):
-        self.func()
 
 
 def worker():
@@ -88,7 +77,8 @@ def main():
     for index in range(10):
         SHARE_Q.put(douban_url.format(page=index * 25))
     for i in range(_WORKER_THREAD_NUM):
-        thread = MyThread(worker)
+        #  thread = MyThread(worker)
+        thread = threading.Thread(target=worker)
         thread.start()  # 线程开始处理任务
         threads.append(thread)
     for thread in threads:
@@ -101,5 +91,4 @@ def main():
     print("Spider Successful!!!")
 
 if __name__ == '__main__':
-    st = time.time()
     main()
