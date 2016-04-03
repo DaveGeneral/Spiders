@@ -12,7 +12,7 @@ import warnings
 
 
 Q_share = queue.Queue()
-thread_num = 1000  # the speed shows little increase beyond this number
+thread_num = 10  # the speed shows little increase beyond this number
 page_sum = 100
 
 outdir = 'temp_mul'
