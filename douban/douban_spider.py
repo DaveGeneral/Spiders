@@ -135,13 +135,10 @@ class DouBanSpider(object):
 
     def start_spider(self, pagenum):
         my_dic = collections.OrderedDict()
-        tstart = time.time()
         while self.page <= pagenum:
             my_soup = self.retrieve_page(self.page)
             self.retrieve_content(my_soup, my_dic)
             self.page += 1
-        tstop = time.time()
-        print("Crawler time:", tstop - tstart)
         self.write_out(my_dic)
         return self.datas
 
