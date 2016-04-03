@@ -11,7 +11,8 @@ import warnings
 
 
 Q_share = queue.Queue()
-thread_num = 50  # the speed shows little increase beyond this number
+thread_num = 1000  # the speed shows little increase beyond this number
+page_sum = 100
 
 outdir = 'temp_mul'
 path = os.getcwd()
@@ -19,9 +20,6 @@ path = os.path.join(path, outdir)
 if os.path.exists(path):
     shutil.rmtree(path)
 os.mkdir(path)
-
-page_sum = 5
-img_startnum = 1
 
 warnings.filterwarnings("ignore")
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
@@ -51,12 +49,13 @@ class BaozouSpider(object):
             page_text = requests.get(
                 url, proxies, headers=headers, timeout=5).text
             soup = bs4.BeautifulSoup(page_text, "lxml")
-        except Exception:
+        except Exception as e:
             print("Error happens! Please check your requests.")
+            raise e
         return soup
 
     def get_imgurl(self, soup):
-        temp = soup.findAll('img', src=True, style="width:460px;")
+        temp = soup.select('.img-wrap img')
         imgurl = [img['src'] for img in temp]
         return imgurl
 
@@ -66,8 +65,10 @@ class BaozouSpider(object):
                              timeout=5, stream=True)
             if r.status_code == 200:
                 with open(path, 'wb') as f:
-                    for chunk in r.iter_content(1024):
-                        f.write(chunk)
+                    r.raw.decode_content = True
+                    shutil.copyfileobj(r.raw, f)
+                    #  for chunk in r.iter_content(1024):
+                    #  f.write(chunk)
             else:
                 print("Forbidden error, step to next one.")
         except Exception:
@@ -76,7 +77,7 @@ class BaozouSpider(object):
     def retrieve_content(self, soup):
         num = 1
         imgurl = self.get_imgurl(soup)
-        print(("Total gifs in page %d: %d" % (self.index, len(imgurl))))
+        print(("Total gif images in page %d: %d" % (self.index, len(imgurl))))
         for x in imgurl:
             imgname = str(self.index) + '_' + str(num)
             fileloc = path + os.sep + imgname + ".gif"

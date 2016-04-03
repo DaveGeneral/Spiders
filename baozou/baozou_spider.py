@@ -6,7 +6,6 @@ import os
 import shutil
 import urllib.request
 
-import time
 
 path = os.getcwd()
 path = os.path.join(path, 'temp')
@@ -14,7 +13,7 @@ if os.path.exists(path):
     shutil.rmtree(path)
 os.mkdir(path)
 
-page_sum = 5
+page_sum = 100
 img_startnum = 1
 url = "http://baozoumanhua.com/gif/month/page/"
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
@@ -44,10 +43,9 @@ for count in range(page_sum):
     )
     content = urllib.request.urlopen(req).read()
     soup = bs4.BeautifulSoup(content, "lxml")
-    img_content = soup.findAll('img', src=True, style="width:460px;")
+    img_content = soup.select('.img-wrap img')
     url_list = [img['src'] for img in img_content]
     print("\nFile number in page %s: %s" % (req.full_url, len(url_list)))
-    st = time.time()
     for i in range(url_list.__len__()):
         try:
             imgurl = url_list[i]
@@ -58,4 +56,3 @@ for count in range(page_sum):
             urllib.request.urlretrieve(imgurl, filename)
         except Exception as e:
             print("Forbidden error, step to next one.")
-    print("time is:", time.time()-st)
