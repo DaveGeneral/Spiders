@@ -9,8 +9,6 @@ import shutil
 import threading
 import warnings
 
-from PIL import Image
-from io import StringIO
 
 Q_share = queue.Queue()
 thread_num = 10  # the speed shows little increase beyond this number
@@ -62,15 +60,17 @@ class BaozouSpider(object):
         imgurl = [img['src'] for img in temp]
         return imgurl
 
-    def get_img(self, url, filename):
+    def get_img(self, url, path):
         try:
             r = requests.get(url, proxies, headers=headers, timeout=5)
-            print(r)
-            print(r.content)
-            i = Image.open(StringIO(r.content))
-            i.save(filename)
+            if r.status_code == 200:
+                with open(path, 'wb') as f:
+                    for chunk in r.iter_content(1024):
+                        f.write(chunk)
+            else:
+                print("Forbidden error, step to next one.")
         except Exception:
-            print("Forbidden error, step to next one.")
+            print("Error happens! Please check your requests.")
 
     def retrieve_content(self, soup):
         num = 1
@@ -100,6 +100,7 @@ def main():
         ###############################
 
              BaoZou Gif Crawler
+           (Multi-Thread Version)
                Author: Ke Yi
 
         ###############################

@@ -55,7 +55,7 @@ for count in range(page_sum):
             filename = path + os.sep + imgname + ".gif"
             img_startnum += 1
             print(filename)
-            #  urllib.request.urlretrieve(imgurl, filename)
+            urllib.request.urlretrieve(imgurl, filename)
         except Exception as e:
             print("Forbidden error, step to next one.")
     print("time is:", time.time()-st)
