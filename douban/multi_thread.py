@@ -37,9 +37,7 @@ proxies = {
 class DouBanSpider(object):
 
     def __init__(self):
-        self.page = 1
-        self.datas = []
-        self.dic = collections.OrderedDict()
+        pass
 
     def retrieve_page(self, cur_url):
         try:
@@ -116,9 +114,6 @@ class DouBanSpider(object):
         comment = self.get_comment(soup)
         count = len(name)
         for i in range(count):
-            self.datas.append([rank[i], name[i], rating[i],
-                               reviewnum[i], summary[i],
-                               comment[i], address[i], imgurl[i]])
             content = collections.OrderedDict([("Rank", rank[i]),
                                                ("Name", name[i]),
                                                ("Rating", rating[i]),
