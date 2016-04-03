@@ -44,8 +44,9 @@ class DoubanSpider(object):
             page_text = requests.get(
                 cur_url, proxies, headers=headers, timeout=5).text
             soup = bs4.BeautifulSoup(page_text, "lxml")
-        except Exception:
+        except Exception as e:
             print("Error happens! Please check your requests.")
+            raise e
         return soup
 
     def get_rank(self, soup):
