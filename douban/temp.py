@@ -10,8 +10,22 @@ import bs4
 _DATA = []
 FILE_LOCK = threading.Lock()
 SHARE_Q = queue.Queue()  # 构造一个不限制大小的的队列
-_WORKER_THREAD_NUM = 5  # 设置线程的个数
-#  _WORKER_THREAD_NUM = 10000  # 设置线程的个数
+_WORKER_THREAD_NUM = 10  # 设置线程的个数
+
+headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
+           'AppleWebKit/537.11'
+           '(KHTML,like Gecko)'
+           'Chrome/23.0.1271.64 Safari/537.11',
+           'Accept': 'text/html,application/xhtml+xml,'
+           'application/xml;q=0.9,*/*;q=0.8',
+           'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+           'Accept-Encoding': 'none',
+           'Accept-Language': 'en-US,en;q=0.8',
+           'Connection': 'keep-alive'}
+proxies = {
+    "http": "http://10.10.1.10:3128",
+    "https": "http://10.10.1.10:1080",
+}
 
 
 class MyThread(threading.Thread):
@@ -37,7 +51,7 @@ def worker():
 
 def get_page(url):
     try:
-        my_page = requests.get(url).text
+        my_page = requests.get(url, proxies, headers=headers, timeout=5).text
         soup = bs4.BeautifulSoup(my_page, "lxml")
     except Exception:
         print("Error happens")
@@ -62,10 +76,8 @@ def get_name(soup):
 
 def find_title(soup):
     rank = get_rank(soup)
-    print(rank)
     name = get_name(soup)
     rt = [x + "  " + y for x, y in zip(rank, name)]
-    print(rt)
     _DATA.append(rt)
 
 
@@ -92,4 +104,3 @@ def main():
 if __name__ == '__main__':
     st = time.time()
     main()
-    print(time.time()-st)

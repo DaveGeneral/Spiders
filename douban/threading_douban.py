@@ -23,7 +23,7 @@ import time
 _DATA = []
 FILE_LOCK = threading.Lock()
 SHARE_Q = queue.Queue()  # 构造一个不限制大小的的队列
-_WORKER_THREAD_NUM = 3  # 设置线程的个数
+_WORKER_THREAD_NUM = 10  # 设置线程的个数
 
 
 class MyThread(threading.Thread):
