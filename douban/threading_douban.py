@@ -66,8 +66,6 @@ def find_title(my_page):
         if item.find("&nbsp") == -1:
             # print item,
             temp_data.append(item)
-    print(len(temp_data))
-    print(temp_data)
     _DATA.append(temp_data)
 
 

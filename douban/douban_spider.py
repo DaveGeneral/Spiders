@@ -11,6 +11,20 @@ import warnings
 import time
 
 warnings.filterwarnings("ignore")
+headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
+           'AppleWebKit/537.11'
+           '(KHTML,like Gecko)'
+           'Chrome/23.0.1271.64 Safari/537.11',
+           'Accept': 'text/html,application/xhtml+xml,'
+           'application/xml;q=0.9,*/*;q=0.8',
+           'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+           'Accept-Encoding': 'none',
+           'Accept-Language': 'en-US,en;q=0.8',
+           'Connection': 'keep-alive'}
+proxies = {
+    "http": "http://10.10.1.10:3128",
+    "https": "http://10.10.1.10:1080",
+}
 
 
 class DouBanSpider(object):
@@ -24,7 +38,8 @@ class DouBanSpider(object):
         url = "https://movie.douban.com/top250?start=%s&filter=" % (
             str((cur_page - 1) * 25))
         try:
-            page_text = requests.get(url).text
+            page_text = requests.get(
+                url, proxies, headers=headers, timeout=5).text
             soup = bs4.BeautifulSoup(page_text, "lxml")
         except Exception:
             print("Error happens! Please check your requests.")
