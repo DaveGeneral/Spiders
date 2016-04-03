@@ -63,23 +63,25 @@ class BaozouSpider(object):
         return imgurl
 
     def get_img(self, url, filename):
-        r = requests.get(url, proxies, headers=headers, timeout=5)
-        i = Image.open(StringIO(r.content))
-        i.save(filename)
+        try:
+            r = requests.get(url, proxies, headers=headers, timeout=5)
+            print(r)
+            print(r.content)
+            i = Image.open(StringIO(r.content))
+            i.save(filename)
+        except Exception:
+            print("Forbidden error, step to next one.")
 
     def retrieve_content(self, soup):
         num = 1
         imgurl = self.get_imgurl(soup)
         print(("Total gifs in page %d: %d" % (self.index, len(imgurl))))
         for x in imgurl:
-            try:
-                imgname = str(self.index) + '_' + str(num)
-                fileloc = path + os.sep + imgname + ".gif"
-                print(fileloc)
-                num += 1
-                self.get_img(x, fileloc)
-            except Exception:
-                print("Forbidden error, step to next one.")
+            imgname = str(self.index) + '_' + str(num)
+            fileloc = path + os.sep + imgname + ".gif"
+            print(fileloc)
+            num += 1
+            self.get_img(x, fileloc)
 
 
 def worker():
