@@ -27,7 +27,7 @@ proxies = {
 }
 
 
-class DouBanSpider(object):
+class DoubanSpider(object):
 
     def __init__(self):
         self.page = 1
@@ -225,7 +225,7 @@ def main():
         ###############################
     """)
     print("Douban Movie Crawler Begins...")
-    my_spider = DouBanSpider()
+    my_spider = DoubanSpider()
     # The Top 250 movies include 10 pages
     my_data = my_spider.start_spider(10)
     print("Douban Movie Crawler Ends.\n")

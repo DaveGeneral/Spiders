@@ -34,7 +34,7 @@ proxies = {
 }
 
 
-class DouBanSpider(object):
+class DoubanSpider(object):
 
     def __init__(self):
         pass
@@ -202,7 +202,7 @@ def worker():
     global Q_share
     while not Q_share.empty():
         url = Q_share.get()
-        spider = DouBanSpider()
+        spider = DoubanSpider()
         my_soup = spider.retrieve_page(url)
         spider.retrieve_content(my_soup)
         #  time.sleep(1)
