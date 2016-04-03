@@ -44,8 +44,7 @@ def worker():
         url = SHARE_Q.get()  # 获得任务
         my_page = get_page(url)
         find_title(my_page)  # 获得当前页面的电影名
-        # write_into_file(temp_data)
-        time.sleep(1)
+        #  time.sleep(1)
         SHARE_Q.task_done()
 
 
