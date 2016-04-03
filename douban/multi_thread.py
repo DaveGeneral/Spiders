@@ -9,9 +9,9 @@ import collections
 import json
 
 my_dic = {}
-FILE_LOCK = threading.Lock()
-SHARE_Q = queue.Queue()  # 构造一个不限制大小的的队列
-_WORKER_THREAD_NUM = 10  # 设置线程的个数
+#  FILE_LOCK = threading.Lock()
+SHARE_Q = queue.Queue()
+_WORKER_THREAD_NUM = 10
 
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
            'AppleWebKit/537.11'
@@ -150,18 +150,14 @@ def main():
     for thread in threads:
         thread.join()
     SHARE_Q.join()
-    import time
-    st = time.time()
     od = collections.OrderedDict(
         sorted(my_dic.items(), key=lambda x: int(x[0])))
-    print(time.time() - st)
-    out = "output_multiThread.json"
+    out = "output_threads.json"
     raw_data = json.dumps(
         od, indent=4, ensure_ascii=False, sort_keys=False)
     with open(out, 'w') as f:
         f.write(raw_data)
     print("Data has been written to %s successfully!" % (out))
-    print("Spider Successful!!!")
 
 if __name__ == '__main__':
     main()
