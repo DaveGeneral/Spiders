@@ -6,6 +6,7 @@ import os
 import queue
 import requests
 import shutil
+import sys
 import threading
 import warnings
 
@@ -49,9 +50,10 @@ class BaozouSpider(object):
             page_text = requests.get(
                 url, proxies, headers=headers, timeout=5).text
             soup = bs4.BeautifulSoup(page_text, "lxml")
-        except Exception as e:
+        except Exception:
             print("Error happens! Please check your requests.")
-            raise e
+            sys.exit(0)
+
         return soup
 
     def get_imgurl(self, soup):
