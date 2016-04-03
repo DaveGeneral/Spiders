@@ -1,17 +1,29 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+"""
+一个简单的Python爬虫, 使用了多线程,
+爬取豆瓣Top前250的所有电影
+
+Anthor: Andrew Liu
+Version: 0.0.2
+Date: 2014-12-14
+Language: Python2.7.8
+Editor: Sublime Text2
+Operate: 具体操作请看README.md介绍
+"""
+
+import urllib.request
+import urllib.error
+import urllib.parse
 import re
-import requests
 import threading
 import queue
 import time
-import bs4
 
 _DATA = []
 FILE_LOCK = threading.Lock()
 SHARE_Q = queue.Queue()  # 构造一个不限制大小的的队列
-_WORKER_THREAD_NUM = 5  # 设置线程的个数
-#  _WORKER_THREAD_NUM = 10000  # 设置线程的个数
+_WORKER_THREAD_NUM = 3  # 设置线程的个数
 
 
 class MyThread(threading.Thread):
@@ -37,36 +49,26 @@ def worker():
 
 def get_page(url):
     try:
-        my_page = requests.get(url).text
-        soup = bs4.BeautifulSoup(my_page, "lxml")
-    except Exception:
-        print("Error happens")
-    return soup
+        my_page = urllib.request.urlopen(url).read().decode("utf-8")
+    except urllib.error.URLError as e:
+        if hasattr(e, "code"):
+            print("Error code: %s" % e.code)
+        elif hasattr(e, "reason"):
+            print("Reason: %s" % e.reason)
+    return my_page
 
 
-def get_rank(soup):
-    temp = soup.select(".pic em")
-    rank = [x.string for x in temp]
-    return rank
-
-
-def get_name(soup):
-    temp = soup.select(".hd")
-    name = []
-    for x in temp:
-        lines = x.select("a span")
-        t = ''.join(re.sub(r'\s+', ' ', s.string) for s in lines)
-        name.append(t)
-    return name
-
-
-def find_title(soup):
-    rank = get_rank(soup)
-    print(rank)
-    name = get_name(soup)
-    rt = [x + "  " + y for x, y in zip(rank, name)]
-    print(rt)
-    _DATA.append(rt)
+def find_title(my_page):
+    temp_data = []
+    movie_items = re.findall(
+        r'<span.*?class="title">(.*?)</span>', my_page, re.S)
+    for index, item in enumerate(movie_items):
+        if item.find("&nbsp") == -1:
+            # print item,
+            temp_data.append(item)
+    print(len(temp_data))
+    print(temp_data)
+    _DATA.append(temp_data)
 
 
 def main():
@@ -83,7 +85,7 @@ def main():
     for thread in threads:
         thread.join()
     SHARE_Q.join()
-    with open("movie.txt", "w") as my_file:
+    with open("movie.txt", "w+") as my_file:
         for page in _DATA:
             for movie_name in page:
                 my_file.write(movie_name + "\n")
