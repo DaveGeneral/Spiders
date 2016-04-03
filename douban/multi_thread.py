@@ -1,17 +1,21 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-import re
-import requests
-import threading
-import queue
 import bs4
 import collections
 import json
+import MySQLdb
+import queue
+import re
+import requests
+import threading
+import warnings
+
+
+warnings.filterwarnings("ignore")
 
 my_dic = {}
-#  FILE_LOCK = threading.Lock()
-SHARE_Q = queue.Queue()
-_WORKER_THREAD_NUM = 10
+Q_share = queue.Queue()
+thread_num = 10  # the speed will not increase a lot after this number
 
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
            'AppleWebKit/537.11'
@@ -126,38 +130,125 @@ class DouBanSpider(object):
             #  print(content)
 
 
+class DoubanDB(object):
+
+    def __init__(self):
+        self.host = "localhost"
+        self.user = "spider"
+        self.password = "pwd123456"
+        self.port = 3306
+        self.db_name = "Movie"
+        self.tb_name = "Douban"
+
+    def tb_drop(self, cursor):
+        cursor.execute("DROP TABLE IF EXISTS " + self.tb_name + ";")
+        return
+
+    def tb_create(self, cursor):
+        sql = (
+            "CREATE TABLE " + self.tb_name +
+            "(Rank VARCHAR(10) NOT NULL,"
+            "Name VARCHAR(500) NOT NULL,"
+            "Rating VARCHAR(10) NOT NULL,"
+            "Review_Number VARCHAR(100) NOT NULL,"
+            "Summary VARCHAR(500) NOT NULL,"
+            "Comment VARCHAR(500),"
+            "Address VARCHAR(500) NOT NULL,"
+            "Image_URL VARCHAR(500) NOT NULL);"
+        )
+        cursor.execute(sql)
+        return
+
+    def tb_insert(self, conn, cursor, raw):
+        #  solve single quote problem when inserting
+        clean = [re.sub(r"'", "''", x) for x in raw]
+        sql = (
+            "INSERT INTO " + self.tb_name +
+            "(Rank, Name, Rating, Review_Number, "
+            "Summary, Comment, Address, Image_URL)"
+            "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');"
+            % (clean[0], clean[1], clean[2], clean[3],
+                clean[4], clean[5], clean[6], clean[7])
+        )
+        try:
+            cursor.execute(sql)
+            conn.commit()
+        except:
+            conn.rollback()
+        return
+
+    def tb_retrieve(self, cursor):
+        try:
+            cursor.execute("SELECT * FROM " + self.tb_name + ";")
+            lines = cursor.fetchall()
+            for row in lines:
+                print(row)
+        except:
+            print("Error: unable to fecth data")
+        return
+
+    def start_db(self, datas):
+        my_conn = MySQLdb.connect(host=self.host, user=self.user,
+                                  passwd=self.password, port=self.port,
+                                  db=self.db_name, charset="utf8")
+        my_cursor = my_conn.cursor()
+        self.tb_drop(my_cursor)
+        self.tb_create(my_cursor)
+        for x in datas:
+            self.tb_insert(my_conn, my_cursor, x)
+        #  print results from mysql database
+        #  self.tb_retrieve(my_cursor)
+        my_cursor.close()
+        my_conn.close()
+
+
 def worker():
-    global SHARE_Q
-    while not SHARE_Q.empty():
-        url = SHARE_Q.get()
+    global Q_share
+    while not Q_share.empty():
+        url = Q_share.get()
         spider = DouBanSpider()
         my_soup = spider.retrieve_page(url)
         spider.retrieve_content(my_soup)
         #  time.sleep(1)
-        SHARE_Q.task_done()
+        Q_share.task_done()
 
 
 def main():
-    global SHARE_Q
+    print("""
+        ###############################
+
+             Douban Top250 Movies
+            (Multi-Thread Version)
+                Author: Ke Yi
+
+        ###############################
+    """)
+    print("Douban Movie Crawler Begins...")
+    global Q_share
     threads = []
     douban_url = "http://movie.douban.com/top250?start={page}&filter=&type="
-    for index in range(10):
-        SHARE_Q.put(douban_url.format(page=index * 25))
-    for i in range(_WORKER_THREAD_NUM):
+    for index in range(10):  # 10 is the total url page number
+        Q_share.put(douban_url.format(page=index * 25))
+    for i in range(thread_num):
         thread = threading.Thread(target=worker)
         thread.start()
         threads.append(thread)
     for thread in threads:
         thread.join()
-    SHARE_Q.join()
-    od = collections.OrderedDict(
-        sorted(my_dic.items(), key=lambda x: int(x[0])))
+    Q_share.join()
+    ol = sorted(my_dic.items(), key=lambda x: int(x[0]))  # ordered list
+    od = collections.OrderedDict(ol)  # ordered dictionary
     out = "output_threads.json"
     raw_data = json.dumps(
         od, indent=4, ensure_ascii=False, sort_keys=False)
     with open(out, 'w') as f:
         f.write(raw_data)
     print("Data has been written to %s successfully!" % (out))
+    print("Douban Movie Crawler Ends.\n")
+    print("Douban Movie Database Insertion Begins...")
+    my_database = DoubanDB()
+    my_database.start_db([x[1].values() for x in ol])
+    print("Douban Movie Database Insertion Ends.\n")
 
 if __name__ == '__main__':
     main()
