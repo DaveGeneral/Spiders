@@ -10,7 +10,7 @@ import threading
 import warnings
 
 from PIL import Image
-from StringIO import StringIO
+from io import StringIO
 
 Q_share = queue.Queue()
 thread_num = 10  # the speed shows little increase beyond this number
@@ -63,21 +63,21 @@ class BaozouSpider(object):
         return imgurl
 
     def get_img(self, url, filename):
-        r = requests.get(url)
+        r = requests.get(url, proxies, headers=headers, timeout=5)
         i = Image.open(StringIO(r.content))
         i.save(filename)
 
     def retrieve_content(self, soup):
         num = 1
         imgurl = self.get_imgurl(soup)
-        print("Total gifs in page %d: %d" % (self.index, len(imgurl)))
+        print(("Total gifs in page %d: %d" % (self.index, len(imgurl))))
         for x in imgurl:
             try:
                 imgname = str(self.index) + '_' + str(num)
                 fileloc = path + os.sep + imgname + ".gif"
                 print(fileloc)
-                self.get_img(x, fileloc)
                 num += 1
+                self.get_img(x, fileloc)
             except Exception:
                 print("Forbidden error, step to next one.")
 
