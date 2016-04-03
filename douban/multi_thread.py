@@ -15,7 +15,7 @@ warnings.filterwarnings("ignore")
 
 my_dic = {}
 Q_share = queue.Queue()
-thread_num = 10  # the speed will not increase a lot after this number
+thread_num = 10  # the speed shows little increase beyond this number
 
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
            'AppleWebKit/537.11'
