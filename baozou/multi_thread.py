@@ -6,13 +6,16 @@ import os
 import queue
 import requests
 import shutil
+import threading
 import warnings
 
+from PIL import Image
+from StringIO import StringIO
 
 Q_share = queue.Queue()
 thread_num = 10  # the speed shows little increase beyond this number
 
-outdir = 'temp'
+outdir = 'temp_mul'
 path = os.getcwd()
 path = os.path.join(path, outdir)
 if os.path.exists(path):
@@ -21,7 +24,6 @@ os.mkdir(path)
 
 page_sum = 5
 img_startnum = 1
-url = "http://baozoumanhua.com/gif/month/page/"
 
 warnings.filterwarnings("ignore")
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
@@ -42,12 +44,11 @@ proxies = {
 
 class BaozouSpider(object):
 
-    def __init__(self):
-        pass
+    def __init__(self, index):
+        self.index = index
 
-    def retrieve_page(self, cur_page):
-        url = "https://movie.douban.com/top250?start=%s&filter=" % (
-            str((cur_page - 1) * 25))
+    def retrieve_page(self):
+        url = "http://baozoumanhua.com/gif/month/page/" + str(self.index)
         try:
             page_text = requests.get(
                 url, proxies, headers=headers, timeout=5).text
@@ -61,13 +62,22 @@ class BaozouSpider(object):
         imgurl = [img['src'] for img in temp]
         return imgurl
 
-    def retrieve_img(self, soup):
+    def get_img(self, url, filename):
+        r = requests.get(url)
+        i = Image.open(StringIO(r.content))
+        i.save(filename)
+
+    def retrieve_content(self, soup):
+        num = 1
         imgurl = self.get_imgurl(soup)
+        print("Total gifs in page %d: %d" % (self.index, len(imgurl)))
         for x in imgurl:
             try:
-                imgname = ""
-                filename = path + os.sep + imgname + ".gif"
-                print(filename)
+                imgname = str(self.index) + '_' + str(num)
+                fileloc = path + os.sep + imgname + ".gif"
+                print(fileloc)
+                self.get_img(x, fileloc)
+                num += 1
             except Exception:
                 print("Forbidden error, step to next one.")
 
@@ -75,9 +85,9 @@ class BaozouSpider(object):
 def worker():
     global Q_share
     while not Q_share.empty():
-        url = Q_share.get()
-        spider = BaozouSpider()
-        my_soup = spider.retrieve_page(url)
+        index = Q_share.get()
+        spider = BaozouSpider(index)
+        my_soup = spider.retrieve_page()
         spider.retrieve_content(my_soup)
         #  time.sleep(1)
         Q_share.task_done()
@@ -93,7 +103,17 @@ def main():
         ###############################
     """)
     print("Baozou Gif Crawler Begins...")
-    #  my_spider = BaozouSpider()
+    global Q_share
+    threads = []
+    for i in range(page_sum):
+        Q_share.put(i + 1)
+    for i in range(thread_num):
+        thread = threading.Thread(target=worker)
+        thread.start()
+        threads.append(thread)
+    for thread in threads:
+        thread.join()
+    Q_share.join()
     print("Douban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':

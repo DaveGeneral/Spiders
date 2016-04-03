@@ -6,6 +6,8 @@ import os
 import shutil
 import urllib.request
 
+import time
+
 path = os.getcwd()
 path = os.path.join(path, 'temp')
 if os.path.exists(path):
@@ -45,6 +47,7 @@ for count in range(page_sum):
     img_content = soup.findAll('img', src=True, style="width:460px;")
     url_list = [img['src'] for img in img_content]
     print("\nFile number in page %s: %s" % (req.full_url, len(url_list)))
+    st = time.time()
     for i in range(url_list.__len__()):
         try:
             imgurl = url_list[i]
@@ -52,6 +55,7 @@ for count in range(page_sum):
             filename = path + os.sep + imgname + ".gif"
             img_startnum += 1
             print(filename)
-            urllib.request.urlretrieve(imgurl, filename)
+            #  urllib.request.urlretrieve(imgurl, filename)
         except Exception as e:
             print("Forbidden error, step to next one.")
+    print("time is:", time.time()-st)
