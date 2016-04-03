@@ -11,7 +11,7 @@ import warnings
 
 
 Q_share = queue.Queue()
-thread_num = 10  # the speed shows little increase beyond this number
+thread_num = 50  # the speed shows little increase beyond this number
 
 outdir = 'temp_mul'
 path = os.getcwd()
@@ -62,7 +62,8 @@ class BaozouSpider(object):
 
     def get_img(self, url, path):
         try:
-            r = requests.get(url, proxies, headers=headers, timeout=5)
+            r = requests.get(url, proxies, headers=headers,
+                             timeout=5, stream=True)
             if r.status_code == 200:
                 with open(path, 'wb') as f:
                     for chunk in r.iter_content(1024):
