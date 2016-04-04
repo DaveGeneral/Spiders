@@ -123,7 +123,8 @@ class DoubanSpider(object):
                                                ("Image_URL", imgurl[i])])
             tempDic[rank[i]] = content
             #  print(content)
-        return tempDic
+        return name
+        #  return tempDic
 
 
 class DoubanDB(object):
@@ -222,13 +223,14 @@ def main():
         idlist.append(douban_url.format(page=index * 25))
     pool = multiprocessing.Pool(POOL_NUM)
     res = (pool.map(worker, idlist))
+    print(res[0])
     #  pool.close()
     #  pool.join()
-    print(type(res[0]))
-    for x in res[0]:
-        print(x)
-        for keys, values in x.items():
-            MY_DIC[keys] = values
+    #  print(type(res[0]))
+    #  for x in res[0]:
+        #  print(x)
+        #  for keys, values in x.items():
+            #  MY_DIC[keys] = values
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
     od = collections.OrderedDict(ol)  # ordered dictionary
     out = "output_threads.json"
