@@ -6,16 +6,15 @@ import os
 import queue
 import requests
 import shutil
-import sys
 import threading
 import warnings
 
 
-Q_share = queue.Queue()
-thread_num = 10  # the speed shows little increase beyond this number
-page_sum = 100
+Q_SHARE = queue.Queue()
+THREAD_NUM = 10  # the speed shows little increase beyond this number
+PAGE_SIZE = 10
 
-outdir = 'temp_mul'
+outdir = 'temp'
 path = os.getcwd()
 path = os.path.join(path, outdir)
 if os.path.exists(path):
@@ -52,7 +51,6 @@ class BaozouSpider(object):
             soup = bs4.BeautifulSoup(page_text, "lxml")
         except Exception:
             print("Error happens! Please check your requests.")
-            sys.exit(0)
 
         return soup
 
@@ -66,6 +64,7 @@ class BaozouSpider(object):
             r = requests.get(url, proxies, headers=headers,
                              timeout=5, stream=True)
             if r.status_code == 200:
+                pass
                 with open(path, 'wb') as f:
                     r.raw.decode_content = True
                     shutil.copyfileobj(r.raw, f)
@@ -89,17 +88,14 @@ class BaozouSpider(object):
 
 
 def worker():
-    global Q_share
-    while not Q_share.empty():
-        index = Q_share.get()
+    global Q_SHARE
+    while not Q_SHARE.empty():
+        index = Q_SHARE.get_nowait()
         spider = BaozouSpider(index)
-        try:
-            my_soup = spider.retrieve_page()
-            spider.retrieve_content(my_soup)
-        except Exception:
-            sys.exit(0)
+        my_soup = spider.retrieve_page()
+        spider.retrieve_content(my_soup)
         #  time.sleep(1)
-        Q_share.task_done()
+        Q_SHARE.task_done()
 
 
 def main():
@@ -113,17 +109,17 @@ def main():
         ###############################
     """)
     print("Baozou Gif Crawler Begins...")
-    global Q_share
-    threads = []
-    for i in range(page_sum):
-        Q_share.put(i + 1)
-    for i in range(thread_num):
+    global Q_SHARE
+    my_threads = []
+    for i in range(PAGE_SIZE):
+        Q_SHARE.put(i + 1)
+    for i in range(THREAD_NUM):
         thread = threading.Thread(target=worker)
         thread.start()
-        threads.append(thread)
-    for thread in threads:
+        my_threads.append(thread)
+    for thread in my_threads:
         thread.join()
-    Q_share.join()
+    Q_SHARE.join()
     print("Douban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':
