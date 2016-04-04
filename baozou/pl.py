@@ -11,7 +11,7 @@ import warnings
 
 
 Q_SHARE = queue.Queue()
-THREAD_NUM = 8  # the speed shows little increase beyond this number
+THREAD_NUM = 10  # the speed shows little increase beyond this number
 PAGE_SIZE = 10
 
 outdir = 'temp'
@@ -87,15 +87,19 @@ class BaozouSpider(object):
             self.get_img(x, fileloc)
 
 
-def worker():
-    global Q_SHARE
-    while not Q_SHARE.empty():
-        index = Q_SHARE.get_nowait()
-        spider = BaozouSpider(index)
-        my_soup = spider.retrieve_page()
-        spider.retrieve_content(my_soup)
-        #  time.sleep(1)
-        Q_SHARE.task_done()
+class DownloadWorker(threading.Thread):
+
+    def __init__(self, index):
+        threading.Thread.__init__(self)
+        self.index = index
+
+    def run(self):
+        while True:
+            index = self.index.get()
+            spider = BaozouSpider(index)
+            my_soup = spider.retrieve_page()
+            spider.retrieve_content(my_soup)
+            self.index.task_done()
 
 
 def main():
@@ -109,17 +113,12 @@ def main():
         ###############################
     """)
     print("Baozou Gif Crawler Begins...")
-    global Q_SHARE
-    my_threads = []
     for i in range(PAGE_SIZE):
         Q_SHARE.put(i + 1)
     for i in range(THREAD_NUM):
-        thread = threading.Thread(target=worker)
+        thread = DownloadWorker(Q_SHARE)
         thread.daemon = True
         thread.start()
-        my_threads.append(thread)
-    for thread in my_threads:
-        thread.join()
     Q_SHARE.join()
     print("Douban Movie Crawler Ends.\n")
 
