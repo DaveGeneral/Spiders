@@ -200,6 +200,7 @@ class DoubanDB(object):
 
 
 def worker(url):
+    global MY_DIC
     spider = DoubanSpider()
     my_soup = spider.retrieve_page(url)
     temp = spider.retrieve_content(my_soup)
@@ -222,10 +223,9 @@ def main():
     for index in range(10):  # 10 is the total url page number
         idlist.append(douban_url.format(page=index * 25))
     pool = multiprocessing.Pool(POOL_NUM)
-    res = (pool.map(worker, idlist))
-    print(res[0])
-    #  pool.close()
-    #  pool.join()
+    pool.map(worker, idlist)
+    pool.close()
+    pool.join()
     #  print(type(res[0]))
     #  for x in res[0]:
         #  print(x)
