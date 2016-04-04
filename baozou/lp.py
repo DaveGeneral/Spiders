@@ -9,7 +9,7 @@ import shutil
 import warnings
 
 
-POOL_NUM = 9  # the speed shows little increase beyond this number
+POOL_NUM = 8  # the speed shows little increase beyond this number
 PAGE_SIZE = 100
 
 outdir = 'temp'
@@ -105,7 +105,11 @@ def main():
         ###############################
     """)
     print("Baozou Gif Crawler Begins...")
-    multiprocessing.Pool(POOL_NUM).map(download, range(1, PAGE_SIZE+1))
+    pool = multiprocessing.Pool(POOL_NUM)
+    pool.map(download, range(1, PAGE_SIZE+1))
+    #  pool.map_async(download, range(1, PAGE_SIZE+1))
+    pool.close()
+    pool.join()
     print("Douban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':
