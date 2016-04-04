@@ -9,7 +9,8 @@ import re
 import requests
 import warnings
 import multiprocessing
-
+import sys
+sys.setrecursionlimit(10000)
 warnings.filterwarnings("ignore")
 
 MY_DIC = {}
@@ -101,7 +102,7 @@ class DoubanSpider(object):
         imgurl = [x['src'] for x in temp]
         return imgurl
 
-    def retrieve_content(self, soup):
+    def retrieve_content(self, soup, md):
         rank = self.get_rank(soup)
         name = self.get_name(soup)
         rating = self.get_rating(soup)
@@ -111,7 +112,6 @@ class DoubanSpider(object):
         summary = self.get_summary(soup)
         comment = self.get_comment(soup)
         count = len(name)
-        tempDic = {}
         for i in range(count):
             content = collections.OrderedDict([("Rank", rank[i]),
                                                ("Name", name[i]),
@@ -121,10 +121,8 @@ class DoubanSpider(object):
                                                ("Comment", comment[i]),
                                                ("Address", address[i]),
                                                ("Image_URL", imgurl[i])])
-            tempDic[rank[i]] = content
             #  print(content)
-        return name
-        #  return tempDic
+            md[rank[i]] = content
 
 
 class DoubanDB(object):
@@ -199,12 +197,10 @@ class DoubanDB(object):
         my_conn.close()
 
 
-def worker(url):
-    global MY_DIC
+def worker(url, md):
     spider = DoubanSpider()
     my_soup = spider.retrieve_page(url)
-    temp = spider.retrieve_content(my_soup)
-    return temp
+    spider.retrieve_content(my_soup, md)
 
 
 def main():
@@ -219,18 +215,14 @@ def main():
     """)
     print("Douban Movie Crawler Begins...")
     douban_url = "http://movie.douban.com/top250?start={page}&filter=&type="
-    idlist = []
-    for index in range(10):  # 10 is the total url page number
-        idlist.append(douban_url.format(page=index * 25))
     pool = multiprocessing.Pool(POOL_NUM)
-    pool.map(worker, idlist)
+    md = multiprocessing.Manager().dict()
+    for index in range(10):
+        url = douban_url.format(page=index * 25)
+        pool.apply(worker, args=(url, md))
     pool.close()
     pool.join()
-    #  print(type(res[0]))
-    #  for x in res[0]:
-        #  print(x)
-        #  for keys, values in x.items():
-            #  MY_DIC[keys] = values
+    print(type(md))
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
     od = collections.OrderedDict(ol)  # ordered dictionary
     out = "output_threads.json"
