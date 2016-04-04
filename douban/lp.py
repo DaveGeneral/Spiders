@@ -223,7 +223,6 @@ def main():
         idlist.append(douban_url.format(page=index * 25))
     pool = multiprocessing.Pool(POOL_NUM)
     res = (pool.map(worker, idlist))
-    print(res[0])
     pool.close()
     pool.join()
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
