@@ -5,18 +5,15 @@ import bs4
 import collections
 import json
 import MySQLdb
-import queue
 import re
 import requests
-import threading
 import warnings
-
+import multiprocessing
 
 warnings.filterwarnings("ignore")
 
 MY_DIC = {}
-Q_SHARE = queue.Queue()
-THREAD_NUM = 10  # the speed shows little increase beyond this number
+POOL_NUM = 6  # the speed shows little increase beyond this number
 
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
            'AppleWebKit/537.11'
@@ -45,7 +42,7 @@ class DoubanSpider(object):
                 cur_url, proxies, headers=headers, timeout=5).text
             soup = bs4.BeautifulSoup(page_text, "lxml")
         except Exception as e:
-            print("Error happens! Please check your requests.")
+            print("Soup Error happens! Please check your requests.")
             raise e
         return soup
 
@@ -114,6 +111,7 @@ class DoubanSpider(object):
         summary = self.get_summary(soup)
         comment = self.get_comment(soup)
         count = len(name)
+        tempDic = {}
         for i in range(count):
             content = collections.OrderedDict([("Rank", rank[i]),
                                                ("Name", name[i]),
@@ -123,8 +121,9 @@ class DoubanSpider(object):
                                                ("Comment", comment[i]),
                                                ("Address", address[i]),
                                                ("Image_URL", imgurl[i])])
-            MY_DIC[rank[i]] = content
+            tempDic[rank[i]] = content
             #  print(content)
+        return tempDic
 
 
 class DoubanDB(object):
@@ -199,15 +198,11 @@ class DoubanDB(object):
         my_conn.close()
 
 
-def worker():
-    global Q_SHARE
-    while not Q_SHARE.empty():
-        url = Q_SHARE.get()
-        spider = DoubanSpider()
-        my_soup = spider.retrieve_page(url)
-        spider.retrieve_content(my_soup)
-        #  time.sleep(1)
-        Q_SHARE.task_done()
+def worker(url):
+    spider = DoubanSpider()
+    my_soup = spider.retrieve_page(url)
+    temp = spider.retrieve_content(my_soup)
+    return temp
 
 
 def main():
@@ -221,18 +216,19 @@ def main():
         ###############################
     """)
     print("Douban Movie Crawler Begins...")
-    global Q_SHARE
-    threads = []
     douban_url = "http://movie.douban.com/top250?start={page}&filter=&type="
+    idlist = []
     for index in range(10):  # 10 is the total url page number
-        Q_SHARE.put(douban_url.format(page=index * 25))
-    for i in range(THREAD_NUM):
-        thread = threading.Thread(target=worker)
-        thread.start()
-        threads.append(thread)
-    for thread in threads:
-        thread.join()
-    Q_SHARE.join()
+        idlist.append(douban_url.format(page=index * 25))
+    pool = multiprocessing.Pool(POOL_NUM)
+    res = (pool.map(worker, idlist))
+    #  pool.close()
+    #  pool.join()
+    print(type(res[0]))
+    for x in res[0]:
+        print(x)
+        for keys, values in x.items():
+            MY_DIC[keys] = values
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
     od = collections.OrderedDict(ol)  # ordered dictionary
     out = "output_threads.json"
