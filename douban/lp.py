@@ -222,7 +222,7 @@ def main():
         pool.apply(worker, args=(url, md))
     pool.close()
     pool.join()
-    print(type(md))
+    print(len(md))
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
     od = collections.OrderedDict(ol)  # ordered dictionary
     out = "output_threads.json"
