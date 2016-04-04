@@ -69,8 +69,8 @@ class BaozouSpider(object):
                 with open(path, 'wb') as f:
                     r.raw.decode_content = True
                     shutil.copyfileobj(r.raw, f)
-                    #  for chunk in r.iter_content(1024):
-                    #  f.write(chunk)
+                    for chunk in r.iter_content(1024):
+                        f.write(chunk)
             else:
                 print("Forbidden error, step to next one.")
         except Exception:
@@ -93,8 +93,11 @@ def worker():
     while not Q_share.empty():
         index = Q_share.get()
         spider = BaozouSpider(index)
-        my_soup = spider.retrieve_page()
-        spider.retrieve_content(my_soup)
+        try:
+            my_soup = spider.retrieve_page()
+            spider.retrieve_content(my_soup)
+        except Exception:
+            sys.exit(0)
         #  time.sleep(1)
         Q_share.task_done()
 

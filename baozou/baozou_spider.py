@@ -13,7 +13,7 @@ if os.path.exists(path):
     shutil.rmtree(path)
 os.mkdir(path)
 
-page_sum = 100
+page_sum = 5
 img_startnum = 1
 url = "http://baozoumanhua.com/gif/month/page/"
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
