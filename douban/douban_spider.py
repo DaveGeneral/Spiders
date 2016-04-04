@@ -20,10 +20,16 @@ headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
            'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
            'Accept-Encoding': 'none',
            'Accept-Language': 'en-US,en;q=0.8',
-           'Connection': 'keep-alive'}
+           'Connection': 'keep-alive',
+           'Referer': 'www.google.com'
+           }
 proxies = {
     "http": "http://10.10.1.10:3128",
     "https": "http://10.10.1.10:1080",
+}
+proxies = {
+    "http": "http://10.10.1.10:3128",
+    "https": "https://194.62.145.248:8080",
 }
 
 
