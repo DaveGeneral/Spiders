@@ -11,8 +11,8 @@ import warnings
 
 
 Q_SHARE = queue.Queue()
-THREAD_NUM = 8  # the speed shows little increase beyond this number
-PAGE_SIZE = 10
+THREAD_NUM = 50  # the speed shows little increase beyond this number
+PAGE_SIZE = 100
 
 outdir = 'temp'
 path = os.getcwd()
@@ -45,13 +45,13 @@ class BaozouSpider(object):
 
     def retrieve_page(self):
         url = "http://baozoumanhua.com/gif/month/page/" + str(self.index)
+        soup = "FLAG"
         try:
             page_text = requests.get(
                 url, proxies, headers=headers, timeout=5).text
             soup = bs4.BeautifulSoup(page_text, "lxml")
         except Exception:
-            print("Error happens! Please check your requests.")
-
+            print("Soup Error happens! Please check your requests.")
         return soup
 
     def get_imgurl(self, soup):
@@ -76,15 +76,16 @@ class BaozouSpider(object):
             print("Error happens! Please check your requests.")
 
     def retrieve_content(self, soup):
-        num = 1
-        imgurl = self.get_imgurl(soup)
-        print(("Total gif images in page %d: %d" % (self.index, len(imgurl))))
-        for x in imgurl:
-            imgname = str(self.index) + '_' + str(num)
-            fileloc = path + os.sep + imgname + ".gif"
-            print(fileloc)
-            num += 1
-            self.get_img(x, fileloc)
+        if soup != "FLAG":
+            num = 1
+            imgurl = self.get_imgurl(soup)
+            print(("Total gif images in page %d: %d" % (self.index, len(imgurl))))
+            for x in imgurl:
+                imgname = str(self.index) + '_' + str(num)
+                fileloc = path + os.sep + imgname + ".gif"
+                print(fileloc)
+                num += 1
+                self.get_img(x, fileloc)
 
 
 def worker():

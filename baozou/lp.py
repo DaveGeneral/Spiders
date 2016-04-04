@@ -2,16 +2,15 @@
 # -*- coding:utf-8 -*-
 
 import bs4
+import multiprocessing
 import os
 import requests
 import shutil
 import warnings
-import multiprocessing as mp
-from multiprocessing.pool import Pool
 
 
-THREAD_NUM = 9  # the speed shows little increase beyond this number
-PAGE_SIZE = 10
+POOL_NUM = 9  # the speed shows little increase beyond this number
+PAGE_SIZE = 100
 
 outdir = 'temp'
 path = os.getcwd()
@@ -44,13 +43,13 @@ class BaozouSpider(object):
 
     def retrieve_page(self):
         url = "http://baozoumanhua.com/gif/month/page/" + str(self.index)
+        soup = "FLAG"
         try:
             page_text = requests.get(
                 url, proxies, headers=headers, timeout=5).text
             soup = bs4.BeautifulSoup(page_text, "lxml")
         except Exception:
-            print("Error happens! Please check your requests.")
-
+            print("Soup Error happens! Please check your requests.")
         return soup
 
     def get_imgurl(self, soup):
@@ -75,15 +74,18 @@ class BaozouSpider(object):
             print("Error happens! Please check your requests.")
 
     def retrieve_content(self, soup):
-        num = 1
-        imgurl = self.get_imgurl(soup)
-        print(("Total gif images in page %d: %d" % (self.index, len(imgurl))))
-        for x in imgurl:
-            imgname = str(self.index) + '_' + str(num)
-            fileloc = path + os.sep + imgname + ".gif"
-            print(fileloc)
-            num += 1
-            self.get_img(x, fileloc)
+        if soup != "FLAG":
+            num = 1
+            imgurl = self.get_imgurl(soup)
+            print(("Total gif images in page %d: %d" % (self.index, len(imgurl))))
+            for x in imgurl:
+                imgname = str(self.index) + '_' + str(num)
+                fileloc = path + os.sep + imgname + ".gif"
+                print(fileloc)
+                num += 1
+                self.get_img(x, fileloc)
+        else:
+            pass
 
 
 def download(index):
@@ -103,9 +105,7 @@ def main():
         ###############################
     """)
     print("Baozou Gif Crawler Begins...")
-    #  with Pool(THREAD_NUM) as p:
-        #  p.map(download, range(1, PAGE_SIZE+1))
-    mp.Pool(THREAD_NUM).map(download, range(1, PAGE_SIZE+1))
+    multiprocessing.Pool(POOL_NUM).map(download, range(1, PAGE_SIZE+1))
     print("Douban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':
