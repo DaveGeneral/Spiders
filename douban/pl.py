@@ -233,7 +233,6 @@ def main():
         thread.daemon = True
         thread.start()
     Q_SHARE.join()
-    print(MY_DIC)
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
     od = collections.OrderedDict(ol)  # ordered dictionary
     out = "output_threads.json"

@@ -21,7 +21,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
            'Accept-Encoding': 'none',
            'Accept-Language': 'en-US,en;q=0.8',
            'Connection': 'keep-alive',
-           'Referer': 'www.google.com'
+           'Referer': 'https://movie.douban.com/chart',
            }
 proxies = {
     "http": "http://10.10.1.10:3128",
