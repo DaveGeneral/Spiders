@@ -1,49 +1,139 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# -*- coding:utf-8 -*-
 
 import bs4
 import collections
 import json
 import MySQLdb
+import queue
 import re
 import requests
+import threading
 import warnings
 
 
+import random
+
+
+def LoadUserAgents(uafile):
+    uas = []
+    with open(uafile, 'rb') as uaf:
+        for ua in uaf.readlines():
+            if ua:
+                uas.append(ua.strip()[1:-1-1])
+    random.shuffle(uas)
+    return uas
+
+
 warnings.filterwarnings("ignore")
-headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
-           'AppleWebKit/537.11'
-           '(KHTML,like Gecko)'
-           'Chrome/23.0.1271.64 Safari/537.11',
-           'Accept': 'text/html,application/xhtml+xml,'
-           'application/xml;q=0.9,*/*;q=0.8',
-           'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-           'Accept-Encoding': 'none',
-           'Accept-Language': 'en-US,en;q=0.8',
-           'Connection': 'keep-alive',
-           'Referer': 'https://movie.douban.com/chart',
-           }
+
+MY_DIC = {}
+Q_SHARE = queue.Queue()
+THREAD_NUM = 10  # the speed shows little increase beyond this number
+
 proxies = {
     "http": "http://10.10.1.10:3128",
     "https": "http://10.10.1.10:1080",
 }
-proxies = {'http': 'http://10.0.0.1:8080',
-           'https': 'https://10.0.0.1:4444'}
+
+proxies = (
+            '211.167.112.14:80',
+            '210.32.34.115:8080',
+            '115.47.8.39:80',
+            '211.151.181.41:80',
+            '219.239.26.23:80',
+            '219.157.200.18:3128',
+            '219.159.105.180:8080',
+            '1.63.18.22:8080',
+            '221.179.173.170:8080',
+            '125.39.66.153:80',
+            '125.39.66.151:80',
+            '61.152.108.187:80',
+            '222.217.99.153:9000',
+            '125.39.66.146:80',
+            '120.132.132.119:8080',
+            '119.7.221.137:82',
+            '117.41.182.188:8080',
+            '202.116.160.89:80',
+            '221.7.145.42:8080',
+            '211.142.236.131:80',
+            '119.7.221.136:80',
+            '211.151.181.41:80',
+            '125.39.66.131:80',
+            '120.132.132.119:8080',
+            '112.5.254.30:80',
+            '106.3.98.82:80',
+            '119.4.250.105:80',
+            '123.235.12.118:8080',
+            '124.240.187.79:80',
+            '182.48.107.219:9000',
+            '122.72.2.180:8080',
+            '119.254.90.18:8080',
+            '124.240.187.80:83',
+            '110.153.9.250:80',
+            '202.202.1.189:80',
+            '58.67.147.205:8080',
+            '111.161.30.228:80',
+            '122.72.76.130:80',
+            '122.72.2.180:80',
+            '202.112.113.7:80',
+            '218.108.85.59:81',
+            '211.144.72.154:80',
+            '119.254.88.53:8080',
+            '121.14.145.132:82',
+            '114.80.149.183:80',
+            '111.161.30.239:80',
+            '182.48.107.219:9000',
+            '122.72.0.28:80',
+            '125.39.68.131:80',
+            '118.244.190.6:80',
+            '120.132.132.119:88',
+            '211.167.112.15:82',
+            '221.2.80.126:8888',
+            '219.137.229.214:3128',
+            '125.39.66.131:80',
+            '61.181.22.157:80',
+            '115.25.216.6:80',
+            '119.7.221.137:82',
+            '221.195.42.195:8080',
+            '119.254.88.53:8080',
+            '219.150.254.158:8080',
+            '113.9.163.101:8080',
+            '222.89.154.14:9000',
+            '114.141.162.53:8080',
+            '218.5.74.199:3128',
+            '61.152.108.187:80',
+            '218.76.159.133:80',
+            '59.34.57.88:8080',
+            '118.244.190.34:80',
+            '59.172.208.189:8080',
+            '116.236.216.116:8080',
+            '111.161.30.233:80',
+            '220.248.237.234:8080',
+            '121.14.145.132:82',
+            '202.114.205.125:8080'
+            )
 
 
 class DoubanSpider(object):
 
     def __init__(self):
-        self.page = 1
-        self.datas = []
-        self.dic = collections.OrderedDict()
+        pass
 
-    def retrieve_page(self, cur_page):
-        url = "https://movie.douban.com/top250?start=%s&filter=" % (
-            str((cur_page - 1) * 25))
+    def retrieve_page(self, cur_url):
+        uas = LoadUserAgents(uafile="user_agents.txt")
+        ua = random.choice(uas)
+        print(ua)
+        headers = {'User-Agent': ua,
+                   'Accept': 'text/html,application/xhtml+xml,'
+                   'application/xml;q=0.9,*/*;q=0.8',
+                   'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+                   'Accept-Encoding': 'none',
+                   'Accept-Language': 'en-US,en;q=0.8',
+                   'Connection': 'keep-alive'}
         try:
             page_text = requests.get(
-                url, proxies, headers=headers, timeout=5).text
+                cur_url, proxies, headers=headers, timeout=5).text
             soup = bs4.BeautifulSoup(page_text, "lxml")
         except Exception as e:
             print("Error happens! Please check your requests.")
@@ -105,7 +195,7 @@ class DoubanSpider(object):
         imgurl = [x['src'] for x in temp]
         return imgurl
 
-    def retrieve_content(self, soup, dic):
+    def retrieve_content(self, soup):
         rank = self.get_rank(soup)
         name = self.get_name(soup)
         rating = self.get_rating(soup)
@@ -116,9 +206,6 @@ class DoubanSpider(object):
         comment = self.get_comment(soup)
         count = len(name)
         for i in range(count):
-            self.datas.append([rank[i], name[i], rating[i],
-                               reviewnum[i], summary[i],
-                               comment[i], address[i], imgurl[i]])
             content = collections.OrderedDict([("Rank", rank[i]),
                                                ("Name", name[i]),
                                                ("Rating", rating[i]),
@@ -127,25 +214,8 @@ class DoubanSpider(object):
                                                ("Comment", comment[i]),
                                                ("Address", address[i]),
                                                ("Image_URL", imgurl[i])])
-            dic[rank[i]] = content
+            MY_DIC[rank[i]] = content
             #  print(content)
-
-    def write_out(self, dic):
-        out = "output.json"
-        raw_data = json.dumps(
-            dic, indent=4, ensure_ascii=False, sort_keys=False)
-        with open(out, 'w') as f:
-            f.write(raw_data)
-        print("Data has been written to %s successfully!" % (out))
-
-    def start_spider(self, pagenum):
-        my_dic = collections.OrderedDict()
-        while self.page <= pagenum:
-            my_soup = self.retrieve_page(self.page)
-            self.retrieve_content(my_soup, my_dic)
-            self.page += 1
-        self.write_out(my_dic)
-        return self.datas
 
 
 class DoubanDB(object):
@@ -220,31 +290,53 @@ class DoubanDB(object):
         my_conn.close()
 
 
+def worker():
+    global Q_SHARE
+    while not Q_SHARE.empty():
+        url = Q_SHARE.get()
+        spider = DoubanSpider()
+        my_soup = spider.retrieve_page(url)
+        spider.retrieve_content(my_soup)
+        #  time.sleep(1)
+        Q_SHARE.task_done()
+
+
 def main():
     print("""
         ###############################
 
              Douban Top250 Movies
-               Author: Ke Yi
+            (Multi-Thread Version)
+                Author: Ke Yi
 
         ###############################
     """)
     print("Douban Movie Crawler Begins...")
-    my_spider = DoubanSpider()
-    # The Top 250 movies include 10 pages
-    my_data = my_spider.start_spider(10)
+    global Q_SHARE
+    threads = []
+    douban_url = "http://movie.douban.com/top250?start={page}&filter=&type="
+    for index in range(10):  # 10 is the total url page number
+        Q_SHARE.put(douban_url.format(page=index * 25))
+    for i in range(THREAD_NUM):
+        thread = threading.Thread(target=worker)
+        thread.start()
+        threads.append(thread)
+    for thread in threads:
+        thread.join()
+    Q_SHARE.join()
+    ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
+    od = collections.OrderedDict(ol)  # ordered dictionary
+    out = "output_threads.json"
+    raw_data = json.dumps(
+        od, indent=4, ensure_ascii=False, sort_keys=False)
+    with open(out, 'w') as f:
+        f.write(raw_data)
+    print("Data has been written to %s successfully!" % (out))
     print("Douban Movie Crawler Ends.\n")
     print("Douban Movie Database Insertion Begins...")
     my_database = DoubanDB()
-    my_database.start_db(my_data)
+    my_database.start_db([x[1].values() for x in ol])
     print("Douban Movie Database Insertion Ends.\n")
-    #  print results from json file
-    """
-    with open('output.json') as data_file:
-        data = json.load(data_file, object_pairs_hook=collections.OrderedDict)
-        mydata = json.dumps(data, indent=4, ensure_ascii=False)
-    print(mydata)
-    """
 
 if __name__ == '__main__':
     main()
