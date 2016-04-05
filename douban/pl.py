@@ -42,8 +42,9 @@ class DoubanSpider(object):
     def retrieve_page(self, cur_url):
         try:
             page_text = requests.get(
-                cur_url, proxies, headers=headers, timeout=5).text
-            soup = bs4.BeautifulSoup(page_text, "lxml")
+                cur_url, proxies, headers=headers, timeout=5)
+            print(page_text.status_code)
+            soup = bs4.BeautifulSoup(page_text.text, "lxml")
         except Exception as e:
             print("Error happens! Please check your requests.")
             raise e
