@@ -8,6 +8,10 @@ import requests
 import shutil
 import warnings
 
+import gevent.monkey
+import gevent
+
+gevent.monkey.patch_socket()
 
 POOL_NUM = 8  # the speed shows little increase beyond this number
 PAGE_SIZE = 10
@@ -105,11 +109,15 @@ def main():
         ###############################
     """)
     print("Baozou Gif Crawler Begins...")
-    pool = multiprocessing.Pool(POOL_NUM)
-    pool.map(download, range(1, PAGE_SIZE+1))
+    threads = []
+    for i in range(1, PAGE_SIZE+1):
+        threads.append(gevent.spawn(download, i))
+    gevent.joinall(threads)
+    #  pool = multiprocessing.Pool(POOL_NUM)
+    #  pool.map(download, range(1, PAGE_SIZE+1))
     #  pool.map_async(download, range(1, PAGE_SIZE+1))
-    pool.close()
-    pool.join()
+    #  pool.close()
+    #  pool.join()
     print("Douban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':

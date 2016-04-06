@@ -8,9 +8,13 @@ import requests
 import shutil
 import warnings
 
+import gevent.monkey
+import gevent
+
+gevent.monkey.patch_socket()
 
 POOL_NUM = 8  # the speed shows little increase beyond this number
-PAGE_SIZE = 10
+PAGE_SIZE = 100
 
 outdir = 'temp'
 path = os.getcwd()
@@ -73,19 +77,30 @@ class BaozouSpider(object):
         except Exception:
             print("Error happens! Please check your requests.")
 
+    #  def retrieve_content(self, soup):
+        #  if soup != "FLAG":
+            #  num = 1
+            #  imgurl = self.get_imgurl(soup)
+            #  print(("Total gif images in page %d: %d" % (self.index, len(imgurl))))
+            #  for x in imgurl:
+                #  imgname = str(self.index) + '_' + str(num)
+                #  fileloc = path + os.sep + imgname + ".gif"
+                #  print(fileloc)
+                #  num += 1
+                #  self.get_img(x, fileloc)
     def retrieve_content(self, soup):
         if soup != "FLAG":
             num = 1
             imgurl = self.get_imgurl(soup)
             print(("Total gif images in page %d: %d" % (self.index, len(imgurl))))
+            threads = []
             for x in imgurl:
                 imgname = str(self.index) + '_' + str(num)
                 fileloc = path + os.sep + imgname + ".gif"
                 print(fileloc)
                 num += 1
-                self.get_img(x, fileloc)
-        else:
-            pass
+                threads.append(gevent.spawn(self.get_img, x, fileloc))
+                gevent.joinall(threads)
 
 
 def download(index):
@@ -107,7 +122,7 @@ def main():
     print("Baozou Gif Crawler Begins...")
     pool = multiprocessing.Pool(POOL_NUM)
     pool.map(download, range(1, PAGE_SIZE+1))
-    #  pool.map_async(download, range(1, PAGE_SIZE+1))
+    pool.map_async(download, range(1, PAGE_SIZE+1))
     pool.close()
     pool.join()
     print("Douban Movie Crawler Ends.\n")
