@@ -13,7 +13,7 @@ import gevent
 
 gevent.monkey.patch_socket()
 
-POOL_NUM = 8  # the speed shows little increase beyond this number
+POOL_NUM = 4  # the speed shows little increase beyond this number
 PAGE_SIZE = 100
 
 outdir = 'temp'
