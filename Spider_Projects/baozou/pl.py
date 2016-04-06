@@ -80,7 +80,7 @@ class BaozouSpider(object):
         if soup != "FLAG":
             num = 1
             imgurl = self.get_imgurl(soup)
-            print(("Total gif images in page %d: %d" % (self.index, len(imgurl))))
+            print(("Gif images in page %d: %d" % (self.index, len(imgurl))))
             for x in imgurl:
                 imgname = str(self.index) + '_' + str(num)
                 fileloc = path + os.sep + imgname + ".gif"

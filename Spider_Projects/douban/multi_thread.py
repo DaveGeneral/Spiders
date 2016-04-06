@@ -167,6 +167,7 @@ class DoubanDB(object):
             % (clean[0], clean[1], clean[2], clean[3],
                 clean[4], clean[5], clean[6], clean[7])
         )
+        print(sql)
         try:
             cursor.execute(sql)
             conn.commit()
