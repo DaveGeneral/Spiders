@@ -6,7 +6,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-class DoubanDB(object):
+class DB(object):
 
     def __init__(self, db_name, tb_name):
         self.host = "localhost"
@@ -38,17 +38,20 @@ class DoubanDB(object):
         cursor.execute(sql)
         return
 
-    def tb_insert(self, conn, cursor, raw):
+    def tb_insert(self, conn, cursor, raw, tb_keys):
         #  solve single quote problem when inserting
         clean = [re.sub(r"'", "''", x) for x in raw]
-        print(clean)
+        sql = (
+            "INSERT INTO" + self.tb_name +
+            "(" + ", ".join(['%s' for i in range(len(tb_keys))]
+                            ) + ")" % tuple(tb_keys)
+        )
         sql = (
             "INSERT INTO " + self.tb_name +
             "(Rank, Name, Rating, Review_Number, "
             "Summary, Comment, Address, Image_URL)"
             "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');"
-            % (clean[0], clean[1], clean[2], clean[3],
-                clean[4], clean[5], clean[6], clean[7])
+            % tuple(clean)
         )
         try:
             cursor.execute(sql)
@@ -67,23 +70,27 @@ class DoubanDB(object):
             print("Error: unable to fecth data")
         return
 
-    def get_items(self, dic):
+    def get_values(self, dic):
         temp = []
         for x in dic.values():
-            temp.append(x.values())
+            temp.append(list(x.values()))
         return temp
+
+    def get_keys(self, dic):
+        temp = []
+        for x in dic.values():
+            temp = x.keys()
+        return list(temp)
 
     def start_db(self, datas):
         my_conn = self.connection
         my_cursor = my_conn.cursor()
         self.tb_drop(my_cursor)
         self.tb_create(my_cursor)
-        datas = self.get_items(datas)
-        print(type(datas))
-        for x in datas:
-            print(type(x))
-            #  print(x)
-            self.tb_insert(my_conn, my_cursor, x)
+        my_keys = self.get_keys(datas)
+        my_values = self.get_values(datas)
+        for x in my_values:
+            self.tb_insert(my_conn, my_cursor, x, my_keys)
         #  print results from mysql database
         #  self.tb_retrieve(my_cursor)
         my_cursor.close()
@@ -105,14 +112,8 @@ my_datas = {
         "Name": "这个杀手不太冷 / Léon / 杀手莱昂 / 终极追杀令(台)",
         "Rating": "9.4",
         "Review_Number": "654870人评价",
-        "Summary": "导演: 吕克·贝松 Luc Besson   主演: 让·雷诺",
+        "Summary": "导演: 吕克·贝松 Luc Besson   主演: 让雷诺",
         "Comment": "怪蜀黍和小萝莉不得不说的故事。",
         "Address": "https://movie.douban.com/subject/1295644/",
         "Image_URL": "https://img3.doubanio.com/view/movie_post",
     }}
-#  my_datas = [['1', "Holo", '9.2', '10243人评价', "综述",
-#  "评论", "www.google.com", "www.img.com"],
-#  ['2', "Yes", "8.7", "23341人评价", "zongshu",
-#  "pinglun", "www.github.com", "www.picture.com"]]
-t = DoubanDB("Movie", "Douban")
-t.start_db(my_datas)
