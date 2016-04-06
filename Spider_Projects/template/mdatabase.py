@@ -39,11 +39,6 @@ class DB(object):
         sql = ("CREATE TABLE " + self.tb_name + " (" +
                ", ".join([x + " VARCHAR(1000)" for x in tb_keys]) + ");"
                )
-        print(sql)
-        #  sql = ("CREATE TABLE " + self.tb_name + " (" +
-        #  " VARCHAR(1000), ".join(tuple(tb_keys)) +
-        #  " VARCHAR(1000));"
-        #  )
         cursor.execute(sql)
 
     def db_insert(self, datas):
@@ -79,7 +74,7 @@ class DB(object):
                     print(self.tb_keys[i], ":", row[i])
                 print("")
         except:
-            print("Error: unable to fecth data")
+            print("Error: Unable to fecth data")
         print("Database Retrieval Ends.")
 
     def db_close(self):
