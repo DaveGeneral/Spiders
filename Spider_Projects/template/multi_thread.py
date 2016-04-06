@@ -167,11 +167,10 @@ def main():
         f.write(raw_data)
     print("Data has been written to %s successfully!" % (out))
     print("Douban Movie Crawler Ends.\n")
-    print("Douban Movie Database Insertion Begins...")
     my_database = mdatabase.DB("Movie", 'Douban')
-    my_database.start_db(od)
-    #  my_database.start_db([x[1].values() for x in ol])
-    print("Douban Movie Database Insertion Ends.\n")
+    my_database.db_insert(od)
+    my_database.db_retrieval()
+    my_database.db_close()
 
 if __name__ == '__main__':
     main()
