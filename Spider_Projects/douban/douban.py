@@ -27,12 +27,17 @@ class DoubanSpider(object):
         pm = mparameter.Parameter()
         headers = pm.get_headers()
         proxies = pm.get_proxies()
+        soup = "FLAG"
         try:
-            page_text = requests.get(
-                url, proxies, headers=headers, timeout=5).text
-            soup = bs4.BeautifulSoup(page_text, "lxml")
+            response = requests.get(
+                url, proxies, headers=headers, timeout=5)
+            status = response.status_code
+            if status == 200:
+                soup = bs4.BeautifulSoup(response.text, "lxml")
+            else:
+                print("%s error, unable to reach the server" % (status))
         except Exception:
-            print("Soup Error happens! Please check your requests.")
+            print("Error happens! Please check your requests.")
         return soup
 
     def get_rank(self, soup):
@@ -89,25 +94,26 @@ class DoubanSpider(object):
         return imgurl
 
     def retrieve_content(self, soup):
-        rank = self.get_rank(soup)
-        name = self.get_name(soup)
-        rating = self.get_rating(soup)
-        reviewnum = self.get_reviewnum(soup)
-        address = self.get_address(soup)
-        imgurl = self.get_imgurl(soup)
-        summary = self.get_summary(soup)
-        comment = self.get_comment(soup)
-        count = len(name)
-        for i in range(count):
-            content = collections.OrderedDict([("Rank", rank[i]),
-                                               ("Name", name[i]),
-                                               ("Rating", rating[i]),
-                                               ("Review_Number", reviewnum[i]),
-                                               ("Summary", summary[i]),
-                                               ("Comment", comment[i]),
-                                               ("Address", address[i]),
-                                               ("Image_URL", imgurl[i])])
-            MY_DIC[rank[i]] = content
+        if soup != "FLAG":
+            rank = self.get_rank(soup)
+            name = self.get_name(soup)
+            rating = self.get_rating(soup)
+            reviewnum = self.get_reviewnum(soup)
+            address = self.get_address(soup)
+            imgurl = self.get_imgurl(soup)
+            summary = self.get_summary(soup)
+            comment = self.get_comment(soup)
+            count = len(name)
+            for i in range(count):
+                content = collections.OrderedDict([("Rank", rank[i]),
+                                                   ("Name", name[i]),
+                                                   ("Rating", rating[i]),
+                                                   ("Review_Number", reviewnum[i]),
+                                                   ("Summary", summary[i]),
+                                                   ("Comment", comment[i]),
+                                                   ("Address", address[i]),
+                                                   ("Image_URL", imgurl[i])])
+                MY_DIC[rank[i]] = content
 
 
 def main():
@@ -127,7 +133,7 @@ def main():
     print("Douban Movie Crawler Ends.\n")
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(MY_DIC)
-    my_file.read_out()
+    #  my_file.read_out()
 
 if __name__ == '__main__':
     main()
