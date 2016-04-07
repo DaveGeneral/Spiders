@@ -132,7 +132,7 @@ def main():
         my_spider = DoubanSpider()
         my_soup = my_spider.retrieve_page(i)
         my_spider.retrieve_content(my_soup)
-    print("Douban Movie Crawler Ends.\n")
+    print("Douban Movie Crawler Ends.")
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(MY_DIC)
     #  my_file.read_out()  # Read results from output file

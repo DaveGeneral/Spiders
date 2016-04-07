@@ -155,7 +155,7 @@ def main():
     for index in range(PAGE_SIZE):
         Q_SHARE.put(index)
     Q_SHARE.join()
-    print("Douban Movie Crawler Ends.\n")
+    print("Douban Movie Crawler Ends.")
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
     od = collections.OrderedDict(ol)  # ordered dictionary
     my_file = mjson.RWfile(OUTPUT)
