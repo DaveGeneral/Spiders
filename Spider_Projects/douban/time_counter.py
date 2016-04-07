@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
 import timeit
 
 t1 = timeit.Timer('main()', 'from douban import main')
