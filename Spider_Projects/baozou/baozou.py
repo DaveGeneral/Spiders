@@ -95,7 +95,7 @@ def main():
         my_spider = BaozouSpider(i)
         my_soup = my_spider.retrieve_page()
         my_spider.retrieve_content(my_soup)
-    print("Baozou Gif Crawler Ends.\n")
+    print("Baozou Gif Crawler Ends.")
 
 if __name__ == '__main__':
     main()

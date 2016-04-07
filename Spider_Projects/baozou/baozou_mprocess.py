@@ -103,7 +103,7 @@ def main():
     pool.map(Workers, range(1, PAGE_SIZE + 1))
     pool.close()
     pool.join()
-    print("Baozou Gif Crawler Ends.\n")
+    print("Baozou Gif Crawler Ends.")
 
 if __name__ == '__main__':
     main()
