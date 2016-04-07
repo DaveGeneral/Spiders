@@ -86,7 +86,6 @@ def main():
         ###############################
 
              BaoZou Gif Crawler
-           (Multi-Process Version)
                Author: Ke Yi
 
         ###############################
