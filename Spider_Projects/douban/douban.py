@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import bs4
@@ -25,7 +25,6 @@ class DoubanSpider(object):
     def retrieve_page(self, cur_page):
         url = "https://movie.douban.com/top250?start=%s&filter=" % (
             str((cur_page) * 25))
-        print(url)
         pm = mparameter.Parameter()
         headers = pm.get_headers()
         proxies = pm.get_proxies()
@@ -135,7 +134,11 @@ def main():
     print("Douban Movie Crawler Ends.\n")
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(MY_DIC)
-    #  my_file.read_out()
+    #  my_file.read_out()  # Read results from output file
+    my_db = mdatabase.DB('Movie', "Douban")
+    my_db.db_insert(MY_DIC)
+    #  my_db.db_retrieval()  # Read results from mysql database
+    my_db.db_close()
 
 if __name__ == '__main__':
     main()
