@@ -1,4 +1,3 @@
-import time
 import random
 
 
@@ -10,18 +9,16 @@ class HEAD(object):
     def __init__(self):
         pass
 
-    def get_UserAgent(self, uafile):
-        uas = []
-        with open(uafile, 'rb') as uaf:
-            for ua in uaf.readlines():
-                if ua:
-                    uas.append(ua.strip()[1:-1 - 1])
-        random.shuffle(uas)
-        return uas
+    def get_useragent(self, uafile):
+        n = random.randint(0, 888)
+        f = open(uafile, 'r')
+        for line in f.readlines()[n:n + 1]:
+            f.close()
+            return line.strip()[1:-1]
 
     def get_header(self):
-        uas = self.get_UserAgent(uafile)
-        ua = random.choice(uas)
+        ua = self.get_useragent(uafile)
+        print(ua)
         headers = {'User-Agent': ua,
                    'Accept': 'text/html,application/xhtml+xml,'
                    'application/xml;q=0.9,*/*;q=0.8',
@@ -29,13 +26,12 @@ class HEAD(object):
                    'Accept-Encoding': 'none',
                    'Accept-Language': 'en-US,en;q=0.8',
                    'Connection': 'keep-alive'}
-        print(headers)
-        time.sleep(3)
+        return headers
 
     def get_proxies(self):
         proxies = {'http': 'http://10.0.0.1:8080',
                    'https': 'http://10.0.0.1:4444'}
         return proxies
 t = HEAD()
-while True:
-    t.get_header()
+for i in range(10):
+    m = t.get_header()
