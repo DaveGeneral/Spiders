@@ -2,16 +2,14 @@
 # -*- coding:utf-8 -*-
 
 import bs4
+import multiprocessing
 import os
-import queue
 import requests
 import shutil
-import threading
 import warnings
 
 
-Q_SHARE = queue.Queue()
-THREAD_NUM = 50  # the speed shows little increase beyond this number
+POOL_NUM = 8  # the speed shows little increase beyond this number
 PAGE_SIZE = 100
 
 outdir = 'temp'
@@ -88,15 +86,10 @@ class BaozouSpider(object):
                 self.get_img(x, fileloc)
 
 
-def worker():
-    global Q_SHARE
-    while not Q_SHARE.empty():
-        index = Q_SHARE.get_nowait()
-        spider = BaozouSpider(index)
-        my_soup = spider.retrieve_page()
-        spider.retrieve_content(my_soup)
-        #  time.sleep(1)
-        Q_SHARE.task_done()
+def download(index):
+    spider = BaozouSpider(index)
+    my_soup = spider.retrieve_page()
+    spider.retrieve_content(my_soup)
 
 
 def main():
@@ -104,24 +97,17 @@ def main():
         ###############################
 
              BaoZou Gif Crawler
-           (Multi-Thread Version)
+           (Multi-Process Version)
                Author: Ke Yi
 
         ###############################
     """)
     print("Baozou Gif Crawler Begins...")
-    global Q_SHARE
-    my_threads = []
-    for i in range(PAGE_SIZE):
-        Q_SHARE.put(i + 1)
-    for i in range(THREAD_NUM):
-        thread = threading.Thread(target=worker)
-        thread.daemon = True
-        thread.start()
-        my_threads.append(thread)
-    for thread in my_threads:
-        thread.join()
-    Q_SHARE.join()
+    pool = multiprocessing.Pool(POOL_NUM)
+    pool.map(download, range(1, PAGE_SIZE+1))
+    #  pool.map_async(download, range(1, PAGE_SIZE+1))
+    pool.close()
+    pool.join()
     print("Douban Movie Crawler Ends.\n")
 
 if __name__ == '__main__':
