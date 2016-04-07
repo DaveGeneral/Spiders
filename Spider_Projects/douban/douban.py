@@ -38,7 +38,7 @@ class DoubanSpider(object):
             if status == 200:
                 soup = bs4.BeautifulSoup(response.text, "lxml")
             else:
-                print("%s error, unable to reach the server" % (status))
+                print("%s error to reach the server %s" % (status, url))
         except Exception:
             print("Error happens! Please check your requests.")
         return soup

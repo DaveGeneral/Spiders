@@ -6,34 +6,20 @@ import multiprocessing
 import os
 import requests
 import shutil
-import warnings
+import sys
+sys.path.append('../template')
+import mparameter
 
 
 POOL_NUM = 8  # the speed shows little increase beyond this number
-PAGE_SIZE = 100
+PAGE_SIZE = 10
 
-outdir = 'temp'
-path = os.getcwd()
-path = os.path.join(path, outdir)
-if os.path.exists(path):
-    shutil.rmtree(path)
-os.mkdir(path)
-
-warnings.filterwarnings("ignore")
-headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'
-           'AppleWebKit/537.11'
-           '(KHTML,like Gecko)'
-           'Chrome/23.0.1271.64 Safari/537.11',
-           'Accept': 'text/html,application/xhtml+xml,'
-           'application/xml;q=0.9,*/*;q=0.8',
-           'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-           'Accept-Encoding': 'none',
-           'Accept-Language': 'en-US,en;q=0.8',
-           'Connection': 'keep-alive'}
-proxies = {
-    "http": "http://10.10.1.10:3128",
-    "https": "http://10.10.1.10:1080",
-}
+OUTDIR = 'temp'
+OUTPATH = os.getcwd()
+OUTPATH = os.path.join(OUTPATH, OUTDIR)
+if os.path.exists(OUTPATH):
+    shutil.rmtree(OUTPATH)
+os.mkdir(OUTPATH)
 
 
 class BaozouSpider(object):
@@ -43,13 +29,20 @@ class BaozouSpider(object):
 
     def retrieve_page(self):
         url = "http://baozoumanhua.com/gif/month/page/" + str(self.index)
+        pm = mparameter.Parameter()
+        headers = pm.get_headers()
+        proxies = pm.get_proxies()
         soup = "FLAG"
         try:
-            page_text = requests.get(
-                url, proxies, headers=headers, timeout=5).text
-            soup = bs4.BeautifulSoup(page_text, "lxml")
+            response = requests.get(
+                url, proxies, headers=headers, timeout=5)
+            status = response.status_code
+            if status == 200:
+                soup = bs4.BeautifulSoup(response.text, "lxml")
+            else:
+                print("%s error to reach the server %s" % (status, url))
         except Exception:
-            print("Soup Error happens! Please check your requests.")
+            print("Error happens! Please check your requests.")
         return soup
 
     def get_imgurl(self, soup):
@@ -57,19 +50,22 @@ class BaozouSpider(object):
         imgurl = [img['src'] for img in temp]
         return imgurl
 
-    def get_img(self, url, path):
+    def get_img(self, url, fileloc):
+        pm = mparameter.Parameter()
+        headers = pm.get_headers()
+        proxies = pm.get_proxies()
         try:
-            r = requests.get(url, proxies, headers=headers,
-                             timeout=5, stream=True)
-            if r.status_code == 200:
-                pass
-                with open(path, 'wb') as f:
-                    r.raw.decode_content = True
-                    shutil.copyfileobj(r.raw, f)
-                    for chunk in r.iter_content(1024):
+            response = requests.get(url, proxies, headers=headers,
+                                    timeout=5, stream=True)
+            status = response.status_code
+            if status == 200:
+                with open(fileloc, 'wb') as f:
+                    response.raw.decode_content = True
+                    shutil.copyfileobj(response.raw, f)
+                    for chunk in response.iter_content(1024):
                         f.write(chunk)
             else:
-                print("Forbidden error, step to next one.")
+                print("%s error to reach the server %s" % (status, url))
         except Exception:
             print("Error happens! Please check your requests.")
 
@@ -77,19 +73,19 @@ class BaozouSpider(object):
         if soup != "FLAG":
             num = 1
             imgurl = self.get_imgurl(soup)
-            print(("Total gif images in page %d: %d" % (self.index, len(imgurl))))
+            print(("Gif number in page %d: %d" % (self.index, len(imgurl))))
             for x in imgurl:
                 imgname = str(self.index) + '_' + str(num)
-                fileloc = path + os.sep + imgname + ".gif"
+                fileloc = OUTPATH + os.sep + imgname + ".gif"
                 print(fileloc)
                 num += 1
                 self.get_img(x, fileloc)
 
 
-def download(index):
-    spider = BaozouSpider(index)
-    my_soup = spider.retrieve_page()
-    spider.retrieve_content(my_soup)
+def Workers(index):
+    my_spider = BaozouSpider(index)
+    my_soup = my_spider.retrieve_page()
+    my_spider.retrieve_content(my_soup)
 
 
 def main():
@@ -104,11 +100,10 @@ def main():
     """)
     print("Baozou Gif Crawler Begins...")
     pool = multiprocessing.Pool(POOL_NUM)
-    pool.map(download, range(1, PAGE_SIZE+1))
-    #  pool.map_async(download, range(1, PAGE_SIZE+1))
+    pool.map(Workers, range(1, PAGE_SIZE + 1))
     pool.close()
     pool.join()
-    print("Douban Movie Crawler Ends.\n")
+    print("Baozou Gif Crawler Ends.\n")
 
 if __name__ == '__main__':
     main()
