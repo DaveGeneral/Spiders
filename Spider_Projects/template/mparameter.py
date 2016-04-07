@@ -18,7 +18,6 @@ class HEAD(object):
 
     def get_header(self):
         ua = self.get_useragent(uafile)
-        print(ua)
         headers = {'User-Agent': ua,
                    'Accept': 'text/html,application/xhtml+xml,'
                    'application/xml;q=0.9,*/*;q=0.8',
@@ -32,6 +31,3 @@ class HEAD(object):
         proxies = {'http': 'http://10.0.0.1:8080',
                    'https': 'http://10.0.0.1:4444'}
         return proxies
-t = HEAD()
-for i in range(10):
-    m = t.get_header()
