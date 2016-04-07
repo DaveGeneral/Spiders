@@ -25,9 +25,10 @@ class BaozouSpider(object):
 
     def __init__(self, index):
         self.index = index
+        self.url = "http://baozoumanhua.com/gif/month/page/"
 
     def retrieve_page(self):
-        url = "http://baozoumanhua.com/gif/month/page/" + str(self.index)
+        url = self.url + str(self.index)
         pm = mparameter.Parameter()
         headers = pm.get_headers()
         proxies = pm.get_proxies()

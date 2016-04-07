@@ -26,11 +26,10 @@ MY_DIC = collections.OrderedDict()
 class DoubanSpider(object):
 
     def __init__(self):
-        pass
+        self.url = "https://movie.douban.com/top250?start=%s&filter"
 
     def retrieve_page(self, cur_page):
-        url = "https://movie.douban.com/top250?start=%s&filter=" % (
-            str((cur_page) * 25))
+        url = self.url % (str((cur_page) * 25))
         pm = mparameter.Parameter()
         headers = pm.get_headers()
         proxies = pm.get_proxies()
