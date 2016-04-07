@@ -16,7 +16,7 @@ class Parameter(object):
             f.close()
             return line.strip()[1:-1]
 
-    def get_header(self):
+    def get_headers(self):
         ua = self.get_useragent(uafile)
         headers = {'User-Agent': ua,
                    'Accept': 'text/html,application/xhtml+xml,'
