@@ -11,6 +11,7 @@ import mdatabase
 import mjson
 import mparameter
 
+
 MY_DIC = collections.OrderedDict()
 PAGE_SIZE = 10
 OUTPUT = 'output.json'
@@ -23,7 +24,8 @@ class DoubanSpider(object):
 
     def retrieve_page(self, cur_page):
         url = "https://movie.douban.com/top250?start=%s&filter=" % (
-            str((cur_page - 1) * 25))
+            str((cur_page) * 25))
+        print(url)
         pm = mparameter.Parameter()
         headers = pm.get_headers()
         proxies = pm.get_proxies()
