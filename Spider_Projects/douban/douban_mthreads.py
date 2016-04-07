@@ -17,6 +17,8 @@ import mparameter
 PAGE_SIZE = 10
 THREAD_NUM = 10  # the speed shows little increase beyond this number
 Q_SHARE = queue.Queue()
+DB_NAME = 'Movie'
+TB_NAME = 'Douban'
 OUTPUT = 'output.json'
 MY_DIC = collections.OrderedDict()
 
@@ -142,7 +144,7 @@ def main():
         ###############################
 
              Douban Top250 Movies
-            (Multi-Thread Version)
+            (Multi-Threads Version)
                Author: Ke Yi
 
         ###############################
@@ -161,7 +163,7 @@ def main():
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(od)
     #  my_file.read_out()  # Read results from output file
-    my_db = mdatabase.DB('Movie', "Douban")
+    my_db = mdatabase.DB(DB_NAME, TB_NAME)
     my_db.db_insert(od)
     #  my_db.db_retrieval()  # Read results from mysql database
     my_db.db_close()

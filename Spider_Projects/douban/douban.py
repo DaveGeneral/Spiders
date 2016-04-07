@@ -14,6 +14,8 @@ import mparameter
 
 MY_DIC = collections.OrderedDict()
 PAGE_SIZE = 10
+DB_NAME = 'Movie'
+TB_NAME = 'Douban'
 OUTPUT = 'output.json'
 
 
@@ -136,7 +138,7 @@ def main():
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(MY_DIC)
     #  my_file.read_out()  # Read results from output file
-    my_db = mdatabase.DB('Movie', "Douban")
+    my_db = mdatabase.DB(DB_NAME, TB_NAME)
     my_db.db_insert(MY_DIC)
     #  my_db.db_retrieval()  # Read results from mysql database
     my_db.db_close()
