@@ -16,7 +16,7 @@ MY_DIC = collections.OrderedDict()
 PAGE_SIZE = 1
 DB_NAME = 'Movie'
 TB_NAME = 'IMDB'
-OUTPUT = 'output.json'
+OUTPUT = 'top250.json'
 
 
 class DoubanSpider(object):
@@ -96,10 +96,10 @@ def main():
     my_spider.retrieve_content(my_soup)
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(MY_DIC)
-    my_file.read_out()  # Read results from output file
+    #  my_file.read_out()  # Read results from output file
     my_db = mdatabase.DB(DB_NAME, TB_NAME)
     my_db.db_insert(MY_DIC)
-    my_db.db_retrieval()  # Read results from mysql database
+    #  my_db.db_retrieval()  # Read results from mysql database
     my_db.db_close()
     print("IMDB Movie Crawler Ends...")
 
