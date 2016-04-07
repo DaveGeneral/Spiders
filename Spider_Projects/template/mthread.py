@@ -7,7 +7,7 @@ PAGE_SIZE = 100  # page number
 Q_SHARE = queue.Queue()
 
 
-class worker(threading.Thread):
+class Workers(threading.Thread):
 
     def __init__(self, index):
         threading.Thread.__init__(self)
@@ -24,7 +24,7 @@ class worker(threading.Thread):
 
 def main():
     for i in range(Thread_NUM):
-        thread = worker(Q_SHARE)
+        thread = Workers(Q_SHARE)
         thread.daemon = True
         thread.start()
     for i in range(PAGE_SIZE):
