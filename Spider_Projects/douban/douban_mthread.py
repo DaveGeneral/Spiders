@@ -14,7 +14,7 @@ import mjson
 import mparameter
 
 
-PAGE_SIZE = 10
+PAGE_SIZE = 10  # The Top 250 movies include 10 pages
 THREAD_NUM = 10  # the speed shows little increase beyond this number
 Q_SHARE = queue.Queue()
 DB_NAME = 'Movie'

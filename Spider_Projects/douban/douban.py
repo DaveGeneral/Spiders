@@ -13,7 +13,7 @@ import mparameter
 
 
 MY_DIC = collections.OrderedDict()
-PAGE_SIZE = 10
+PAGE_SIZE = 10  # The Top 250 movies include 10 pages
 DB_NAME = 'Movie'
 TB_NAME = 'Douban'
 OUTPUT = 'output.json'
@@ -129,7 +129,7 @@ def main():
         ###############################
     """)
     print("Douban Movie Crawler Begins...")
-    for i in range(PAGE_SIZE):  # The Top 250 movies include 10 pages
+    for i in range(PAGE_SIZE):
         my_spider = DoubanSpider()
         my_soup = my_spider.retrieve_page(i)
         my_spider.retrieve_content(my_soup)
