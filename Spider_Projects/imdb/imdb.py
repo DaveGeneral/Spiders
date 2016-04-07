@@ -3,7 +3,6 @@
 
 import bs4
 import collections
-import re
 import requests
 import sys
 sys.path.append('../template')
@@ -19,10 +18,11 @@ TB_NAME = 'IMDB'
 OUTPUT = 'top250.json'
 
 
-class DoubanSpider(object):
+class IMDBSpider(object):
 
     def __init__(self):
-        self.url = "http://www.imdb.com/chart/top?sort=rk,asc&mode=simple&page=1"
+        self.url = ("http://www.imdb.com/chart/top?"
+                    "sort=rk,asc&mode=simple&page=1")
         self.prefix = "http://www.imdb.com"
 
     def retrieve_page(self, cur_page):
@@ -91,7 +91,7 @@ def main():
         ###############################
     """)
     print("IMDB Movie Crawler Begins...")
-    my_spider = DoubanSpider()
+    my_spider = IMDBSpider()
     my_soup = my_spider.retrieve_page(0)
     my_spider.retrieve_content(my_soup)
     my_file = mjson.RWfile(OUTPUT)
