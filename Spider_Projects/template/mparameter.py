@@ -4,7 +4,7 @@ import random
 uafile = "../data/user_agents.txt"
 
 
-class HEAD(object):
+class Parameter(object):
 
     def __init__(self):
         pass
