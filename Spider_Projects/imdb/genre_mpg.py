@@ -12,6 +12,9 @@ sys.path.append('../template')
 import mdatabase
 import mjson
 import mparameter
+import gevent
+import gevent.monkey
+gevent.monkey.patch_socket()
 
 
 GENRE_LIST = [{'name': 'Action', 'order': '1', 'page_size': 20},
@@ -165,14 +168,20 @@ class GenreSpider(object):
                 DIC[rank[i]] = content
 
 
+def Subworker(index, item, Dic):
+    my_spider = GenreSpider()
+    my_soup = my_spider.retrieve_page(
+        item['name'], item['order'], index)
+    my_spider.retrieve_content(my_soup, Dic)
+
+
 def Workers(item):
     MY_DIC = collections.OrderedDict()
     st = time.time()
+    threads = []
     for i in range(item['page_size']):
-        my_spider = GenreSpider()
-        my_soup = my_spider.retrieve_page(
-            item['name'], item['order'], i)
-        my_spider.retrieve_content(my_soup, MY_DIC)
+        threads.append(gevent.spawn(Subworker, i, item, MY_DIC))
+    gevent.joinall(threads)
     print(time.time() - st)
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))
     od = collections.OrderedDict(ol)  # ordered dictionary
