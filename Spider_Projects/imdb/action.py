@@ -3,6 +3,7 @@
 
 import bs4
 import collections
+import re
 import requests
 import sys
 sys.path.append('../template')
@@ -12,7 +13,7 @@ import mparameter
 
 
 MY_DIC = collections.OrderedDict()
-PAGE_SIZE = 1
+PAGE_SIZE = 10
 DB_NAME = 'Movie'
 TB_NAME = 'Action'
 OUTPUT = 'action.json'
@@ -25,12 +26,12 @@ class ActionSpider(object):
                     "&num_votes=25000,&pf_rd_i=top&pf_rd_m=A2FGELUUNOQJNL"
                     "&pf_rd_p=2406822102&pf_rd_r=09E81XJGYBWBJZTG7WYJ"
                     "&pf_rd_s=right-6&pf_rd_t=15506&ref_=chttp_gnr_1"
-                    "&sort=user_rating,desc&start=1"
+                    "&sort=user_rating,desc&start=%s"
                     "&title_type=feature")
         self.prefix = "http://www.imdb.com"
 
     def retrieve_page(self, cur_page):
-        url = self.url
+        url = self.url % (str(cur_page*50 + 1))
         pm = mparameter.Parameter()
         headers = pm.get_headers()
         proxies = pm.get_proxies()
@@ -77,6 +78,14 @@ class ActionSpider(object):
             outline.append(" ".join(lines))
         return outline
 
+    def get_credit(self, soup):
+        temp = soup.select(".credit")
+        credit = []
+        for x in temp:
+            lines = [row for row in x.stripped_strings]
+            credit.append(re.sub(r"\s,", ",", " ".join(lines)))
+        return credit
+
     def get_genre(self, soup):
         temp = soup.select(".genre")
         genre = []
@@ -110,6 +119,7 @@ class ActionSpider(object):
             rating = self.get_rating(soup)
             year = self.get_year(soup)
             outline = self.get_outline(soup)
+            credit = self.get_credit(soup)
             genre = self.get_genre(soup)
             runtime = self.get_runtime(soup)
             certificate = self.get_certificate(soup)
@@ -120,6 +130,7 @@ class ActionSpider(object):
                                                    ("Rating", rating[i]),
                                                    ("Year", year[i]),
                                                    ("Outline", outline[i]),
+                                                   ("Credit", credit[i]),
                                                    ("Genre", genre[i]),
                                                    ("Runtime", runtime[i]),
                                                    ("Certificate",
@@ -139,9 +150,10 @@ def main():
         ###############################
     """)
     print("IMDB Action Movies Crawler Begins...")
-    my_spider = ActionSpider()
-    my_soup = my_spider.retrieve_page(0)
-    my_spider.retrieve_content(my_soup)
+    for i in range(PAGE_SIZE):
+        my_spider = ActionSpider()
+        my_soup = my_spider.retrieve_page(i)
+        my_spider.retrieve_content(my_soup)
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(MY_DIC)
     #  my_file.read_out()  # Read results from output file
