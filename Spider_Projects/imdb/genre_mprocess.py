@@ -182,8 +182,8 @@ def Workers(item):
 def main():
     print("""
         ###############################
-
             IMDB Mutiple Genre Movies
+              Multi-Process Version
                Author: Ke Yi
 
         ###############################

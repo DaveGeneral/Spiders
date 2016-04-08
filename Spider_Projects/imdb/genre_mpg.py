@@ -192,8 +192,9 @@ def main():
     print("""
         ###############################
 
-            IMDB Mutiple Genre Movies
-               Author: Ke Yi
+           IMDB Mutiple Genre Movies
+         Multi-(Process+Gevent) Verison
+                Author: Ke Yi
 
         ###############################
     """)
