@@ -15,7 +15,7 @@ import mparameter
 
 
 MY_DIC = collections.OrderedDict()
-PAGE_SIZE = 20
+PAGE_SIZE =38
 DB_NAME = 'Movie'
 TB_NAME = 'Action'
 OUTPUT = 'action.json'
