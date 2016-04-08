@@ -200,12 +200,12 @@ def main():
     print("""
         ###############################
 
-             IMDB Action Movies
+            IMDB Mutiple Genre Movies
                Author: Ke Yi
 
         ###############################
     """)
-    print("IMDB Action Movies Crawler Begins...")
+    print("IMDB Mutiple Genre Crawler Begins...")
     for i in range(Thread_NUM):
         thread = Workers(Q_SHARE)
         thread.daemon = True
@@ -213,7 +213,7 @@ def main():
     for x in GENRE_LIST:
         Q_SHARE.put(x)
     Q_SHARE.join()
-    print("IMDB Action Movies Crawler Ends...")
+    print("IMDB Mutiple Genre Crawler Ends...")
 
 if __name__ == '__main__':
     main()
