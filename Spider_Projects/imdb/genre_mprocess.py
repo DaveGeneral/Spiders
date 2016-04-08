@@ -37,9 +37,6 @@ GENRE_LIST = [{'name': 'Action', 'order': '1', 'page_size': 20},
               {'name': 'Western', 'order': '21', 'page_size': 2}]
 
 DB_NAME = 'Movie'
-TB_NAME = 'Action'
-OUTPUT = 'action.json'
-
 POOL_NUM = 8
 
 
