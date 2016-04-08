@@ -61,15 +61,12 @@ class ActionSpider(object):
         return rating
 
     def get_nameaddress(self, soup):
-        temp = soup.select(".title")
+        temp = soup.select(".image a")
         name = []
         address = []
         for x in temp:
-            s = x.findAll("a")
-            name.append(s[0].string)
-            address.append(self.prefix + s[0]['href'])
-        print(name)
-        print(address)
+            name.append(x['title'][:-7])
+            address.append(self.prefix + x['href'])
         return [name, address]
 
     def get_outline(self, soup):
