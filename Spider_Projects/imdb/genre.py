@@ -16,16 +16,36 @@ import mparameter
 
 
 GENRE_LIST = [{'name': 'Action', 'order': '1', 'page_size': 20},
-              {'name': 'Crime', 'order': '6', 'page_size': 16}]
+              {'name': 'Adventure', 'order': '2', 'page_size': 16},
+              {'name': 'Animation', 'order': '3', 'page_size': 5},
+              {'name': 'Biography', 'order': '4', 'page_size': 5},
+              {'name': 'Comedy', 'order': '5', 'page_size': 28},
+              {'name': 'Crime', 'order': '6', 'page_size': 16},
+              {'name': 'Drama', 'order': '7', 'page_size': 38},
+              {'name': 'Family', 'order': '8', 'page_size': 8},
+              {'name': 'Fantasy', 'order': '9', 'page_size': 11},
+              {'name': 'Film_Noir', 'order': '10', 'page_size': 1},
+              {'name': 'History', 'order': '11', 'page_size': 3},
+              {'name': 'Horror', 'order': '12', 'page_size': 9},
+              {'name': 'Music', 'order': '13', 'page_size': 3},
+              {'name': 'Musical', 'order': '14', 'page_size': 2},
+              {'name': 'Mystery', 'order': '15', 'page_size': 10},
+              {'name': 'Romance', 'order': '16', 'page_size': 16},
+              {'name': 'Sci_Fi', 'order': '17', 'page_size': 11},
+              {'name': 'Sport', 'order': '18', 'page_size': 3},
+              {'name': 'Thriller', 'order': '19', 'page_size': 25},
+              {'name': 'War', 'order': '20', 'page_size': 3},
+              {'name': 'Western', 'order': '21', 'page_size': 2}]
+
 DB_NAME = 'Movie'
 TB_NAME = 'Action'
 OUTPUT = 'action.json'
 
-Thread_NUM = 20  # thread number
+Thread_NUM = 10  # thread number
 Q_SHARE = queue.Queue()
 
 
-class ActionSpider(object):
+class GenreSpider(object):
 
     def __init__(self):
         self.url = ("http://www.imdb.com/search/title?genres=%s"
@@ -155,15 +175,15 @@ class Workers(threading.Thread):
 
     def run(self):
         while True:
-            st = time.time()
             MY_DIC = collections.OrderedDict()
             item = self.item.get()
+            st = time.time()
             for i in range(item['page_size']):
-                my_spider = ActionSpider()
+                my_spider = GenreSpider()
                 my_soup = my_spider.retrieve_page(
                     item['name'], item['order'], i)
                 my_spider.retrieve_content(my_soup, MY_DIC)
-            print(time.time()-st)
+            print(time.time() - st)
             ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))
             od = collections.OrderedDict(ol)  # ordered dictionary
             my_file = mjson.RWfile(item['name'].lower() + '.json')
