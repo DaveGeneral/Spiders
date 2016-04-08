@@ -94,6 +94,7 @@ def main():
     my_spider = IMDBSpider()
     my_soup = my_spider.retrieve_page(0)
     my_spider.retrieve_content(my_soup)
+    print("IMDB Movie Crawler Ends...")
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(MY_DIC)
     #  my_file.read_out()  # Read results from output file
@@ -101,7 +102,6 @@ def main():
     my_db.db_insert(MY_DIC)
     #  my_db.db_retrieval()  # Read results from mysql database
     my_db.db_close()
-    print("IMDB Movie Crawler Ends...")
 
 if __name__ == '__main__':
     main()

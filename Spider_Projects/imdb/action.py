@@ -15,14 +15,14 @@ MY_DIC = collections.OrderedDict()
 PAGE_SIZE = 1
 DB_NAME = 'Movie'
 TB_NAME = 'Action'
-OUTPUT = 'top250.json'
+OUTPUT = 'action.json'
 
 
 class ActionSpider(object):
 
     def __init__(self):
         self.url = ("http://www.imdb.com/search/title?genres=action"
-                    "&num_votes=25000&pf_rd_i=top&pf_rd_m=A2FGELUUNOQJNL"
+                    "&num_votes=25000,&pf_rd_i=top&pf_rd_m=A2FGELUUNOQJNL"
                     "&pf_rd_p=2406822102&pf_rd_r=09E81XJGYBWBJZTG7WYJ"
                     "&pf_rd_s=right-6&pf_rd_t=15506&ref_=chttp_gnr_1"
                     "&sort=user_rating,desc&start=1"
@@ -49,7 +49,7 @@ class ActionSpider(object):
 
     def get_rank(self, soup):
         temp = soup.select(".detailed .number")
-        rank = [x.string for x in temp]
+        rank = [x.string[:-1] for x in temp]
         return rank
 
     def get_rating(self, soup):
@@ -65,7 +65,7 @@ class ActionSpider(object):
         for x in temp:
             if count == 2:
                 name.append(x.string)
-                address.append(self.prefix + ['href'])
+                address.append(self.prefix + x['href'])
             count += 1
         return [name, address]
 
@@ -107,32 +107,32 @@ class ActionSpider(object):
         return runtime
 
     def get_certificate(self, soup):
-        temp = soup.select(".certificate span")
-        certificate = [x['title'] for x in temp]
+        temp = soup.select(".certificate")
+        certificate = []
+        for x in temp:
+            s = x.select("span")
+            certificate += [s[0]['title']] if s else [""]
         return certificate
 
     def retrieve_content(self, soup):
         if soup != "FLAG":
             rank = self.get_rank(soup)
-            name, address = self.get_nameaddress(soup)
-            rating = self.get_rating(soup)
+            #  name, address = self.get_nameaddress(soup)
+            #  rating = self.get_rating(soup)
             year = self.get_year(soup)
             outline = self.get_outline(soup)
             genre = self.get_genre(soup)
             runtime = self.get_runtime(soup)
             certificate = self.get_certificate(soup)
-            count = len(name)
+            count = len(rank)
             for i in range(count):
                 content = collections.OrderedDict([("Rank", rank[i]),
-                                                   ("Name", name[i]),
-                                                   ("Rating", rating[i]),
                                                    ("Year", year[i]),
                                                    ("Outline", outline[i]),
                                                    ("Genre", genre[i]),
                                                    ("Runtime", runtime[i]),
                                                    ("Certificate",
-                                                    certificate[i]),
-                                                   ("Address", address[i])])
+                                                    certificate[i])])
                 print(content)
                 MY_DIC[rank[i]] = content
 
