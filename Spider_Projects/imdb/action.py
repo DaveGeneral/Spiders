@@ -84,26 +84,25 @@ class ActionSpider(object):
     def get_outline(self, soup):
         temp = soup.select(".outline")
         outline = [x.string for x in temp]
+        print(outline[20:22])
         return outline
 
     def get_genre(self, soup):
         temp = soup.select(".genre")
         genre = []
         for x in temp:
-            lines = ""
-            for s in x.select("a"):
-                lines += s.string
+            lines = " | ".join([s.string for s in x.select("a")])
             genre.append(lines)
         return genre
 
     def get_year(self, soup):
         temp = soup.select(".year_type")
-        year = [x.string for x in temp]
+        year = [x.string[1:-1] for x in temp]
         return year
 
     def get_runtime(self, soup):
         temp = soup.select(".runtime")
-        runtime = [x.string for x in temp]
+        runtime = [x.string[:-1] for x in temp]
         return runtime
 
     def get_certificate(self, soup):
@@ -133,7 +132,7 @@ class ActionSpider(object):
                                                    ("Runtime", runtime[i]),
                                                    ("Certificate",
                                                     certificate[i])])
-                print(content)
+                #  print(content)
                 MY_DIC[rank[i]] = content
 
 
