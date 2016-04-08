@@ -164,7 +164,7 @@ class Workers(threading.Thread):
                 my_spider.retrieve_content(my_soup, MY_DIC)
             ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))
             od = collections.OrderedDict(ol)  # ordered dictionary
-            my_file = mjson.RWfile(item['name'] + '.json')
+            my_file = mjson.RWfile(item['name'].lower() + '.json')
             my_file.write_in(od)
             #  my_file.read_out()  # Read results from output file
             my_db = mdatabase.DB(DB_NAME, item['name'])
