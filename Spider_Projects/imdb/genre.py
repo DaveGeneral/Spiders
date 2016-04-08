@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import time
 import bs4
 import collections
 import queue
@@ -154,7 +155,7 @@ class Workers(threading.Thread):
 
     def run(self):
         while True:
-            #  global MY_DIC
+            st = time.time()
             MY_DIC = collections.OrderedDict()
             item = self.item.get()
             for i in range(item['page_size']):
@@ -162,6 +163,7 @@ class Workers(threading.Thread):
                 my_soup = my_spider.retrieve_page(
                     item['name'], item['order'], i)
                 my_spider.retrieve_content(my_soup, MY_DIC)
+            print(time.time()-st)
             ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))
             od = collections.OrderedDict(ol)  # ordered dictionary
             my_file = mjson.RWfile(item['name'].lower() + '.json')
