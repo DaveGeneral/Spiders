@@ -54,37 +54,30 @@ class ActionSpider(object):
 
     def get_rating(self, soup):
         temp = soup.select(".rating-rating")
-        rank = [x.string for x in temp]
-        return rank
-
-    def get_nameaddress(self, soup):
-        temp = soup.select(".title a")
-        name = []
-        address = []
-        count = 1
-        for x in temp:
-            if count == 2:
-                name.append(x.string)
-                address.append(self.prefix + x['href'])
-            count += 1
-        return [name, address]
-
-    def get_rny(self, soup):
-        temp = soup.select(".titleColumn")
-        rank = []
-        name = []
-        year = []
+        rating = []
         for x in temp:
             lines = [row for row in x.stripped_strings]
-            rank.append(lines[0][:-1])
-            name.append(lines[1])
-            year.append(lines[2][1:-1])
-        return [rank, name, year]
+            rating.append("".join(lines))
+        return rating
+
+    def get_nameaddress(self, soup):
+        temp = soup.select(".title")
+        name = []
+        address = []
+        for x in temp:
+            s = x.findAll("a")
+            name.append(s[0].string)
+            address.append(self.prefix + s[0]['href'])
+        print(name)
+        print(address)
+        return [name, address]
 
     def get_outline(self, soup):
         temp = soup.select(".outline")
-        outline = [x.string for x in temp]
-        print(outline[20:22])
+        outline = []
+        for x in temp:
+            lines = [row for row in x.stripped_strings]
+            outline.append(" ".join(lines))
         return outline
 
     def get_genre(self, soup):
@@ -116,8 +109,8 @@ class ActionSpider(object):
     def retrieve_content(self, soup):
         if soup != "FLAG":
             rank = self.get_rank(soup)
-            #  name, address = self.get_nameaddress(soup)
-            #  rating = self.get_rating(soup)
+            name, address = self.get_nameaddress(soup)
+            rating = self.get_rating(soup)
             year = self.get_year(soup)
             outline = self.get_outline(soup)
             genre = self.get_genre(soup)
@@ -126,12 +119,15 @@ class ActionSpider(object):
             count = len(rank)
             for i in range(count):
                 content = collections.OrderedDict([("Rank", rank[i]),
+                                                   ("Name", name[i]),
+                                                   ("Rating", rating[i]),
                                                    ("Year", year[i]),
                                                    ("Outline", outline[i]),
                                                    ("Genre", genre[i]),
                                                    ("Runtime", runtime[i]),
                                                    ("Certificate",
-                                                    certificate[i])])
+                                                    certificate[i]),
+                                                   ("Address", address[i])])
                 #  print(content)
                 MY_DIC[rank[i]] = content
 
