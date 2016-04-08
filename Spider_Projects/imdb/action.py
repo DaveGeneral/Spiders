@@ -129,13 +129,13 @@ class ActionSpider(object):
                                                    ("Name", name[i]),
                                                    ("Rating", rating[i]),
                                                    ("Year", year[i]),
-                                                   ("Outline", outline[i]),
-                                                   ("Credit", credit[i]),
-                                                   ("Genre", genre[i]),
-                                                   ("Runtime", runtime[i]),
                                                    ("Certificate",
                                                     certificate[i]),
-                                                   ("Address", address[i])])
+                                                   ("Runtime", runtime[i]),
+                                                   ("Genre", genre[i]),
+                                                   ("Credit", credit[i]),
+                                                   ("Address", address[i]),
+                                                   ("Outline", outline[i])])
                 #  print(content)
                 MY_DIC[rank[i]] = content
 
