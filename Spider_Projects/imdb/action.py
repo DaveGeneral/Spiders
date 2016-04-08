@@ -27,10 +27,10 @@ Q_SHARE = queue.Queue()
 class ActionSpider(object):
 
     def __init__(self):
-        self.url = ("http://www.imdb.com/search/title?genres=action"
+        self.url = ("http://www.imdb.com/search/title?genres=crime"
                     "&num_votes=25000,&pf_rd_i=top&pf_rd_m=A2FGELUUNOQJNL"
                     "&pf_rd_p=2406822102&pf_rd_r=09E81XJGYBWBJZTG7WYJ"
-                    "&pf_rd_s=right-6&pf_rd_t=15506&ref_=chttp_gnr_1"
+                    "&pf_rd_s=right-6&pf_rd_t=15506&ref_=chttp_gnr_6"
                     "&sort=user_rating,desc&start=%s"
                     "&title_type=feature")
         self.prefix = "http://www.imdb.com"
