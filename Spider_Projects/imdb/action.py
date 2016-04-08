@@ -13,7 +13,7 @@ import mparameter
 
 
 MY_DIC = collections.OrderedDict()
-PAGE_SIZE = 10
+PAGE_SIZE = 20
 DB_NAME = 'Movie'
 TB_NAME = 'Action'
 OUTPUT = 'action.json'
@@ -151,6 +151,7 @@ def main():
     """)
     print("IMDB Action Movies Crawler Begins...")
     for i in range(PAGE_SIZE):
+        print("Page", i)
         my_spider = ActionSpider()
         my_soup = my_spider.retrieve_page(i)
         my_spider.retrieve_content(my_soup)
