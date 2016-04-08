@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import time
 import bs4
 import multiprocessing
 import collections
@@ -174,12 +173,10 @@ def Subworker(index, item, Dic):
 
 def Workers(item):
     MY_DIC = collections.OrderedDict()
-    st = time.time()
     threads = []
     for i in range(item['page_size']):
         threads.append(gevent.spawn(Subworker, i, item, MY_DIC))
     gevent.joinall(threads)
-    print(time.time() - st)
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))
     od = collections.OrderedDict(ol)  # ordered dictionary
     my_file = mjson.RWfile(item['name'].lower() + '.json')

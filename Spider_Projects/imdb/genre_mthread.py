@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import time
 import bs4
 import collections
 import queue
@@ -38,9 +37,6 @@ GENRE_LIST = [{'name': 'Action', 'order': '1', 'page_size': 20},
               {'name': 'Western', 'order': '21', 'page_size': 2}]
 
 DB_NAME = 'Movie'
-TB_NAME = 'Action'
-OUTPUT = 'action.json'
-
 Thread_NUM = 10  # thread number
 Q_SHARE = queue.Queue()
 
@@ -177,13 +173,11 @@ class Workers(threading.Thread):
         while True:
             MY_DIC = collections.OrderedDict()
             item = self.item.get()
-            st = time.time()
             for i in range(item['page_size']):
                 my_spider = GenreSpider()
                 my_soup = my_spider.retrieve_page(
                     item['name'], item['order'], i)
                 my_spider.retrieve_content(my_soup, MY_DIC)
-            print(time.time() - st)
             ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))
             od = collections.OrderedDict(ol)  # ordered dictionary
             my_file = mjson.RWfile(item['name'].lower() + '.json')
