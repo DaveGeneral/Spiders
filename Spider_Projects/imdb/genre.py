@@ -41,7 +41,7 @@ DB_NAME = 'Movie'
 TB_NAME = 'Action'
 OUTPUT = 'action.json'
 
-Thread_NUM = 10  # thread number
+Thread_NUM = 20  # thread number
 Q_SHARE = queue.Queue()
 
 
