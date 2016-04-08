@@ -16,7 +16,7 @@ MY_DIC = collections.OrderedDict()
 PAGE_SIZE = 10  # The Top 250 movies include 10 pages
 DB_NAME = 'Movie'
 TB_NAME = 'Douban'
-OUTPUT = 'output.json'
+OUTPUT = 'top250.json'
 
 
 class DoubanSpider(object):

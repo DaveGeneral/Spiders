@@ -19,7 +19,7 @@ THREAD_NUM = 10  # the speed shows little increase beyond this number
 Q_SHARE = queue.Queue()
 DB_NAME = 'Movie'
 TB_NAME = 'Douban'
-OUTPUT = 'output.json'
+OUTPUT = 'top250.json'
 MY_DIC = collections.OrderedDict()
 
 
