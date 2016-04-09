@@ -158,13 +158,12 @@ def main():
     Q_SHARE.join()
     print("Douban Movie Crawler Ends.")
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
-    od = collections.OrderedDict(ol)  # ordered dictionary
-    ot = [s[1] for s in ol]
+    ol = [s[1] for s in ol]
     my_file = mjson.RWfile(OUTPUT)
-    my_file.write_in(ot)
-    my_file.read_out()  # Read results from output file
+    my_file.write_in(ol)
+    #  my_file.read_out()  # Read results from output file
     my_db = mdatabase.DB(DB_NAME, TB_NAME)
-    my_db.db_insert(od)
+    my_db.db_insert(ol)
     #  my_db.db_retrieval()  # Read results from mysql database
     my_db.db_close()
 

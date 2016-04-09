@@ -23,13 +23,8 @@ class DB(object):
         print("Database Connection Setup...")
 
     def db_process(self, raw_datas):
-        clean_keys = []
-        clean_values = []
-        for x in raw_datas.values():
-            clean_keys = list(x.keys())
-            clean_values.append(list(x.values()))
-        self.tb_keys = clean_keys
-        self.tb_values = clean_values
+        self.tb_keys = list(raw_datas[0].keys())
+        self.tb_values = [list(x.values()) for x in raw_datas]
 
     def tb_drop(self, cursor):
         cursor.execute("DROP TABLE IF EXISTS " + self.tb_name + ";")
