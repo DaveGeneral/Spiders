@@ -95,11 +95,13 @@ def main():
     my_soup = my_spider.retrieve_page(0)
     my_spider.retrieve_content(my_soup)
     print("IMDB Movie Crawler Ends...")
+    ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))  # ordered list
+    ol = [s[1] for s in ol]
     my_file = mjson.RWfile(OUTPUT)
-    my_file.write_in(MY_DIC)
+    my_file.write_in(ol)
     #  my_file.read_out()  # Read results from output file
     my_db = mdatabase.DB(DB_NAME, TB_NAME)
-    my_db.db_insert(MY_DIC)
+    my_db.db_insert(ol)
     #  my_db.db_retrieval()  # Read results from mysql database
     my_db.db_close()
 

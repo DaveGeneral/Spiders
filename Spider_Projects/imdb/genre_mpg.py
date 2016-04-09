@@ -178,12 +178,12 @@ def Workers(item):
         threads.append(gevent.spawn(Subworker, i, item, MY_DIC))
     gevent.joinall(threads)
     ol = sorted(MY_DIC.items(), key=lambda x: int(x[0]))
-    od = collections.OrderedDict(ol)  # ordered dictionary
+    ol = [s[1] for s in ol]
     my_file = mjson.RWfile(item['name'].lower() + '.json')
-    my_file.write_in(od)
+    my_file.write_in(ol)
     #  my_file.read_out()  # Read results from output file
     my_db = mdatabase.DB(DB_NAME, item['name'])
-    my_db.db_insert(od)
+    my_db.db_insert(ol)
     #  my_db.db_retrieval()  # Read results from mysql database
     my_db.db_close()
 
