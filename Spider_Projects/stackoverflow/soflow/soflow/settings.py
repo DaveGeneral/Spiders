@@ -15,7 +15,7 @@ SPIDER_MODULES = ['soflow.spiders']
 NEWSPIDER_MODULE = 'soflow.spiders'
 
 ITEM_PIPELINES = {
-    'soflow.pipelines.MongoDBPipeline': 300,
+    'soflow.pipelines.SoflowPipeline': 300,
 }
 
 MONGODB_SERVER = 'localhost'

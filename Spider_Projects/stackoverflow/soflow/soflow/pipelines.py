@@ -6,7 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 import pymongo
-from soflow.conf import settings
+from scrapy.conf import settings
 
 
 class SoflowPipeline(object):
