@@ -14,12 +14,20 @@ BOT_NAME = 'soflow'
 SPIDER_MODULES = ['soflow.spiders']
 NEWSPIDER_MODULE = 'soflow.spiders'
 
+ITEM_PIPELINES = {
+    'soflow.pipelines.MongoDBPipeline': 300,
+}
+
+MONGODB_SERVER = 'localhost'
+MONGODB_PORT = 27017
+MONGODB_DB = 'stackoverflow'
+MONGODB_COL = 'question'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS=32
 
 # Configure a delay for requests for the same website (default: 0)
-# DOWNLOAD_DELAY=3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN=16
 # CONCURRENT_REQUESTS_PER_IP=16
@@ -52,12 +60,6 @@ NEWSPIDER_MODULE = 'soflow.spiders'
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
 # EXTENSIONS = {
 #    'scrapy.telnet.TelnetConsole': None,
-# }
-
-# Configure item pipelines
-# See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'soflow.pipelines.SomePipeline': 300,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
