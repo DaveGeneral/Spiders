@@ -12,7 +12,7 @@ class RWfile(object):
 
     def write_in(self, raw_datas):
         clean_datas = json.dumps(
-            raw_datas, indent=INDENT_SIZE, ensure_ascii=False, sort_keys=False)
+            raw_datas, ensure_ascii=False)
         with open(self.fname, 'w') as f:
             f.write(clean_datas)
         print("Write data to %s" % (self.fname))
