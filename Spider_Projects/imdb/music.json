@@ -817,18 +817,6 @@
     },
     "69": {
         "Rank": "69",
-        "Name": "Walk Hard: The Dewey Cox Story",
-        "Rating": "6.7/10",
-        "Year": "2007",
-        "Certificate": "R",
-        "Runtime": "96 mins",
-        "Genre": "Comedy | Music",
-        "Credit": "Dir: Jake Kasdan With: John C. Reilly, Jenna Fischer, David Krumholtz",
-        "Address": "http://www.imdb.com/title/tt0841046/",
-        "Outline": "Singer Dewey Cox overcomes adversity to become a musical legend."
-    },
-    "70": {
-        "Rank": "70",
         "Name": "Empire Records",
         "Rating": "6.7/10",
         "Year": "1995",
@@ -838,6 +826,18 @@
         "Credit": "Dir: Allan Moyle With: Anthony LaPaglia, Debi Mazar, Maxwell Caulfield",
         "Address": "http://www.imdb.com/title/tt0112950/",
         "Outline": "The employees of an independent music store learn about each other as they try anything to stop the store being absorbed by a large chain."
+    },
+    "70": {
+        "Rank": "70",
+        "Name": "Walk Hard: The Dewey Cox Story",
+        "Rating": "6.7/10",
+        "Year": "2007",
+        "Certificate": "R",
+        "Runtime": "96 mins",
+        "Genre": "Comedy | Music",
+        "Credit": "Dir: Jake Kasdan With: John C. Reilly, Jenna Fischer, David Krumholtz",
+        "Address": "http://www.imdb.com/title/tt0841046/",
+        "Outline": "Singer Dewey Cox overcomes adversity to become a musical legend."
     },
     "71": {
         "Rank": "71",

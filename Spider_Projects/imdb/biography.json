@@ -42,7 +42,7 @@
         "Year": "1976",
         "Certificate": "PG",
         "Runtime": "177 mins",
-        "Genre": "Adventure | Biography | Drama | History",
+        "Genre": "Adventure | Biography | Drama | History | War",
         "Credit": "Dir: Moustapha Akkad With: Anthony Quinn, Irene Papas, Michael Ansara",
         "Address": "http://www.imdb.com/title/tt0074896/",
         "Outline": "This must-see epic depicts the birth of Islam. In the 7th century Mohammed is visited by Angel Gabriel..."
@@ -93,7 +93,7 @@
         "Genre": "Adventure | Biography | Drama | History | War",
         "Credit": "Dir: David Lean With: Peter O'Toole, Alec Guinness, Anthony Quinn",
         "Address": "http://www.imdb.com/title/tt0056172/",
-        "Outline": "Follows a brilliant, flamboyant and controversial British military figure and his conflicted loyalties during wartime service."
+        "Outline": "The story of TE Lawrence, the English officer who successfully united and lead the diverse, often warring, Arab tribes during World War 1 in order to fight the Turks."
     },
     "9": {
         "Rank": "9",
@@ -1165,18 +1165,6 @@
     },
     "98": {
         "Rank": "98",
-        "Name": "Saving Mr. Banks",
-        "Rating": "7.5/10",
-        "Year": "2013",
-        "Certificate": "PG_13",
-        "Runtime": "125 mins",
-        "Genre": "Biography | Comedy | Drama | History | Music",
-        "Credit": "Dir: John Lee Hancock With: Emma Thompson, Tom Hanks, Annie Rose Buckley",
-        "Address": "http://www.imdb.com/title/tt2140373/",
-        "Outline": "Author P.L. Travers reflects on her childhood after reluctantly meeting with Walt Disney , who seeks to adapt her Mary Poppins books for the big screen."
-    },
-    "99": {
-        "Rank": "99",
         "Name": "Trumbo",
         "Rating": "7.5/10",
         "Year": "2015",
@@ -1186,6 +1174,18 @@
         "Credit": "Dir: Jay Roach With: Bryan Cranston, Diane Lane, Helen Mirren",
         "Address": "http://www.imdb.com/title/tt3203606/",
         "Outline": "In 1947, Dalton Trumbo was Hollywood's top screenwriter, until he and other artists were jailed and blacklisted for their political beliefs."
+    },
+    "99": {
+        "Rank": "99",
+        "Name": "Saving Mr. Banks",
+        "Rating": "7.5/10",
+        "Year": "2013",
+        "Certificate": "PG_13",
+        "Runtime": "125 mins",
+        "Genre": "Biography | Comedy | Drama | History | Music",
+        "Credit": "Dir: John Lee Hancock With: Emma Thompson, Tom Hanks, Annie Rose Buckley",
+        "Address": "http://www.imdb.com/title/tt2140373/",
+        "Outline": "Author P.L. Travers reflects on her childhood after reluctantly meeting with Walt Disney , who seeks to adapt her Mary Poppins books for the big screen."
     },
     "100": {
         "Rank": "100",
@@ -1717,18 +1717,6 @@
     },
     "144": {
         "Rank": "144",
-        "Name": "Kill the Irishman",
-        "Rating": "7.2/10",
-        "Year": "2011",
-        "Certificate": "R",
-        "Runtime": "106 mins",
-        "Genre": "Biography | Crime | Drama",
-        "Credit": "Dir: Jonathan Hensleigh With: Ray Stevenson, Christopher Walken, Vincent D'Onofrio",
-        "Address": "http://www.imdb.com/title/tt1416801/",
-        "Outline": "The true story of Danny Greene, a tough Irish thug working for mobsters in Cleveland during the 1970's."
-    },
-    "145": {
-        "Rank": "145",
         "Name": "Lee Daniels' The Butler",
         "Rating": "7.2/10",
         "Year": "2013",
@@ -1738,6 +1726,18 @@
         "Credit": "Dir: Lee Daniels With: Forest Whitaker, Oprah Winfrey, John Cusack",
         "Address": "http://www.imdb.com/title/tt1327773/",
         "Outline": "As Cecil Gaines serves eight presidents during his tenure as a butler at the White House, the civil rights movement, Vietnam, and other major events affect this man's life, family, and American society."
+    },
+    "145": {
+        "Rank": "145",
+        "Name": "Kill the Irishman",
+        "Rating": "7.2/10",
+        "Year": "2011",
+        "Certificate": "R",
+        "Runtime": "106 mins",
+        "Genre": "Biography | Crime | Drama",
+        "Credit": "Dir: Jonathan Hensleigh With: Ray Stevenson, Christopher Walken, Vincent D'Onofrio",
+        "Address": "http://www.imdb.com/title/tt1416801/",
+        "Outline": "The true story of Danny Greene, a tough Irish thug working for mobsters in Cleveland during the 1970's."
     },
     "146": {
         "Rank": "146",
@@ -1801,18 +1801,6 @@
     },
     "151": {
         "Rank": "151",
-        "Name": "Kinsey",
-        "Rating": "7.1/10",
-        "Year": "2004",
-        "Certificate": "R",
-        "Runtime": "118 mins",
-        "Genre": "Biography | Drama",
-        "Credit": "Dir: Bill Condon With: Liam Neeson, Laura Linney, Chris O'Donnell",
-        "Address": "http://www.imdb.com/title/tt0362269/",
-        "Outline": "A look at the life of Alfred Kinsey, a pioneer in the area of human sexuality research, whose 1948 publication \"Sexual Behavior in the Human Male\" was one of the first recorded works that saw science address sexual behavior."
-    },
-    "152": {
-        "Rank": "152",
         "Name": "Concussion",
         "Rating": "7.1/10",
         "Year": "2015",
@@ -1822,6 +1810,18 @@
         "Credit": "Dir: Peter Landesman With: Will Smith, Alec Baldwin, Albert Brooks",
         "Address": "http://www.imdb.com/title/tt3322364/",
         "Outline": "In Pittsburgh, accomplished pathologist Dr. Bennet Omalu uncovers the truth about brain damage in football players who suffer repeated concussions in the course of normal play."
+    },
+    "152": {
+        "Rank": "152",
+        "Name": "Kinsey",
+        "Rating": "7.1/10",
+        "Year": "2004",
+        "Certificate": "R",
+        "Runtime": "118 mins",
+        "Genre": "Biography | Drama",
+        "Credit": "Dir: Bill Condon With: Liam Neeson, Laura Linney, Chris O'Donnell",
+        "Address": "http://www.imdb.com/title/tt0362269/",
+        "Outline": "A look at the life of Alfred Kinsey, a pioneer in the area of human sexuality research, whose 1948 publication \"Sexual Behavior in the Human Male\" was one of the first recorded works that saw science address sexual behavior."
     },
     "153": {
         "Rank": "153",
