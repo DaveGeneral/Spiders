@@ -7,6 +7,7 @@
 
 import pymongo
 from scrapy.conf import settings
+from scrapy.exceptions import DropItem
 
 
 class SoflowPipeline(object):
@@ -16,7 +17,8 @@ class SoflowPipeline(object):
             settings['MONGODB_SERVER'], settings['MONGODB_PORT'])
         db = conn[settings['MONGODB_DB']]
         self.col = db[settings['MONGODB_COL']]
+        self.col.drop()
 
     def process_item(self, item, spider):
-        self.col.update({'url': item['url']}, dict(item), upsert=True)
+        self.col.insert(dict(item))
         return item
