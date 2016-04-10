@@ -6,9 +6,10 @@ from scrapy.linkextractors import LinkExtractor
 class StackSpider(CrawlSpider):
     name = 'stack'
     allowed_domains = ['stackoverflow.com']
-    start_urls = ['http://stackoverflow.com/questions?sort=votes']
+    start_urls = ['http://stackoverflow.com/questions?sort=votes',
+                  'http://stackoverflow.com/questions?sort=frequent']
 
-    rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=votes'),
+    rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=votes'),
                   callback='parse_item', follow=True)]
 
     def parse_item(self, response):
