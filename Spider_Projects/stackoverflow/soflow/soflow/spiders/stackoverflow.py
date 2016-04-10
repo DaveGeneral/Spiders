@@ -31,8 +31,7 @@ class StackSpider(CrawlSpider):
         return title
 
     def get_user(self, response):
-        user = response.xpath(
-            '//div[@class="user-details"]/a/text()').extract()
+        user = response.xpath('//div[@class="user-details"]/a/text()').extract()
         return user
 
     def get_tags(self, response):
