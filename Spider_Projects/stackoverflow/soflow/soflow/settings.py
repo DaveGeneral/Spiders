@@ -21,7 +21,7 @@ ITEM_PIPELINES = {
 MONGODB_SERVER = 'localhost'
 MONGODB_PORT = 27017
 MONGODB_DB = 'stackoverflow'
-MONGODB_COL = 'question'
+MONGODB_COLLECTION = 'question'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS=32
