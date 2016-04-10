@@ -1,7 +1,6 @@
 from soflow.items import SoflowItem
-from scrapy.spider import CrawlSpider, Rule
+from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
-#  from scrapy import Spider
 
 
 class StackSpider(CrawlSpider):
