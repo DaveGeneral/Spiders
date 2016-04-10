@@ -1,6 +1,7 @@
 from soflow.items import SoflowItem
 from scrapy.spider import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
+#  from scrapy import Spider
 
 
 class StackSpider(CrawlSpider):
@@ -11,10 +12,13 @@ class StackSpider(CrawlSpider):
     rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=votes'),
                   callback='parse_item', follow=True)]
 
-    def parse_item(self, response):
+    def parse(self, response):
         title = self.get_title(response)
         user = self.get_user(response)
         tags = self.get_tags(response)
+        votes = self.get_votes(response)
+        answers = self.get_answers(response)
+        views = self.get_views(response)
         url = self.get_url(response)
 
         for i in range(len(title)):
@@ -22,6 +26,9 @@ class StackSpider(CrawlSpider):
             item['title'] = title[i]
             item['user'] = user[i]
             item['tags'] = tags[i]
+            item['votes'] = votes[i]
+            item['answers'] = answers[i]
+            item['views'] = views[i]
             item['url'] = url[i]
             yield item
 
@@ -31,7 +38,16 @@ class StackSpider(CrawlSpider):
         return title
 
     def get_user(self, response):
-        user = response.xpath('//div[@class="user-details"]/a/text()').extract()
+        user = []
+        temp = response.xpath('//div[contains(@class,"user-info")]')
+        print("Org:", len(temp))
+        for x in temp:
+            s = x.xpath(
+                'div[@class="user-details"]/a[contains(@href, "users")]/text()')
+            if len(s) == 0:
+                user.append("Anonymous")
+            else:
+                user.extend(s.extract())
         return user
 
     def get_tags(self, response):
@@ -42,8 +58,24 @@ class StackSpider(CrawlSpider):
             tags.append("/".join(s))
         return tags
 
+    def get_votes(self, response):
+        votes = response.xpath(
+            '//span[contains(@class,"vote-count-post")]/strong/text()').extract()
+        return votes
+
+    def get_answers(self, response):
+        answers = response.xpath(
+            '//div[contains(@class,"status")]/strong/text()').extract()
+        return answers
+
+    def get_views(self, response):
+        views = response.xpath(
+            '//div[contains(@class,"views")]/text()').extract()
+        views = [x.strip()[:-6] for x in views]
+        return views
+
     def get_url(self, response):
-        temp = response.xpath(
+        url = response.xpath(
             '//a[@class="question-hyperlink"]/@href').extract()
-        url = ['http://stackoverflow.com' + s for s in temp]
+        url = ['http://stackoverflow.com' + s for s in url]
         return url
