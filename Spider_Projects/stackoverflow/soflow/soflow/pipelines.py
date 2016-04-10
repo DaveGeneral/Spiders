@@ -10,6 +10,7 @@ import json
 import logging
 import pymongo
 from scrapy.conf import settings
+from items import SoflowItem
 
 
 logger = logging.getLogger(__name__)
@@ -29,17 +30,20 @@ class SoflowPipeline(object):
         logging.debug("Here we go")
 
     def process_item(self, item, spider):
-        content = collections.OrderedDict([("Title", item['title']),
-                                           ("Tags", item['tags']),
-                                           ("User", item['user']),
-                                           ("Votes", item['votes']),
-                                           ("Answers", item['answers']),
-                                           ("Views", item['views']),
-                                           ("Url", item['url'])])
-        self.col.insert(content)
-        logger.debug('Item written to MongoDB %s/%s\n' %
-                     (self.db, self.collection))
-        return item
+        if isinstance(item, SoflowItem):
+            content = collections.OrderedDict([("Title", item['title']),
+                                               ("Tags", item['tags']),
+                                               ("User", item['user']),
+                                               ("Votes", item['votes']),
+                                               ("Answers", item['answers']),
+                                               ("Views", item['views']),
+                                               ("Url", item['url'])])
+            self.col.insert(content)
+            logger.debug('Item written to MongoDB %s/%s\n' %
+                         (self.db, self.collection))
+            return item
+        else:
+            logger.debug("Not the first type item")
 
 
 class JsonWriterPipeline(object):

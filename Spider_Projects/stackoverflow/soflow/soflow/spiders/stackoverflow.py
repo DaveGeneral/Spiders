@@ -1,4 +1,4 @@
-from soflow.items import SoflowItem
+from soflow.items import SoflowItem, SoflowItem2
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 
@@ -10,7 +10,7 @@ class StackSpider(CrawlSpider):
                   'http://stackoverflow.com/questions?sort=frequent']
 
     rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=votes'),
-                  callback='parse_item', follow=True)]
+                  callback='parse_item', follow=True), Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=frequent'), callback='parse_item2', follow=True)]
 
     def parse_item(self, response):
         title = self.get_title(response)
@@ -23,6 +23,26 @@ class StackSpider(CrawlSpider):
 
         for i in range(len(title)):
             item = SoflowItem()
+            item['title'] = title[i]
+            item['user'] = user[i]
+            item['tags'] = tags[i]
+            item['votes'] = votes[i]
+            item['answers'] = answers[i]
+            item['views'] = views[i]
+            item['url'] = url[i]
+            yield item
+
+    def parse_item2(self, response):
+        title = self.get_title(response)
+        user = self.get_user(response)
+        tags = self.get_tags(response)
+        votes = self.get_votes(response)
+        answers = self.get_answers(response)
+        views = self.get_views(response)
+        url = self.get_url(response)
+
+        for i in range(len(title)):
+            item = SoflowItem2()
             item['title'] = title[i]
             item['user'] = user[i]
             item['tags'] = tags[i]

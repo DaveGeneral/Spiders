@@ -12,7 +12,7 @@
     "Title": "How do you undo the last commit?", 
     "Tags": "git/git-commit/git-reset", 
     "User": "Peter Mortensen", 
-    "Votes": "9834", 
+    "Votes": "9835", 
     "Answers": "41", 
     "Views": "3.1m", 
     "Url": "http://stackoverflow.com/questions/927358/how-do-you-undo-the-last-commit"
@@ -390,7 +390,7 @@
     "Title": "Remove a particular element from an array in JavaScript?", 
     "Tags": "javascript/arrays", 
     "User": "Walker", 
-    "Votes": "2683", 
+    "Votes": "2684", 
     "Answers": "36", 
     "Views": "2.0m", 
     "Url": "http://stackoverflow.com/questions/5767325/remove-a-particular-element-from-an-array-in-javascript"
@@ -534,7 +534,7 @@
     "Title": "Why is the Android emulator so slow? How can we speed up the Android emulator?", 
     "Tags": "android/performance/android-emulator/qemu", 
     "User": "Peter Mortensen", 
-    "Votes": "2260", 
+    "Votes": "2261", 
     "Answers": "67", 
     "Views": "726k", 
     "Url": "http://stackoverflow.com/questions/1554099/why-is-the-android-emulator-so-slow-how-can-we-speed-up-the-android-emulator"
@@ -1323,6 +1323,15 @@
     "Url": "http://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add"
   }, 
   {
+    "Title": "Add table row in jQuery", 
+    "Tags": "javascript/jquery/html-table", 
+    "User": "Darryl Hein", 
+    "Votes": "1450", 
+    "Answers": "26", 
+    "Views": "964k", 
+    "Url": "http://stackoverflow.com/questions/171027/add-table-row-in-jquery"
+  }, 
+  {
     "Title": "Stop EditText from gaining focus at Activity startup", 
     "Tags": "android/android-listview/android-edittext", 
     "User": "Mark", 
@@ -1339,15 +1348,6 @@
     "Answers": "23", 
     "Views": "1.6m", 
     "Url": "http://stackoverflow.com/questions/92082/add-a-column-with-a-default-value-to-an-existing-table-in-sql-server"
-  }, 
-  {
-    "Title": "Add table row in jQuery", 
-    "Tags": "javascript/jquery/html-table", 
-    "User": "Darryl Hein", 
-    "Votes": "1449", 
-    "Answers": "26", 
-    "Views": "964k", 
-    "Url": "http://stackoverflow.com/questions/171027/add-table-row-in-jquery"
   }, 
   {
     "Title": "Move existing, uncommited work to a new branch in Git", 
