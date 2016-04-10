@@ -8,9 +8,9 @@ class StackSpider(CrawlSpider):
     allowed_domains = ['stackoverflow.com']
     start_urls = ['http://stackoverflow.com/questions?sort=newest']
     rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=newest'),
-                  callback='parse_item')]
+                  callback='parse_newest')]
 
-    def parse_item(self, response):
+    def parse_newest(self, response):
         blocks = response.xpath('//div[@class="summary"]/h3')
         for question in blocks:
             item = SoflowItem()
