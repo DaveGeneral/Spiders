@@ -12,7 +12,7 @@ class StackSpider(CrawlSpider):
     rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=votes'),
                   callback='parse_item', follow=True)]
 
-    def parse(self, response):
+    def parse_item(self, response):
         title = self.get_title(response)
         user = self.get_user(response)
         tags = self.get_tags(response)

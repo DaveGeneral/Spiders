@@ -9,7 +9,6 @@ import scrapy
 
 
 class SoflowItem(scrapy.Item):
-    # define the fields for your item here like:
     title = scrapy.Field()
     user = scrapy.Field()
     tags = scrapy.Field()
@@ -18,5 +17,5 @@ class SoflowItem(scrapy.Item):
     views = scrapy.Field()
     url = scrapy.Field()
 
-    #  def key(self):
-    #  return ['title', 'user', 'tags', 'url']
+    def key(self):
+        return ['title', 'user', 'tags', 'votes', 'answers', 'views' 'url']
