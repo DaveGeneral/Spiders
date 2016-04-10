@@ -11,6 +11,8 @@
 
 BOT_NAME = 'soflow'
 
+LOG_LEVEL = 'INFO'
+
 SPIDER_MODULES = ['soflow.spiders']
 NEWSPIDER_MODULE = 'soflow.spiders'
 

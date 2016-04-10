@@ -10,7 +10,7 @@ import json
 import logging
 import pymongo
 from scrapy.conf import settings
-from items import SoflowItem
+from items import SoflowItem, SoflowItem2
 
 
 logger = logging.getLogger(__name__)
@@ -39,7 +39,7 @@ class SoflowPipeline(object):
                                                ("Views", item['views']),
                                                ("Url", item['url'])])
             self.col.insert(content)
-            logger.debug('Item written to MongoDB %s/%s\n' %
+            logger.debug('Item written to MongoDB %s/%s' %
                          (self.db, self.collection))
             return item
         else:
@@ -62,12 +62,18 @@ class JsonWriterPipeline(object):
         self.file.close()
 
     def process_item(self, item, spider):
-        content = collections.OrderedDict([("Title", item['title']),
-                                           ("Tags", item['tags']),
-                                           ("User", item['user']),
-                                           ("Votes", item['votes']),
-                                           ("Answers", item['answers']),
-                                           ("Views", item['views']),
-                                           ("Url", item['url'])])
-        self.jsonlist.append(content)
-        return item
+        print("haha")
+        if isinstance(item, SoflowItem2):
+            print("Second show", item)
+            content = collections.OrderedDict([("Title", item['title']),
+                                               ("Tags", item['tags']),
+                                               ("User", item['user']),
+                                               ("Votes", item['votes']),
+                                               ("Answers", item['answers']),
+                                               ("Views", item['views']),
+                                               ("Url", item['url'])])
+            self.jsonlist.append(content)
+            logger.debug("Here we append new line\n")
+            return item
+        else:
+            pass

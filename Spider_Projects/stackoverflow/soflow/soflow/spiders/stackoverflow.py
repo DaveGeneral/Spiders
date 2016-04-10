@@ -9,8 +9,13 @@ class StackSpider(CrawlSpider):
     start_urls = ['http://stackoverflow.com/questions?sort=votes',
                   'http://stackoverflow.com/questions?sort=frequent']
 
-    rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=votes'),
-                  callback='parse_item', follow=True), Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=frequent'), callback='parse_item2', follow=True)]
+    #  rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=votes'),
+    #  callback='parse_item', follow=True),
+    #  Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=frequent'),
+    #  callback='parse_item2', follow=True)]
+
+    rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=votes'),
+                  callback='parse_new', follow=True)]
 
     def parse_item(self, response):
         title = self.get_title(response)
@@ -32,7 +37,7 @@ class StackSpider(CrawlSpider):
             item['url'] = url[i]
             yield item
 
-    def parse_item2(self, response):
+    def parse_new(self, response):
         title = self.get_title(response)
         user = self.get_user(response)
         tags = self.get_tags(response)
@@ -50,6 +55,7 @@ class StackSpider(CrawlSpider):
             item['answers'] = answers[i]
             item['views'] = views[i]
             item['url'] = url[i]
+            print("Orignal", item)
             yield item
 
     def get_title(self, response):
@@ -60,7 +66,6 @@ class StackSpider(CrawlSpider):
     def get_user(self, response):
         user = []
         temp = response.xpath('//div[contains(@class,"user-info")]')
-        print("Org:", len(temp))
         for x in temp:
             s = x.xpath(
                 'div[@class="user-details"]/a[contains(@href, "users")]/text()')
