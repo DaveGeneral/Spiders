@@ -39,7 +39,7 @@
     "Title": "What is the correct JSON content type?", 
     "Tags": "json/content-type", 
     "User": "Oli", 
-    "Votes": "6554", 
+    "Votes": "6555", 
     "Answers": "28", 
     "Views": "1.3m", 
     "Url": "http://stackoverflow.com/questions/477816/what-is-the-correct-json-content-type"
@@ -1035,6 +1035,15 @@
     "Url": "http://stackoverflow.com/questions/130794/what-is-dependency-injection"
   }, 
   {
+    "Title": "View the change history of a file using Git versioning", 
+    "Tags": "git/git-log", 
+    "User": "Richard", 
+    "Votes": "1578", 
+    "Answers": "20", 
+    "Views": "712k", 
+    "Url": "http://stackoverflow.com/questions/278192/view-the-change-history-of-a-file-using-git-versioning"
+  }, 
+  {
     "Title": "Get current URL in web browser", 
     "Tags": "javascript/url/window.location", 
     "User": "Anonymous", 
@@ -1042,15 +1051,6 @@
     "Answers": "11", 
     "Views": "1.4m", 
     "Url": "http://stackoverflow.com/questions/1034621/get-current-url-in-web-browser"
-  }, 
-  {
-    "Title": "View the change history of a file using Git versioning", 
-    "Tags": "git/git-log", 
-    "User": "Richard", 
-    "Votes": "1577", 
-    "Answers": "20", 
-    "Views": "712k", 
-    "Url": "http://stackoverflow.com/questions/278192/view-the-change-history-of-a-file-using-git-versioning"
   }, 
   {
     "Title": "Replacing all occurrences of a string in JavaScript", 
@@ -2248,5 +2248,1805 @@
     "Answers": "42", 
     "Views": "796k", 
     "Url": "http://stackoverflow.com/questions/610406/javascript-equivalent-to-printf-string-format"
+  }, 
+  {
+    "Title": "Is there a reason for C#'s reuse of the variable in a foreach?", 
+    "Tags": "c#/foreach/lambda/scope/anonymous-methods", 
+    "User": "StriplingWarrior", 
+    "Votes": "1131", 
+    "Answers": "4", 
+    "Views": "70k", 
+    "Url": "http://stackoverflow.com/questions/8898925/is-there-a-reason-for-cs-reuse-of-the-variable-in-a-foreach"
+  }, 
+  {
+    "Title": "Delete an element from an array", 
+    "Tags": "php/arrays", 
+    "User": "Ben", 
+    "Votes": "1130", 
+    "Answers": "17", 
+    "Views": "1.1m", 
+    "Url": "http://stackoverflow.com/questions/369602/delete-an-element-from-an-array"
+  }, 
+  {
+    "Title": "Determine installed PowerShell version", 
+    "Tags": "powershell", 
+    "User": "MagicAndi", 
+    "Votes": "1128", 
+    "Answers": "20", 
+    "Views": "1.0m", 
+    "Url": "http://stackoverflow.com/questions/1825585/determine-installed-powershell-version"
+  }, 
+  {
+    "Title": "How can I test if an array contains a certain value?", 
+    "Tags": "java/arrays", 
+    "User": "Mike Sickler", 
+    "Votes": "1124", 
+    "Answers": "23", 
+    "Views": "788k", 
+    "Url": "http://stackoverflow.com/questions/1128723/how-can-i-test-if-an-array-contains-a-certain-value"
+  }, 
+  {
+    "Title": "jQuery scroll to element", 
+    "Tags": "jquery", 
+    "User": "DiegoP.", 
+    "Votes": "1123", 
+    "Answers": "18", 
+    "Views": "1.1m", 
+    "Url": "http://stackoverflow.com/questions/6677035/jquery-scroll-to-element"
+  }, 
+  {
+    "Title": "Need an unordered list without any bullets", 
+    "Tags": "html/css", 
+    "User": "praveenjayapal", 
+    "Votes": "1121", 
+    "Answers": "16", 
+    "Views": "926k", 
+    "Url": "http://stackoverflow.com/questions/1027354/need-an-unordered-list-without-any-bullets"
+  }, 
+  {
+    "Title": "Check if object is array?", 
+    "Tags": "javascript/arrays", 
+    "User": "mpen", 
+    "Votes": "1119", 
+    "Answers": "29", 
+    "Views": "691k", 
+    "Url": "http://stackoverflow.com/questions/4775722/check-if-object-is-array"
+  }, 
+  {
+    "Title": "How can I disable ARC for a single file in a project?", 
+    "Tags": "objective-c/xcode/automatic-ref-counting/manual-retain-release", 
+    "User": "casademora", 
+    "Votes": "1114", 
+    "Answers": "17", 
+    "Views": "282k", 
+    "Url": "http://stackoverflow.com/questions/6646052/how-can-i-disable-arc-for-a-single-file-in-a-project"
+  }, 
+  {
+    "Title": "What does the C ??!??! operator do?", 
+    "Tags": "c/operators/trigraphs", 
+    "User": "Peter Olson", 
+    "Votes": "1113", 
+    "Answers": "4", 
+    "Views": "170k", 
+    "Url": "http://stackoverflow.com/questions/7825055/what-does-the-c-operator-do"
+  }, 
+  {
+    "Title": "Catch multiple exceptions at once?", 
+    "Tags": "c#/.net/exception/exception-handling", 
+    "User": "Michael Stum", 
+    "Votes": "1111", 
+    "Answers": "21", 
+    "Views": "249k", 
+    "Url": "http://stackoverflow.com/questions/136035/catch-multiple-exceptions-at-once"
+  }, 
+  {
+    "Title": "Reset local repository branch to be just like remote repository HEAD", 
+    "Tags": "git/undo", 
+    "User": "hap497", 
+    "Votes": "1107", 
+    "Answers": "13", 
+    "Views": "718k", 
+    "Url": "http://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head"
+  }, 
+  {
+    "Title": "What is the scope of variables in JavaScript?", 
+    "Tags": "javascript/variables/scope", 
+    "User": "lYriCAlsSH", 
+    "Votes": "1103", 
+    "Answers": "19", 
+    "Views": "311k", 
+    "Url": "http://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript"
+  }, 
+  {
+    "Title": "What is the copy-and-swap idiom?", 
+    "Tags": "c++/copy-constructor/assignment-operator/c++-faq/copy-and-swap", 
+    "User": "GManNickG", 
+    "Votes": "1101", 
+    "Answers": "5", 
+    "Views": "159k", 
+    "Url": "http://stackoverflow.com/questions/3279543/what-is-the-copy-and-swap-idiom"
+  }, 
+  {
+    "Title": "How to align checkboxes and their labels consistently cross-browsers", 
+    "Tags": "html/css/html-form", 
+    "User": "One Crayon", 
+    "Votes": "1100", 
+    "Answers": "34", 
+    "Views": "576k", 
+    "Url": "http://stackoverflow.com/questions/306252/how-to-align-checkboxes-and-their-labels-consistently-cross-browsers"
+  }, 
+  {
+    "Title": "How to avoid Java code in JSP files?", 
+    "Tags": "java/jsp/scriptlet", 
+    "User": "former", 
+    "Votes": "1092", 
+    "Answers": "24", 
+    "Views": "175k", 
+    "Url": "http://stackoverflow.com/questions/3177733/how-to-avoid-java-code-in-jsp-files"
+  }, 
+  {
+    "Title": "\u201cimplements Runnable\u201d vs. \u201cextends Thread\u201d", 
+    "Tags": "java/multithreading/java-threads", 
+    "User": "user65374", 
+    "Votes": "1091", 
+    "Answers": "34", 
+    "Views": "400k", 
+    "Url": "http://stackoverflow.com/questions/541487/implements-runnable-vs-extends-thread"
+  }, 
+  {
+    "Title": "What is a NullReferenceException and how do I fix it?", 
+    "Tags": "c#/.net/vb.net/null/nullreferenceexception", 
+    "User": "John Saunders", 
+    "Votes": "1090", 
+    "Answers": "21", 
+    "Views": "329k", 
+    "Url": "http://stackoverflow.com/questions/4660142/what-is-a-nullreferenceexception-and-how-do-i-fix-it"
+  }, 
+  {
+    "Title": "Why is \u201cusing namespace std\u201d in C++ considered bad practice?", 
+    "Tags": "c++/namespaces/std/c++-faq", 
+    "User": "akbiggs", 
+    "Votes": "1086", 
+    "Answers": "28", 
+    "Views": "352k", 
+    "Url": "http://stackoverflow.com/questions/1452721/why-is-using-namespace-std-in-c-considered-bad-practice"
+  }, 
+  {
+    "Title": "Does finally always execute in Java?", 
+    "Tags": "java/return/try-catch-finally", 
+    "User": "jonny five", 
+    "Votes": "1086", 
+    "Answers": "35", 
+    "Views": "216k", 
+    "Url": "http://stackoverflow.com/questions/65035/does-finally-always-execute-in-java"
+  }, 
+  {
+    "Title": "Explain Python's slice notation", 
+    "Tags": "python/list/slice", 
+    "User": "Simon", 
+    "Votes": "1079", 
+    "Answers": "20", 
+    "Views": "539k", 
+    "Url": "http://stackoverflow.com/questions/509211/explain-pythons-slice-notation"
+  }, 
+  {
+    "Title": "Download a specific tag with Git", 
+    "Tags": "git/git-clone/git-tag", 
+    "User": "Jack BeNimble", 
+    "Votes": "1073", 
+    "Answers": "14", 
+    "Views": "629k", 
+    "Url": "http://stackoverflow.com/questions/791959/download-a-specific-tag-with-git"
+  }, 
+  {
+    "Title": "How can I concatenate string variables in Bash?", 
+    "Tags": "bash/shell/unix/append/string-concatenation", 
+    "User": "Strawberry", 
+    "Votes": "1072", 
+    "Answers": "22", 
+    "Views": "1.3m", 
+    "Url": "http://stackoverflow.com/questions/4181703/how-can-i-concatenate-string-variables-in-bash"
+  }, 
+  {
+    "Title": "Get current URL in JavaScript?", 
+    "Tags": "javascript/jquery/url/path", 
+    "User": "venkatachalam", 
+    "Votes": "1064", 
+    "Answers": "24", 
+    "Views": "1.2m", 
+    "Url": "http://stackoverflow.com/questions/406192/get-current-url-in-javascript"
+  }, 
+  {
+    "Title": "Creating multiline strings in JavaScript", 
+    "Tags": "javascript/string/multiline/heredoc", 
+    "User": "Newy", 
+    "Votes": "1061", 
+    "Answers": "31", 
+    "Views": "544k", 
+    "Url": "http://stackoverflow.com/questions/805107/creating-multiline-strings-in-javascript"
+  }, 
+  {
+    "Title": "How to check for \u201cundefined\u201d in JavaScript? [duplicate]", 
+    "Tags": "javascript/undefined", 
+    "User": "LamonteCristo", 
+    "Votes": "1061", 
+    "Answers": "17", 
+    "Views": "833k", 
+    "Url": "http://stackoverflow.com/questions/3390396/how-to-check-for-undefined-in-javascript"
+  }, 
+  {
+    "Title": "What is the best way to iterate over a Dictionary in C#?", 
+    "Tags": "c#/dictionary/loops", 
+    "User": "Jake Stewart", 
+    "Votes": "1060", 
+    "Answers": "17", 
+    "Views": "638k", 
+    "Url": "http://stackoverflow.com/questions/141088/what-is-the-best-way-to-iterate-over-a-dictionary-in-c"
+  }, 
+  {
+    "Title": "With C arrays, why is it the case that a[5] == 5[a]?", 
+    "Tags": "c/arrays/pointers/pointer-arithmetic", 
+    "User": "Dinah", 
+    "Votes": "1060", 
+    "Answers": "13", 
+    "Views": "56k", 
+    "Url": "http://stackoverflow.com/questions/381542/with-c-arrays-why-is-it-the-case-that-a5-5a"
+  }, 
+  {
+    "Title": "HTML 5: Is it <br>, <br/>, or <br />?", 
+    "Tags": "html/html5", 
+    "User": "Eikern", 
+    "Votes": "1060", 
+    "Answers": "16", 
+    "Views": "781k", 
+    "Url": "http://stackoverflow.com/questions/1946426/html-5-is-it-br-br-or-br"
+  }, 
+  {
+    "Title": "Modify the URL without reloading the page", 
+    "Tags": "javascript/html/url/url-rewriting/friendly-url", 
+    "User": "Jarvis", 
+    "Votes": "1057", 
+    "Answers": "19", 
+    "Views": "522k", 
+    "Url": "http://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page"
+  }, 
+  {
+    "Title": "When to use double or single quotes in JavaScript?", 
+    "Tags": "javascript/string/conventions", 
+    "User": "aemkei", 
+    "Votes": "1057", 
+    "Answers": "37", 
+    "Views": "292k", 
+    "Url": "http://stackoverflow.com/questions/242813/when-to-use-double-or-single-quotes-in-javascript"
+  }, 
+  {
+    "Title": "Why does changing 0.1f to 0 slow down performance by 10x?", 
+    "Tags": "c++/performance/visual-studio-2010/compilation/floating-point", 
+    "User": "Dragarro", 
+    "Votes": "1055", 
+    "Answers": "4", 
+    "Views": "97k", 
+    "Url": "http://stackoverflow.com/questions/9314534/why-does-changing-0-1f-to-0-slow-down-performance-by-10x"
+  }, 
+  {
+    "Title": "Parse JSON in JavaScript? [duplicate]", 
+    "Tags": "javascript/json/parsing", 
+    "User": "Anonymous", 
+    "Votes": "1051", 
+    "Answers": "16", 
+    "Views": "1.3m", 
+    "Url": "http://stackoverflow.com/questions/4935632/parse-json-in-javascript"
+  }, 
+  {
+    "Title": "Should I use Vagrant or Docker for creating an isolated environment?", 
+    "Tags": "vagrant/docker", 
+    "User": "murtaza52", 
+    "Votes": "1049", 
+    "Answers": "9", 
+    "Views": "211k", 
+    "Url": "http://stackoverflow.com/questions/16647069/should-i-use-vagrant-or-docker-for-creating-an-isolated-environment"
+  }, 
+  {
+    "Title": "What can I use to profile C++ code in Linux? [closed]", 
+    "Tags": "c++/unix/profiling", 
+    "User": "Gabriel Isenberg", 
+    "Votes": "1049", 
+    "Answers": "24", 
+    "Views": "297k", 
+    "Url": "http://stackoverflow.com/questions/375913/what-can-i-use-to-profile-c-code-in-linux"
+  }, 
+  {
+    "Title": "How do I call one constructor from another in Java?", 
+    "Tags": "java/constructor", 
+    "User": "ashokgelal", 
+    "Votes": "1049", 
+    "Answers": "7", 
+    "Views": "383k", 
+    "Url": "http://stackoverflow.com/questions/285177/how-do-i-call-one-constructor-from-another-in-java"
+  }, 
+  {
+    "Title": "Regular cast vs. static_cast vs. dynamic_cast [duplicate]", 
+    "Tags": "c++/pointers/casting", 
+    "User": "Graeme Perrow", 
+    "Votes": "1049", 
+    "Answers": "9", 
+    "Views": "344k", 
+    "Url": "http://stackoverflow.com/questions/28002/regular-cast-vs-static-cast-vs-dynamic-cast"
+  }, 
+  {
+    "Title": "In the shell, what does \u201c 2>&1 \u201d mean?", 
+    "Tags": "bash/shell/unix/redirect", 
+    "User": "Tristan Havelick", 
+    "Votes": "1048", 
+    "Answers": "13", 
+    "Views": "532k", 
+    "Url": "http://stackoverflow.com/questions/818255/in-the-shell-what-does-21-mean"
+  }, 
+  {
+    "Title": "How do I center text horizontally and vertically in a TextView on Android?", 
+    "Tags": "android/text/center/textview", 
+    "User": "Pablo", 
+    "Votes": "1043", 
+    "Answers": "26", 
+    "Views": "652k", 
+    "Url": "http://stackoverflow.com/questions/432037/how-do-i-center-text-horizontally-and-vertically-in-a-textview-on-android"
+  }, 
+  {
+    "Title": "What is the function of the var keyword and when to use it (or omit it)?", 
+    "Tags": "javascript/keyword/ecmascript-5", 
+    "User": "Alex", 
+    "Votes": "1042", 
+    "Answers": "14", 
+    "Views": "192k", 
+    "Url": "http://stackoverflow.com/questions/1470488/what-is-the-function-of-the-var-keyword-and-when-to-use-it-or-omit-it"
+  }, 
+  {
+    "Title": "How do you display code snippets in MS Word preserving format and syntax highlighting?", 
+    "Tags": "ms-word", 
+    "User": "Lawrence Barsanti", 
+    "Votes": "1035", 
+    "Answers": "23", 
+    "Views": "423k", 
+    "Url": "http://stackoverflow.com/questions/387453/how-do-you-display-code-snippets-in-ms-word-preserving-format-and-syntax-highlig"
+  }, 
+  {
+    "Title": "Convert a String to an enum in Java", 
+    "Tags": "java/enums", 
+    "User": "Malachi", 
+    "Votes": "1033", 
+    "Answers": "16", 
+    "Views": "532k", 
+    "Url": "http://stackoverflow.com/questions/604424/convert-a-string-to-an-enum-in-java"
+  }, 
+  {
+    "Title": "Catch multiple exceptions in one line (except block)", 
+    "Tags": "python/exception/exception-handling", 
+    "User": "inspectorG4dget", 
+    "Votes": "1033", 
+    "Answers": "4", 
+    "Views": "178k", 
+    "Url": "http://stackoverflow.com/questions/6470428/catch-multiple-exceptions-in-one-line-except-block"
+  }, 
+  {
+    "Title": "Add key to a dictionary in Python?", 
+    "Tags": "python/dictionary", 
+    "User": "lfaraone", 
+    "Votes": "1032", 
+    "Answers": "14", 
+    "Views": "940k", 
+    "Url": "http://stackoverflow.com/questions/1024847/add-key-to-a-dictionary-in-python"
+  }, 
+  {
+    "Title": "What IDE to use for Python?", 
+    "Tags": "python/ide/editor", 
+    "User": "husayt", 
+    "Votes": "1032", 
+    "Answers": "1", 
+    "Views": "1.2m", 
+    "Url": "http://stackoverflow.com/questions/81584/what-ide-to-use-for-python"
+  }, 
+  {
+    "Title": "Length of a JavaScript object (that is, associative array)", 
+    "Tags": "javascript/arrays/javascript-objects", 
+    "User": "Gareth Simpson", 
+    "Votes": "1031", 
+    "Answers": "23", 
+    "Views": "697k", 
+    "Url": "http://stackoverflow.com/questions/5223/length-of-a-javascript-object-that-is-associative-array"
+  }, 
+  {
+    "Title": "What does O(log n) mean exactly?", 
+    "Tags": "big-o/algorithm/logarithm/growth-rate", 
+    "User": "Andreas Grech", 
+    "Votes": "1031", 
+    "Answers": "26", 
+    "Views": "379k", 
+    "Url": "http://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly"
+  }, 
+  {
+    "Title": "How to replace a character by a newline in Vim?", 
+    "Tags": "vim/replace/escaping/newline/vi", 
+    "User": "Vinko Vrsalovic", 
+    "Votes": "1029", 
+    "Answers": "13", 
+    "Views": "386k", 
+    "Url": "http://stackoverflow.com/questions/71323/how-to-replace-a-character-by-a-newline-in-vim"
+  }, 
+  {
+    "Title": "Is floating point math broken?", 
+    "Tags": "math/language-agnostic/floating-point/floating-accuracy", 
+    "User": "Cato Johnston", 
+    "Votes": "1027", 
+    "Answers": "27", 
+    "Views": "121k", 
+    "Url": "http://stackoverflow.com/questions/588004/is-floating-point-math-broken"
+  }, 
+  {
+    "Title": "How to migrate SVN repository with history to a new Git repository?", 
+    "Tags": "svn/git/version-control/git-svn", 
+    "User": "Milan Babu\u0161kov", 
+    "Votes": "1026", 
+    "Answers": "27", 
+    "Views": "267k", 
+    "Url": "http://stackoverflow.com/questions/79165/how-to-migrate-svn-repository-with-history-to-a-new-git-repository"
+  }, 
+  {
+    "Title": "How to modify a specified commit in git?", 
+    "Tags": "git/git-rewrite-history", 
+    "User": "Sam Liao", 
+    "Votes": "1026", 
+    "Answers": "4", 
+    "Views": "279k", 
+    "Url": "http://stackoverflow.com/questions/1186535/how-to-modify-a-specified-commit-in-git"
+  }, 
+  {
+    "Title": "Create Excel (.XLS and .XLSX) file from C#", 
+    "Tags": "c#/.net/excel", 
+    "User": "mistrmark", 
+    "Votes": "1025", 
+    "Answers": "35", 
+    "Views": "655k", 
+    "Url": "http://stackoverflow.com/questions/151005/create-excel-xls-and-xlsx-file-from-c-sharp"
+  }, 
+  {
+    "Title": "Text editor to open big (giant, huge, large) text files [closed]", 
+    "Tags": "windows/xml/editor/text-editor/large-files", 
+    "User": "Dave Jarvis", 
+    "Votes": "1023", 
+    "Answers": "2", 
+    "Views": "908k", 
+    "Url": "http://stackoverflow.com/questions/159521/text-editor-to-open-big-giant-huge-large-text-files"
+  }, 
+  {
+    "Title": "Loop through JavaScript object", 
+    "Tags": "javascript", 
+    "User": "Tanmoy", 
+    "Votes": "1022", 
+    "Answers": "16", 
+    "Views": "579k", 
+    "Url": "http://stackoverflow.com/questions/684672/loop-through-javascript-object"
+  }, 
+  {
+    "Title": "I ran into a merge conflict. How can I abort the merge?", 
+    "Tags": "git/version-control/git-merge/merge-conflict-resolution", 
+    "User": "Gwyn Morfey", 
+    "Votes": "1022", 
+    "Answers": "8", 
+    "Views": "494k", 
+    "Url": "http://stackoverflow.com/questions/101752/i-ran-into-a-merge-conflict-how-can-i-abort-the-merge"
+  }, 
+  {
+    "Title": "How to make a UITextField move up when keyboard is present", 
+    "Tags": "ios/objective-c/swift/uitextfield/uikeyboard", 
+    "User": "philfreo", 
+    "Votes": "1022", 
+    "Answers": "68", 
+    "Views": "425k", 
+    "Url": "http://stackoverflow.com/questions/1126726/how-to-make-a-uitextfield-move-up-when-keyboard-is-present"
+  }, 
+  {
+    "Title": "<button> vs. <input type=\u201cbutton\u201d />. Which to use?", 
+    "Tags": "html/button/compatibility/html-input", 
+    "User": "Aron Rotteveel", 
+    "Votes": "1022", 
+    "Answers": "12", 
+    "Views": "403k", 
+    "Url": "http://stackoverflow.com/questions/469059/button-vs-input-type-button-which-to-use"
+  }, 
+  {
+    "Title": "<meta charset=\u201cutf-8\u201d> vs <meta http-equiv=\u201cContent-Type\u201d>", 
+    "Tags": "html5/meta-tags/doctype", 
+    "User": "CuriousMind", 
+    "Votes": "1021", 
+    "Answers": "6", 
+    "Views": "749k", 
+    "Url": "http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type"
+  }, 
+  {
+    "Title": "Breaking out of nested loops in Java", 
+    "Tags": "java/loops", 
+    "User": "boutta", 
+    "Votes": "1018", 
+    "Answers": "24", 
+    "Views": "571k", 
+    "Url": "http://stackoverflow.com/questions/886955/breaking-out-of-nested-loops-in-java"
+  }, 
+  {
+    "Title": "Enums in JavaScript?", 
+    "Tags": "javascript/enums", 
+    "User": "David Citron", 
+    "Votes": "1018", 
+    "Answers": "30", 
+    "Views": "384k", 
+    "Url": "http://stackoverflow.com/questions/287903/enums-in-javascript"
+  }, 
+  {
+    "Title": "Convert form data to JavaScript object with jQuery", 
+    "Tags": "jquery/json/serialization", 
+    "User": "Yisroel", 
+    "Votes": "1015", 
+    "Answers": "44", 
+    "Views": "559k", 
+    "Url": "http://stackoverflow.com/questions/1184624/convert-form-data-to-javascript-object-with-jquery"
+  }, 
+  {
+    "Title": "Is < faster than <=?", 
+    "Tags": "c++/performance/assembly", 
+    "User": "Viniyo Shouta", 
+    "Votes": "1014", 
+    "Answers": "13", 
+    "Views": "75k", 
+    "Url": "http://stackoverflow.com/questions/12135518/is-faster-than"
+  }, 
+  {
+    "Title": "Why does ++[[]][+[]]+[+[]] return the string \u201c10\u201d?", 
+    "Tags": "javascript/syntax", 
+    "User": "Anonymous", 
+    "Votes": "1012", 
+    "Answers": "8", 
+    "Views": "145k", 
+    "Url": "http://stackoverflow.com/questions/7202157/why-does-return-the-string-10"
+  }, 
+  {
+    "Title": "Try-catch speeding up my code?", 
+    "Tags": "c#/.net/clr/try-catch/performance-testing", 
+    "User": "Eren Ers\u00f6nmez", 
+    "Votes": "1012", 
+    "Answers": "5", 
+    "Views": "71k", 
+    "Url": "http://stackoverflow.com/questions/8928403/try-catch-speeding-up-my-code"
+  }, 
+  {
+    "Title": "How can relative time be calculated in C#?", 
+    "Tags": "c#/datetime/datediff/relative-time-span", 
+    "User": "Jeff Atwood", 
+    "Votes": "1011", 
+    "Answers": "33", 
+    "Views": "106k", 
+    "Url": "http://stackoverflow.com/questions/11/how-can-relative-time-be-calculated-in-c"
+  }, 
+  {
+    "Title": "Trim string in JavaScript?", 
+    "Tags": "javascript/string/trim", 
+    "User": "Vinodtiru", 
+    "Votes": "1007", 
+    "Answers": "22", 
+    "Views": "686k", 
+    "Url": "http://stackoverflow.com/questions/498970/trim-string-in-javascript"
+  }, 
+  {
+    "Title": "How to check if column exists in SQL Server table", 
+    "Tags": "sql-server/sql-server-2008/tsql/sql-server-2012/exists", 
+    "User": "Maciej", 
+    "Votes": "1005", 
+    "Answers": "21", 
+    "Views": "627k", 
+    "Url": "http://stackoverflow.com/questions/133031/how-to-check-if-column-exists-in-sql-server-table"
+  }, 
+  {
+    "Title": "A potentially dangerous Request.Form value was detected from the client", 
+    "Tags": "asp.net/asp.net-mvc/validation/html-encode/request.form", 
+    "User": "Radu094", 
+    "Votes": "1002", 
+    "Answers": "34", 
+    "Views": "592k", 
+    "Url": "http://stackoverflow.com/questions/81991/a-potentially-dangerous-request-form-value-was-detected-from-the-client"
+  }, 
+  {
+    "Title": "Where can I find documentation on formatting a date in JavaScript?", 
+    "Tags": "javascript/datetime/date", 
+    "User": "Naga Kiran", 
+    "Votes": "995", 
+    "Answers": "35", 
+    "Views": "1.2m", 
+    "Url": "http://stackoverflow.com/questions/1056728/where-can-i-find-documentation-on-formatting-a-date-in-javascript"
+  }, 
+  {
+    "Title": "How to make div not larger than its contents?", 
+    "Tags": "html/css/width", 
+    "User": "Anonymous", 
+    "Votes": "995", 
+    "Answers": "21", 
+    "Views": "666k", 
+    "Url": "http://stackoverflow.com/questions/450903/how-to-make-div-not-larger-than-its-contents"
+  }, 
+  {
+    "Title": "How to format XML in Notepad++?", 
+    "Tags": "notepad++/code-formatting", 
+    "User": "happyhardik", 
+    "Votes": "995", 
+    "Answers": "14", 
+    "Views": "509k", 
+    "Url": "http://stackoverflow.com/questions/3961217/how-to-format-xml-in-notepad"
+  }, 
+  {
+    "Title": "Homebrew install specific version of formula?", 
+    "Tags": "installation/versioning/homebrew", 
+    "User": "Gravis", 
+    "Votes": "994", 
+    "Answers": "15", 
+    "Views": "357k", 
+    "Url": "http://stackoverflow.com/questions/3987683/homebrew-install-specific-version-of-formula"
+  }, 
+  {
+    "Title": "Why is executing Java code in comments with certain Unicode characters allowed?", 
+    "Tags": "java/unicode/comments", 
+    "User": "Reg", 
+    "Votes": "994", 
+    "Answers": "7", 
+    "Views": "55k", 
+    "Url": "http://stackoverflow.com/questions/30727515/why-is-executing-java-code-in-comments-with-certain-unicode-characters-allowed"
+  }, 
+  {
+    "Title": "How to insert an item into an array at a specific index?", 
+    "Tags": "javascript/arrays/insert", 
+    "User": "tags2k", 
+    "Votes": "992", 
+    "Answers": "5", 
+    "Views": "532k", 
+    "Url": "http://stackoverflow.com/questions/586182/how-to-insert-an-item-into-an-array-at-a-specific-index"
+  }, 
+  {
+    "Title": "How does 'foreach' actually work?", 
+    "Tags": "php/loops/foreach/iteration/php-internals", 
+    "User": "DaveRandom", 
+    "Votes": "990", 
+    "Answers": "5", 
+    "Views": "191k", 
+    "Url": "http://stackoverflow.com/questions/10057671/how-does-foreach-actually-work"
+  }, 
+  {
+    "Title": "Dealing with \u201cjava.lang.OutOfMemoryError: PermGen space\u201d error", 
+    "Tags": "java/exception/memory-leaks/permgen", 
+    "User": "Chris", 
+    "Votes": "988", 
+    "Answers": "30", 
+    "Views": "809k", 
+    "Url": "http://stackoverflow.com/questions/88235/dealing-with-java-lang-outofmemoryerror-permgen-space-error"
+  }, 
+  {
+    "Title": "C++11 introduced a standardized memory model. What does it mean? And how is it going to affect C++ programming?", 
+    "Tags": "c++/multithreading/c++11/language-lawyer/memory-model", 
+    "User": "Nawaz", 
+    "Votes": "979", 
+    "Answers": "6", 
+    "Views": "87k", 
+    "Url": "http://stackoverflow.com/questions/6319146/c11-introduced-a-standardized-memory-model-what-does-it-mean-and-how-is-it-g"
+  }, 
+  {
+    "Title": "Why is using \u201cfor\u2026in\u201d with array iteration such a bad idea?", 
+    "Tags": "javascript/arrays/for-loop", 
+    "User": "lYriCAlsSH", 
+    "Votes": "976", 
+    "Answers": "20", 
+    "Views": "431k", 
+    "Url": "http://stackoverflow.com/questions/500504/why-is-using-for-in-with-array-iteration-such-a-bad-idea"
+  }, 
+  {
+    "Title": "How to check for an active Internet connection on iOS or OSX?", 
+    "Tags": "ios/osx/cocoa/cocoa-touch/reachability", 
+    "User": "Brock Woolf", 
+    "Votes": "973", 
+    "Answers": "34", 
+    "Views": "333k", 
+    "Url": "http://stackoverflow.com/questions/1083701/how-to-check-for-an-active-internet-connection-on-ios-or-osx"
+  }, 
+  {
+    "Title": "How do I commit all deleted files in Git? [duplicate]", 
+    "Tags": "git/git-add", 
+    "User": "Igor Zevaka", 
+    "Votes": "970", 
+    "Answers": "0", 
+    "Views": "224k", 
+    "Url": "http://stackoverflow.com/questions/1402776/how-do-i-commit-all-deleted-files-in-git"
+  }, 
+  {
+    "Title": "How can I convert a string to boolean in JavaScript?", 
+    "Tags": "javascript", 
+    "User": "Anonymous", 
+    "Votes": "969", 
+    "Answers": "53", 
+    "Views": "667k", 
+    "Url": "http://stackoverflow.com/questions/263965/how-can-i-convert-a-string-to-boolean-in-javascript"
+  }, 
+  {
+    "Title": "Java inner class and static nested class", 
+    "Tags": "java/inner-classes/nested-class", 
+    "User": "Omnipotent", 
+    "Votes": "968", 
+    "Answers": "19", 
+    "Views": "425k", 
+    "Url": "http://stackoverflow.com/questions/70324/java-inner-class-and-static-nested-class"
+  }, 
+  {
+    "Title": "Clone a specific Git branch [duplicate]", 
+    "Tags": "git/git-branch/git-clone", 
+    "User": "Scud", 
+    "Votes": "966", 
+    "Answers": "7", 
+    "Views": "877k", 
+    "Url": "http://stackoverflow.com/questions/1911109/clone-a-specific-git-branch"
+  }, 
+  {
+    "Title": "Finding the index of an item given a list containing it in Python", 
+    "Tags": "python/list", 
+    "User": "Eugene M", 
+    "Votes": "965", 
+    "Answers": "18", 
+    "Views": "986k", 
+    "Url": "http://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python"
+  }, 
+  {
+    "Title": "Multiple \u201corder by\u201d in LINQ", 
+    "Tags": "linq/sql-order-by", 
+    "User": "Sasha", 
+    "Votes": "963", 
+    "Answers": "5", 
+    "Views": "322k", 
+    "Url": "http://stackoverflow.com/questions/298725/multiple-order-by-in-linq"
+  }, 
+  {
+    "Title": "Vim clear last search highlighting", 
+    "Tags": "vim/highlight", 
+    "User": "Gabriel Solomon", 
+    "Votes": "962", 
+    "Answers": "21", 
+    "Views": "209k", 
+    "Url": "http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting"
+  }, 
+  {
+    "Title": "How does database indexing work?", 
+    "Tags": "database/indexing", 
+    "User": "Xenph Yan", 
+    "Votes": "960", 
+    "Answers": "5", 
+    "Views": "360k", 
+    "Url": "http://stackoverflow.com/questions/1108/how-does-database-indexing-work"
+  }, 
+  {
+    "Title": "How do I make git use the editor of my choice for commits?", 
+    "Tags": "git/vim/emacs/editor/commit-message", 
+    "User": "brass-kazoo", 
+    "Votes": "957", 
+    "Answers": "12", 
+    "Views": "282k", 
+    "Url": "http://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits"
+  }, 
+  {
+    "Title": "Prefer composition over inheritance?", 
+    "Tags": "language-agnostic/oop/inheritance/composition/aggregation", 
+    "User": "Readonly", 
+    "Votes": "957", 
+    "Answers": "31", 
+    "Views": "174k", 
+    "Url": "http://stackoverflow.com/questions/49002/prefer-composition-over-inheritance"
+  }, 
+  {
+    "Title": "How do you clone a git repository into a specific folder?", 
+    "Tags": "git/repository/git-clone", 
+    "User": "David Smith", 
+    "Votes": "956", 
+    "Answers": "15", 
+    "Views": "742k", 
+    "Url": "http://stackoverflow.com/questions/651038/how-do-you-clone-a-git-repository-into-a-specific-folder"
+  }, 
+  {
+    "Title": "performSelector may cause a leak because its selector is unknown", 
+    "Tags": "ios/objective-c/memory-leaks/automatic-ref-counting", 
+    "User": "Eduardo Scoz", 
+    "Votes": "954", 
+    "Answers": "19", 
+    "Views": "134k", 
+    "Url": "http://stackoverflow.com/questions/7017281/performselector-may-cause-a-leak-because-its-selector-is-unknown"
+  }, 
+  {
+    "Title": "What do \u201cbranch\u201d, \u201ctag\u201d and \u201ctrunk\u201d mean in Subversion repositories?", 
+    "Tags": "svn/tags/branch/glossary/trunk", 
+    "User": "grapefrukt", 
+    "Votes": "953", 
+    "Answers": "14", 
+    "Views": "311k", 
+    "Url": "http://stackoverflow.com/questions/16142/what-do-branch-tag-and-trunk-mean-in-subversion-repositories"
+  }, 
+  {
+    "Title": "What is the difference between #include <filename> and #include \u201cfilename\u201d?", 
+    "Tags": "c++/c/include/header-files/c-preprocessor", 
+    "User": "quest49", 
+    "Votes": "952", 
+    "Answers": "20", 
+    "Views": "207k", 
+    "Url": "http://stackoverflow.com/questions/21593/what-is-the-difference-between-include-filename-and-include-filename"
+  }, 
+  {
+    "Title": "Extract filename and extension in Bash", 
+    "Tags": "bash/string/filenames", 
+    "User": "ibz", 
+    "Votes": "949", 
+    "Answers": "31", 
+    "Views": "655k", 
+    "Url": "http://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash"
+  }, 
+  {
+    "Title": "Is there a way to skip password typing when using https:// on GitHub?", 
+    "Tags": "git/authentication/github", 
+    "User": "Zepplock", 
+    "Votes": "945", 
+    "Answers": "16", 
+    "Views": "400k", 
+    "Url": "http://stackoverflow.com/questions/5343068/is-there-a-way-to-skip-password-typing-when-using-https-on-github"
+  }, 
+  {
+    "Title": "Parse String to Float or Int", 
+    "Tags": "python/string/parsing/floating-point/integer", 
+    "User": "Tristan Havelick", 
+    "Votes": "945", 
+    "Answers": "16", 
+    "Views": "1.6m", 
+    "Url": "http://stackoverflow.com/questions/379906/parse-string-to-float-or-int"
+  }, 
+  {
+    "Title": "When are you supposed to use escape instead of encodeURI / encodeURIComponent?", 
+    "Tags": "javascript/encoding/query-string", 
+    "User": "Adam", 
+    "Votes": "944", 
+    "Answers": "10", 
+    "Views": "307k", 
+    "Url": "http://stackoverflow.com/questions/75980/when-are-you-supposed-to-use-escape-instead-of-encodeuri-encodeuricomponent"
+  }, 
+  {
+    "Title": "Creating a div element in jQuery", 
+    "Tags": "javascript/jquery/html/append/jquery-append", 
+    "User": "Jasmine", 
+    "Votes": "940", 
+    "Answers": "22", 
+    "Views": "1.1m", 
+    "Url": "http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery"
+  }, 
+  {
+    "Title": "Removing multiple files from a Git repo that have already been deleted from disk", 
+    "Tags": "git/git-commit/git-add/git-rm", 
+    "User": "Codebeef", 
+    "Votes": "939", 
+    "Answers": "27", 
+    "Views": "274k", 
+    "Url": "http://stackoverflow.com/questions/492558/removing-multiple-files-from-a-git-repo-that-have-already-been-deleted-from-disk"
+  }, 
+  {
+    "Title": "What is \u201c:-!!\u201d in C code?", 
+    "Tags": "c/linux/macros/linux-kernel", 
+    "User": "chmurli", 
+    "Votes": "939", 
+    "Answers": "5", 
+    "Views": "70k", 
+    "Url": "http://stackoverflow.com/questions/9229601/what-is-in-c-code"
+  }, 
+  {
+    "Title": "Android SDK installation doesn't find JDK", 
+    "Tags": "java/android", 
+    "User": "Simon", 
+    "Votes": "937", 
+    "Answers": "44", 
+    "Views": "358k", 
+    "Url": "http://stackoverflow.com/questions/4382178/android-sdk-installation-doesnt-find-jdk"
+  }, 
+  {
+    "Title": "How to move an element into another element?", 
+    "Tags": "javascript/jquery/html", 
+    "User": "Mark Richman", 
+    "Votes": "937", 
+    "Answers": "11", 
+    "Views": "578k", 
+    "Url": "http://stackoverflow.com/questions/1279957/how-to-move-an-element-into-another-element"
+  }, 
+  {
+    "Title": "How can I merge properties of two JavaScript objects dynamically?", 
+    "Tags": "javascript", 
+    "User": "Anonymous", 
+    "Votes": "934", 
+    "Answers": "47", 
+    "Views": "435k", 
+    "Url": "http://stackoverflow.com/questions/171251/how-can-i-merge-properties-of-two-javascript-objects-dynamically"
+  }, 
+  {
+    "Title": "Proper use of the IDisposable interface", 
+    "Tags": "c#/.net/garbage-collection/idisposable", 
+    "User": "cwick", 
+    "Votes": "933", 
+    "Answers": "16", 
+    "Views": "174k", 
+    "Url": "http://stackoverflow.com/questions/538060/proper-use-of-the-idisposable-interface"
+  }, 
+  {
+    "Title": "Check if a given key already exists in a dictionary", 
+    "Tags": "python/dictionary", 
+    "User": "Mohan Gulati", 
+    "Votes": "931", 
+    "Answers": "12", 
+    "Views": "847k", 
+    "Url": "http://stackoverflow.com/questions/1602934/check-if-a-given-key-already-exists-in-a-dictionary"
+  }, 
+  {
+    "Title": "Difference between static class and singleton pattern?", 
+    "Tags": "design-patterns/static/singleton", 
+    "User": "Jorge C\u00f3rdoba", 
+    "Votes": "926", 
+    "Answers": "29", 
+    "Views": "232k", 
+    "Url": "http://stackoverflow.com/questions/519520/difference-between-static-class-and-singleton-pattern"
+  }, 
+  {
+    "Title": "Stop tracking and ignore changes to a file in Git", 
+    "Tags": "git/gitignore/git-rm", 
+    "User": "Joshua Ball", 
+    "Votes": "924", 
+    "Answers": "8", 
+    "Views": "324k", 
+    "Url": "http://stackoverflow.com/questions/936249/stop-tracking-and-ignore-changes-to-a-file-in-git"
+  }, 
+  {
+    "Title": "How to get current time in Python", 
+    "Tags": "python/datetime/time", 
+    "User": "user46646", 
+    "Votes": "920", 
+    "Answers": "18", 
+    "Views": "853k", 
+    "Url": "http://stackoverflow.com/questions/415511/how-to-get-current-time-in-python"
+  }, 
+  {
+    "Title": "How do I show the changes which have been staged?", 
+    "Tags": "git/diff/dvcs/git-stage", 
+    "User": "Frerich Raabe", 
+    "Votes": "919", 
+    "Answers": "6", 
+    "Views": "278k", 
+    "Url": "http://stackoverflow.com/questions/1587846/how-do-i-show-the-changes-which-have-been-staged"
+  }, 
+  {
+    "Title": "What is the difference between match_parent and fill_parent?", 
+    "Tags": "android/android-layout", 
+    "User": "vnshetty", 
+    "Votes": "918", 
+    "Answers": "8", 
+    "Views": "193k", 
+    "Url": "http://stackoverflow.com/questions/5761960/what-is-the-difference-between-match-parent-and-fill-parent"
+  }, 
+  {
+    "Title": "Image Processing: Algorithm Improvement for 'Coca-Cola Can' Recognition", 
+    "Tags": "c++/algorithm/image-processing/opencv", 
+    "User": "Charles Menguy", 
+    "Votes": "916", 
+    "Answers": "17", 
+    "Views": "77k", 
+    "Url": "http://stackoverflow.com/questions/10168686/image-processing-algorithm-improvement-for-coca-cola-can-recognition"
+  }, 
+  {
+    "Title": "src refspec master does not match any when pushing commits in git", 
+    "Tags": "git/commit", 
+    "User": "sinoohe", 
+    "Votes": "915", 
+    "Answers": "34", 
+    "Views": "448k", 
+    "Url": "http://stackoverflow.com/questions/4181861/src-refspec-master-does-not-match-any-when-pushing-commits-in-git"
+  }, 
+  {
+    "Title": "Insert results of a stored procedure into a temporary table", 
+    "Tags": "sql/sql-server/sql-server-2005/tsql/stored-procedures", 
+    "User": "Ferdeen", 
+    "Votes": "914", 
+    "Answers": "23", 
+    "Views": "1.2m", 
+    "Url": "http://stackoverflow.com/questions/653714/insert-results-of-a-stored-procedure-into-a-temporary-table"
+  }, 
+  {
+    "Title": "$(document).ready equivalent without jQuery", 
+    "Tags": "javascript/jquery", 
+    "User": "FlySwat", 
+    "Votes": "911", 
+    "Answers": "26", 
+    "Views": "463k", 
+    "Url": "http://stackoverflow.com/questions/799981/document-ready-equivalent-without-jquery"
+  }, 
+  {
+    "Title": "How can you speed up Eclipse?", 
+    "Tags": "eclipse/performance", 
+    "User": "Peter Mortensen", 
+    "Votes": "908", 
+    "Answers": "38", 
+    "Views": "402k", 
+    "Url": "http://stackoverflow.com/questions/316265/how-can-you-speed-up-eclipse"
+  }, 
+  {
+    "Title": "How to get current date in JavaScript?", 
+    "Tags": "javascript/date", 
+    "User": "Sunny", 
+    "Votes": "906", 
+    "Answers": "28", 
+    "Views": "980k", 
+    "Url": "http://stackoverflow.com/questions/1531093/how-to-get-current-date-in-javascript"
+  }, 
+  {
+    "Title": "Is Safari on iOS 6 caching $.ajax results?", 
+    "Tags": "javascript/jquery/ajax/caching/mobile-safari", 
+    "User": "user1684978", 
+    "Votes": "906", 
+    "Answers": "24", 
+    "Views": "126k", 
+    "Url": "http://stackoverflow.com/questions/12506897/is-safari-on-ios-6-caching-ajax-results"
+  }, 
+  {
+    "Title": "How do I revert all local changes in Git managed project to previous state?", 
+    "Tags": "git/revert/git-checkout", 
+    "User": "Jacques Ren\u00e9 Mesrine", 
+    "Votes": "903", 
+    "Answers": "8", 
+    "Views": "532k", 
+    "Url": "http://stackoverflow.com/questions/1146973/how-do-i-revert-all-local-changes-in-git-managed-project-to-previous-state"
+  }, 
+  {
+    "Title": "Using Git and Dropbox together effectively?", 
+    "Tags": "git/version-control/cloud/dropbox", 
+    "User": "n1kh1lp", 
+    "Votes": "903", 
+    "Answers": "16", 
+    "Views": "208k", 
+    "Url": "http://stackoverflow.com/questions/1960799/using-git-and-dropbox-together-effectively"
+  }, 
+  {
+    "Title": "What is the difference between Bower and npm?", 
+    "Tags": "javascript/npm/bower", 
+    "User": "Games Brainiac", 
+    "Votes": "902", 
+    "Answers": "8", 
+    "Views": "140k", 
+    "Url": "http://stackoverflow.com/questions/18641899/what-is-the-difference-between-bower-and-npm"
+  }, 
+  {
+    "Title": "Difference between a method and a function", 
+    "Tags": "oop/function/methods/scripting/terminology", 
+    "User": "willc2", 
+    "Votes": "901", 
+    "Answers": "23", 
+    "Views": "334k", 
+    "Url": "http://stackoverflow.com/questions/155609/difference-between-a-method-and-a-function"
+  }, 
+  {
+    "Title": "What is the n+1 selects issue?", 
+    "Tags": "orm/select-n-plus-1", 
+    "User": "Lars A. Brekken", 
+    "Votes": "900", 
+    "Answers": "15", 
+    "Views": "184k", 
+    "Url": "http://stackoverflow.com/questions/97197/what-is-the-n1-selects-issue"
+  }, 
+  {
+    "Title": "What is a typedef enum in Objective-C?", 
+    "Tags": "objective-c/enums/typedef", 
+    "User": "Craig", 
+    "Votes": "899", 
+    "Answers": "13", 
+    "Views": "340k", 
+    "Url": "http://stackoverflow.com/questions/707512/what-is-a-typedef-enum-in-objective-c"
+  }, 
+  {
+    "Title": "How do I debug Node.js applications?", 
+    "Tags": "javascript/node.js/debugging/google-chrome-devtools", 
+    "User": "Fabian Jakobs", 
+    "Votes": "898", 
+    "Answers": "25", 
+    "Views": "296k", 
+    "Url": "http://stackoverflow.com/questions/1911015/how-do-i-debug-node-js-applications"
+  }, 
+  {
+    "Title": "How do I check if a string contains another string in Objective-C?", 
+    "Tags": "ios/objective-c/string/substring", 
+    "User": "Jonathan.", 
+    "Votes": "897", 
+    "Answers": "15", 
+    "Views": "405k", 
+    "Url": "http://stackoverflow.com/questions/2753956/how-do-i-check-if-a-string-contains-another-string-in-objective-c"
+  }, 
+  {
+    "Title": "Print in terminal with colors using Python?", 
+    "Tags": "python/unicode/terminal/ansi-colors", 
+    "User": "aboSamoor", 
+    "Votes": "897", 
+    "Answers": "32", 
+    "Views": "367k", 
+    "Url": "http://stackoverflow.com/questions/287871/print-in-terminal-with-colors-using-python"
+  }, 
+  {
+    "Title": "How do I pass command line arguments to Node.js?", 
+    "Tags": "javascript/node.js/arguments/command-line-arguments", 
+    "User": "milkplus", 
+    "Votes": "895", 
+    "Answers": "14", 
+    "Views": "363k", 
+    "Url": "http://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-node-js"
+  }, 
+  {
+    "Title": "Static class variables in Python", 
+    "Tags": "python/class/methods/static/class-variables", 
+    "User": "Andrew Walker", 
+    "Votes": "894", 
+    "Answers": "13", 
+    "Views": "499k", 
+    "Url": "http://stackoverflow.com/questions/68645/static-class-variables-in-python"
+  }, 
+  {
+    "Title": "How to sort an NSMutableArray with custom objects in it?", 
+    "Tags": "ios/objective-c/sorting/cocoa-touch/nsarray", 
+    "User": "rustyshelf", 
+    "Votes": "893", 
+    "Answers": "20", 
+    "Views": "356k", 
+    "Url": "http://stackoverflow.com/questions/805547/how-to-sort-an-nsmutablearray-with-custom-objects-in-it"
+  }, 
+  {
+    "Title": "How can I rename a database column in a Ruby on Rails migration?", 
+    "Tags": "ruby-on-rails/ruby-on-rails-3/migration", 
+    "User": "user1994764", 
+    "Votes": "893", 
+    "Answers": "19", 
+    "Views": "264k", 
+    "Url": "http://stackoverflow.com/questions/1992019/how-can-i-rename-a-database-column-in-a-ruby-on-rails-migration"
+  }, 
+  {
+    "Title": "How to declare an array", 
+    "Tags": "java/arrays", 
+    "User": "bestattendance", 
+    "Votes": "892", 
+    "Answers": "14", 
+    "Views": "2.0m", 
+    "Url": "http://stackoverflow.com/questions/1200621/how-to-declare-an-array"
+  }, 
+  {
+    "Title": "What is reflection and why is it useful?", 
+    "Tags": "java/reflection/terminology", 
+    "User": "Lehane", 
+    "Votes": "890", 
+    "Answers": "17", 
+    "Views": "428k", 
+    "Url": "http://stackoverflow.com/questions/37628/what-is-reflection-and-why-is-it-useful"
+  }, 
+  {
+    "Title": "\\d is less efficient than [0-9]", 
+    "Tags": "c#/regex/performance", 
+    "User": "weston", 
+    "Votes": "889", 
+    "Answers": "6", 
+    "Views": "56k", 
+    "Url": "http://stackoverflow.com/questions/16621738/d-is-less-efficient-than-0-9"
+  }, 
+  {
+    "Title": "Difference between == and === in JavaScript [duplicate]", 
+    "Tags": "javascript/comparison-operators/equality-operator/identity-operator", 
+    "User": "Shiva", 
+    "Votes": "888", 
+    "Answers": "2", 
+    "Views": "495k", 
+    "Url": "http://stackoverflow.com/questions/523643/difference-between-and-in-javascript"
+  }, 
+  {
+    "Title": "How to fix: Unsupported major.minor version 51.0 error?", 
+    "Tags": "java/jvm/java-7/incompatibility", 
+    "User": "ERJAN", 
+    "Votes": "888", 
+    "Answers": "34", 
+    "Views": "970k", 
+    "Url": "http://stackoverflow.com/questions/10382929/how-to-fix-unsupported-major-minor-version-51-0-error"
+  }, 
+  {
+    "Title": "Open a URL in a new tab (and not a new window) using JavaScript", 
+    "Tags": "javascript", 
+    "User": "Mark F", 
+    "Votes": "884", 
+    "Answers": "25", 
+    "Views": "1.0m", 
+    "Url": "http://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window-using-javascript"
+  }, 
+  {
+    "Title": "403 Forbidden vs 401 Unauthorized HTTP responses", 
+    "Tags": "http-headers/http-status-code-403/http-status-codes/http-status-code-401/http-response-codes", 
+    "User": "VirtuosiMedia", 
+    "Votes": "881", 
+    "Answers": "11", 
+    "Views": "262k", 
+    "Url": "http://stackoverflow.com/questions/3297048/403-forbidden-vs-401-unauthorized-http-responses"
+  }, 
+  {
+    "Title": "Visual Studio - Command to collapse all sections of code?", 
+    "Tags": "visual-studio-2008/visual-studio", 
+    "User": "Mr. Flibble", 
+    "Votes": "880", 
+    "Answers": "12", 
+    "Views": "314k", 
+    "Url": "http://stackoverflow.com/questions/982677/visual-studio-command-to-collapse-all-sections-of-code"
+  }, 
+  {
+    "Title": "Convert JavaScript String to be all lower case?", 
+    "Tags": "javascript/string", 
+    "User": "Derek", 
+    "Votes": "879", 
+    "Answers": "9", 
+    "Views": "293k", 
+    "Url": "http://stackoverflow.com/questions/154862/convert-javascript-string-to-be-all-lower-case"
+  }, 
+  {
+    "Title": "jQuery's jquery-1.10.2.min.map is triggering a 404 (Not Found)", 
+    "Tags": "javascript/jquery/google-chrome-devtools", 
+    "User": "Paul Irish", 
+    "Votes": "878", 
+    "Answers": "11", 
+    "Views": "359k", 
+    "Url": "http://stackoverflow.com/questions/18365315/jquerys-jquery-1-10-2-min-map-is-triggering-a-404-not-found"
+  }, 
+  {
+    "Title": "Serializing to JSON in jQuery", 
+    "Tags": "javascript/jquery/ajax/json/serialization", 
+    "User": "Herb Caudill", 
+    "Votes": "876", 
+    "Answers": "11", 
+    "Views": "660k", 
+    "Url": "http://stackoverflow.com/questions/191881/serializing-to-json-in-jquery"
+  }, 
+  {
+    "Title": "Using Auto Layout in UITableView for dynamic cell layouts & variable row heights", 
+    "Tags": "ios/uitableview/autolayout/nslayoutconstraint/nsautolayout", 
+    "User": "smileyborg", 
+    "Votes": "875", 
+    "Answers": "15", 
+    "Views": "268k", 
+    "Url": "http://stackoverflow.com/questions/18746929/using-auto-layout-in-uitableview-for-dynamic-cell-layouts-variable-row-heights"
+  }, 
+  {
+    "Title": "How to fully delete a git repository created with init?", 
+    "Tags": "git", 
+    "User": "Peiniau", 
+    "Votes": "875", 
+    "Answers": "10", 
+    "Views": "485k", 
+    "Url": "http://stackoverflow.com/questions/1213430/how-to-fully-delete-a-git-repository-created-with-init"
+  }, 
+  {
+    "Title": "What is Inversion of Control?", 
+    "Tags": "inversion-of-control/design-patterns", 
+    "User": "Wolfbyte", 
+    "Votes": "873", 
+    "Answers": "25", 
+    "Views": "211k", 
+    "Url": "http://stackoverflow.com/questions/3058/what-is-inversion-of-control"
+  }, 
+  {
+    "Title": "How do I split a string on a delimiter in Bash?", 
+    "Tags": "bash/shell/scripting", 
+    "User": "stefanB", 
+    "Votes": "873", 
+    "Answers": "28", 
+    "Views": "882k", 
+    "Url": "http://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimiter-in-bash"
+  }, 
+  {
+    "Title": "Make div 100% height of browser window", 
+    "Tags": "html/css/height", 
+    "User": "mike", 
+    "Votes": "872", 
+    "Answers": "19", 
+    "Views": "773k", 
+    "Url": "http://stackoverflow.com/questions/1575141/make-div-100-height-of-browser-window"
+  }, 
+  {
+    "Title": "Default behavior of \u201cgit push\u201d without a branch specified", 
+    "Tags": "git/branch/git-branch/git-push", 
+    "User": "PlagueHammer", 
+    "Votes": "872", 
+    "Answers": "12", 
+    "Views": "465k", 
+    "Url": "http://stackoverflow.com/questions/948354/default-behavior-of-git-push-without-a-branch-specified"
+  }, 
+  {
+    "Title": "Why should I use a pointer rather than the object itself?", 
+    "Tags": "c++/pointers/c++11", 
+    "User": "gEdringer", 
+    "Votes": "870", 
+    "Answers": "17", 
+    "Views": "150k", 
+    "Url": "http://stackoverflow.com/questions/22146094/why-should-i-use-a-pointer-rather-than-the-object-itself"
+  }, 
+  {
+    "Title": "String contains in Bash", 
+    "Tags": "bash/string", 
+    "User": "davidsheldon", 
+    "Votes": "869", 
+    "Answers": "17", 
+    "Views": "728k", 
+    "Url": "http://stackoverflow.com/questions/229551/string-contains-in-bash"
+  }, 
+  {
+    "Title": "'Must Override a Superclass Method' Errors after importing a project into Eclipse", 
+    "Tags": "java/android/eclipse/override/superclass", 
+    "User": "Tim H", 
+    "Votes": "869", 
+    "Answers": "11", 
+    "Views": "191k", 
+    "Url": "http://stackoverflow.com/questions/1678122/must-override-a-superclass-method-errors-after-importing-a-project-into-eclips"
+  }, 
+  {
+    "Title": "Round to at most 2 decimal places in JavaScript", 
+    "Tags": "javascript/decimal/rounding/decimal-point", 
+    "User": "stinkycheeseman", 
+    "Votes": "868", 
+    "Answers": "31", 
+    "Views": "701k", 
+    "Url": "http://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-in-javascript"
+  }, 
+  {
+    "Title": "Node.js/Windows error: ENOENT, stat 'C:\\Users\\RT\\AppData\\Roaming\\npm'", 
+    "Tags": "windows/node.js/install", 
+    "User": "tryasko", 
+    "Votes": "867", 
+    "Answers": "6", 
+    "Views": "215k", 
+    "Url": "http://stackoverflow.com/questions/25093276/node-js-windows-error-enoent-stat-c-users-rt-appdata-roaming-npm"
+  }, 
+  {
+    "Title": "How to do case insensitive search in Vim", 
+    "Tags": "search/vim/case-insensitive", 
+    "User": "Haiyuan Zhang", 
+    "Votes": "866", 
+    "Answers": "7", 
+    "Views": "192k", 
+    "Url": "http://stackoverflow.com/questions/2287440/how-to-do-case-insensitive-search-in-vim"
+  }, 
+  {
+    "Title": "How to rotate the Android emulator display? [duplicate]", 
+    "Tags": "android/android-emulator/emulator", 
+    "User": "mahdi ", 
+    "Votes": "866", 
+    "Answers": "24", 
+    "Views": "232k", 
+    "Url": "http://stackoverflow.com/questions/4535298/how-to-rotate-the-android-emulator-display"
+  }, 
+  {
+    "Title": "How to get the size of a list", 
+    "Tags": "python/list", 
+    "User": "y2k", 
+    "Votes": "865", 
+    "Answers": "6", 
+    "Views": "1.1m", 
+    "Url": "http://stackoverflow.com/questions/1712227/how-to-get-the-size-of-a-list"
+  }, 
+  {
+    "Title": "How to generate a random alpha-numeric string?", 
+    "Tags": "java/string/random/alphanumeric", 
+    "User": "Todd", 
+    "Votes": "864", 
+    "Answers": "36", 
+    "Views": "718k", 
+    "Url": "http://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string"
+  }, 
+  {
+    "Title": "Shortcuts in Objective-C to concatenate NSStrings", 
+    "Tags": "objective-c/nsstring/string-concatenation", 
+    "User": "typeoneerror", 
+    "Votes": "863", 
+    "Answers": "28", 
+    "Views": "627k", 
+    "Url": "http://stackoverflow.com/questions/510269/shortcuts-in-objective-c-to-concatenate-nsstrings"
+  }, 
+  {
+    "Title": "How do you give a C# Auto-Property a default value?", 
+    "Tags": "c#/automatic-properties", 
+    "User": "bentford", 
+    "Votes": "863", 
+    "Answers": "17", 
+    "Views": "352k", 
+    "Url": "http://stackoverflow.com/questions/40730/how-do-you-give-a-c-sharp-auto-property-a-default-value"
+  }, 
+  {
+    "Title": "What is the maximum value for a int32?", 
+    "Tags": "integer", 
+    "User": "Flinkman", 
+    "Votes": "862", 
+    "Answers": "34", 
+    "Views": "883k", 
+    "Url": "http://stackoverflow.com/questions/94591/what-is-the-maximum-value-for-a-int32"
+  }, 
+  {
+    "Title": "Sort a Map<Key, Value> by values (Java)", 
+    "Tags": "java/sorting/dictionary/collections", 
+    "User": "Abe", 
+    "Votes": "861", 
+    "Answers": "41", 
+    "Views": "815k", 
+    "Url": "http://stackoverflow.com/questions/109383/sort-a-mapkey-value-by-values-java"
+  }, 
+  {
+    "Title": "How can I remove (chomp) a newline in Python?", 
+    "Tags": "python/newline", 
+    "User": "Anonymous", 
+    "Votes": "860", 
+    "Answers": "20", 
+    "Views": "708k", 
+    "Url": "http://stackoverflow.com/questions/275018/how-can-i-remove-chomp-a-newline-in-python"
+  }, 
+  {
+    "Title": "Convert HTML + CSS to PDF with PHP?", 
+    "Tags": "php/html/css/pdf", 
+    "User": "cletus", 
+    "Votes": "860", 
+    "Answers": "34", 
+    "Views": "461k", 
+    "Url": "http://stackoverflow.com/questions/391005/convert-html-css-to-pdf-with-php"
+  }, 
+  {
+    "Title": "What is Context in Android?", 
+    "Tags": "android/android-context", 
+    "User": "Brigadier", 
+    "Votes": "859", 
+    "Answers": "21", 
+    "Views": "308k", 
+    "Url": "http://stackoverflow.com/questions/3572463/what-is-context-in-android"
+  }, 
+  {
+    "Title": "How can I permanently have line numbers in IntelliJ?", 
+    "Tags": "java/intellij-idea/android-studio", 
+    "User": "Anonymous", 
+    "Votes": "855", 
+    "Answers": "17", 
+    "Views": "216k", 
+    "Url": "http://stackoverflow.com/questions/13751/how-can-i-permanently-have-line-numbers-in-intellij"
+  }, 
+  {
+    "Title": "Sort array of objects by string property value in JavaScript", 
+    "Tags": "javascript/arrays/sorting/properties", 
+    "User": "Tyrone Slothrop", 
+    "Votes": "854", 
+    "Answers": "21", 
+    "Views": "354k", 
+    "Url": "http://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript"
+  }, 
+  {
+    "Title": "What do two question marks together mean in C#?", 
+    "Tags": "c#/null-coalescing-operator", 
+    "User": "Edward Tanguay", 
+    "Votes": "853", 
+    "Answers": "14", 
+    "Views": "169k", 
+    "Url": "http://stackoverflow.com/questions/446835/what-do-two-question-marks-together-mean-in-c"
+  }, 
+  {
+    "Title": "Squash my last X commits together using Git", 
+    "Tags": "git", 
+    "User": "markdorison", 
+    "Votes": "852", 
+    "Answers": "13", 
+    "Views": "260k", 
+    "Url": "http://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git"
+  }, 
+  {
+    "Title": "Why is Dictionary preferred over hashtable?", 
+    "Tags": "c#/.net/vb.net/data-structures", 
+    "User": "Nakul Chaudhary", 
+    "Votes": "851", 
+    "Answers": "17", 
+    "Views": "338k", 
+    "Url": "http://stackoverflow.com/questions/301371/why-is-dictionary-preferred-over-hashtable"
+  }, 
+  {
+    "Title": "How can I remove a commit on GitHub?", 
+    "Tags": "git/github", 
+    "User": "hectorsq", 
+    "Votes": "850", 
+    "Answers": "11", 
+    "Views": "332k", 
+    "Url": "http://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github"
+  }, 
+  {
+    "Title": "How to list the file names only that changed between two commits?", 
+    "Tags": "git/git-diff", 
+    "User": "Shawn", 
+    "Votes": "850", 
+    "Answers": "9", 
+    "Views": "273k", 
+    "Url": "http://stackoverflow.com/questions/1552340/how-to-list-the-file-names-only-that-changed-between-two-commits"
+  }, 
+  {
+    "Title": "What is the best way to detect a mobile device in jQuery?", 
+    "Tags": "javascript/mobile/browser-detection", 
+    "User": "superUntitled", 
+    "Votes": "849", 
+    "Answers": "41", 
+    "Views": "761k", 
+    "Url": "http://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery"
+  }, 
+  {
+    "Title": "jQuery document.createElement equivalent?", 
+    "Tags": "javascript/jquery/html/dom/dhtml", 
+    "User": "Rob Stevenson-Leggett", 
+    "Votes": "849", 
+    "Answers": "13", 
+    "Views": "628k", 
+    "Url": "http://stackoverflow.com/questions/268490/jquery-document-createelement-equivalent"
+  }, 
+  {
+    "Title": "Static methods in Python?", 
+    "Tags": "python/static-methods", 
+    "User": "Joan Venge", 
+    "Votes": "848", 
+    "Answers": "7", 
+    "Views": "387k", 
+    "Url": "http://stackoverflow.com/questions/735975/static-methods-in-python"
+  }, 
+  {
+    "Title": "Activity restart on rotation Android", 
+    "Tags": "android/rotation/android-activity", 
+    "User": "Isaac Waller", 
+    "Votes": "845", 
+    "Answers": "24", 
+    "Views": "288k", 
+    "Url": "http://stackoverflow.com/questions/456211/activity-restart-on-rotation-android"
+  }, 
+  {
+    "Title": "How do you use bcrypt for hashing passwords in PHP?", 
+    "Tags": "php/passwords/cryptography/password-protection/bcrypt", 
+    "User": "Vilx-", 
+    "Votes": "845", 
+    "Answers": "9", 
+    "Views": "230k", 
+    "Url": "http://stackoverflow.com/questions/4795385/how-do-you-use-bcrypt-for-hashing-passwords-in-php"
+  }, 
+  {
+    "Title": "What is the best way to add options to a select from an array with jQuery?", 
+    "Tags": "javascript/jquery/arrays/html-select", 
+    "User": "Darryl Hein", 
+    "Votes": "844", 
+    "Answers": "26", 
+    "Views": "523k", 
+    "Url": "http://stackoverflow.com/questions/170986/what-is-the-best-way-to-add-options-to-a-select-from-an-array-with-jquery"
+  }, 
+  {
+    "Title": "What is the best algorithm for an overridden System.Object.GetHashCode?", 
+    "Tags": ".net/hashcode/gethashcode", 
+    "User": "bitbonk", 
+    "Votes": "844", 
+    "Answers": "14", 
+    "Views": "89k", 
+    "Url": "http://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode"
+  }, 
+  {
+    "Title": "Static readonly vs const", 
+    "Tags": "c#/constants", 
+    "User": "Svish", 
+    "Votes": "844", 
+    "Answers": "15", 
+    "Views": "200k", 
+    "Url": "http://stackoverflow.com/questions/755685/static-readonly-vs-const"
+  }, 
+  {
+    "Title": "How does git handle symbolic links?", 
+    "Tags": "git/version-control/symlink", 
+    "User": "Alex", 
+    "Votes": "844", 
+    "Answers": "4", 
+    "Views": "157k", 
+    "Url": "http://stackoverflow.com/questions/954560/how-does-git-handle-symbolic-links"
+  }, 
+  {
+    "Title": "How to fix \u201cHeaders already sent\u201d error in PHP", 
+    "Tags": "php/header", 
+    "User": "Moses89", 
+    "Votes": "843", 
+    "Answers": "11", 
+    "Views": "519k", 
+    "Url": "http://stackoverflow.com/questions/8028957/how-to-fix-headers-already-sent-error-in-php"
+  }, 
+  {
+    "Title": "How can I make the cursor a hand when a user hovers over a list item?", 
+    "Tags": "css", 
+    "User": "user246114", 
+    "Votes": "843", 
+    "Answers": "14", 
+    "Views": "836k", 
+    "Url": "http://stackoverflow.com/questions/3087975/how-can-i-make-the-cursor-a-hand-when-a-user-hovers-over-a-list-item"
+  }, 
+  {
+    "Title": "How to exit from PostgreSQL command line utility: psql", 
+    "Tags": "postgresql/postgresql-9.1/psql", 
+    "User": "App Work", 
+    "Votes": "843", 
+    "Answers": "6", 
+    "Views": "237k", 
+    "Url": "http://stackoverflow.com/questions/9463318/how-to-exit-from-postgresql-command-line-utility-psql"
+  }, 
+  {
+    "Title": "Differences between lodash and underscore", 
+    "Tags": "underscore.js/javascript/lodash", 
+    "User": "Brian M. Hunt", 
+    "Votes": "843", 
+    "Answers": "10", 
+    "Views": "148k", 
+    "Url": "http://stackoverflow.com/questions/13789618/differences-between-lodash-and-underscore"
+  }, 
+  {
+    "Title": "JavaScript post request like a form submit", 
+    "Tags": "javascript/http/post/submit/html-form", 
+    "User": "Joseph Holsten", 
+    "Votes": "842", 
+    "Answers": "22", 
+    "Views": "747k", 
+    "Url": "http://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit"
+  }, 
+  {
+    "Title": "Fling gesture detection on grid layout", 
+    "Tags": "android/listener/gesture-recognition", 
+    "User": "gav", 
+    "Votes": "841", 
+    "Answers": "17", 
+    "Views": "359k", 
+    "Url": "http://stackoverflow.com/questions/937313/fling-gesture-detection-on-grid-layout"
+  }, 
+  {
+    "Title": "How do I force a favicon refresh", 
+    "Tags": "favicon", 
+    "User": "Simon", 
+    "Votes": "840", 
+    "Answers": "24", 
+    "Views": "339k", 
+    "Url": "http://stackoverflow.com/questions/2208933/how-do-i-force-a-favicon-refresh"
+  }, 
+  {
+    "Title": "Constants in Objective-C", 
+    "Tags": "objective-c/cocoa/constants", 
+    "User": "Allyn", 
+    "Votes": "840", 
+    "Answers": "13", 
+    "Views": "335k", 
+    "Url": "http://stackoverflow.com/questions/538996/constants-in-objective-c"
+  }, 
+  {
+    "Title": "When to use struct?", 
+    "Tags": "c#/struct", 
+    "User": "Alex Baranosky", 
+    "Votes": "839", 
+    "Answers": "24", 
+    "Views": "138k", 
+    "Url": "http://stackoverflow.com/questions/521298/when-to-use-struct"
+  }, 
+  {
+    "Title": "Best way to use Google's hosted jQuery, but fall back to my hosted library on Google fail", 
+    "Tags": "jquery/cdn/google-ajax-libraries", 
+    "User": "Nosredna", 
+    "Votes": "838", 
+    "Answers": "21", 
+    "Views": "115k", 
+    "Url": "http://stackoverflow.com/questions/1014203/best-way-to-use-googles-hosted-jquery-but-fall-back-to-my-hosted-library-on-go"
+  }, 
+  {
+    "Title": "Check if a program exists from a Bash script", 
+    "Tags": "bash/shell", 
+    "User": "gregh", 
+    "Votes": "837", 
+    "Answers": "26", 
+    "Views": "235k", 
+    "Url": "http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script"
+  }, 
+  {
+    "Title": "What's the simplest way to print a Java array?", 
+    "Tags": "java/arrays/printing", 
+    "User": "Alex Spurling", 
+    "Votes": "837", 
+    "Answers": "18", 
+    "Views": "932k", 
+    "Url": "http://stackoverflow.com/questions/409784/whats-the-simplest-way-to-print-a-java-array"
+  }, 
+  {
+    "Title": "Disabling Chrome cache for website development", 
+    "Tags": "google-chrome/caching/browser/google-chrome-devtools/browser-cache", 
+    "User": "joel234", 
+    "Votes": "837", 
+    "Answers": "18", 
+    "Views": "322k", 
+    "Url": "http://stackoverflow.com/questions/5690269/disabling-chrome-cache-for-website-development"
+  }, 
+  {
+    "Title": "How do I reformat HTML code using Sublime Text 2?", 
+    "Tags": "html/sublimetext2/sublimetext/indentation/reformat", 
+    "User": "Ravi Ram", 
+    "Votes": "836", 
+    "Answers": "16", 
+    "Views": "538k", 
+    "Url": "http://stackoverflow.com/questions/8839753/how-do-i-reformat-html-code-using-sublime-text-2"
+  }, 
+  {
+    "Title": "Concatenate many rows into a single text string?", 
+    "Tags": "sql/string-concatenation/group-concat", 
+    "User": "JohnnyM", 
+    "Votes": "836", 
+    "Answers": "31", 
+    "Views": "983k", 
+    "Url": "http://stackoverflow.com/questions/194852/concatenate-many-rows-into-a-single-text-string"
+  }, 
+  {
+    "Title": "What do 'real', 'user' and 'sys' mean in the output of time(1)?", 
+    "Tags": "unix/time/benchmarking", 
+    "User": "Anonymous", 
+    "Votes": "832", 
+    "Answers": "4", 
+    "Views": "203k", 
+    "Url": "http://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1"
+  }, 
+  {
+    "Title": "jQuery get specific option tag text", 
+    "Tags": "javascript/jquery/drop-down-menu/jquery-selectors", 
+    "User": "Paolo Bergantino", 
+    "Votes": "831", 
+    "Answers": "18", 
+    "Views": "787k", 
+    "Url": "http://stackoverflow.com/questions/196684/jquery-get-specific-option-tag-text"
+  }, 
+  {
+    "Title": "endsWith in JavaScript", 
+    "Tags": "javascript/string/ends-with", 
+    "User": "Bobby Kumar", 
+    "Votes": "830", 
+    "Answers": "29", 
+    "Views": "345k", 
+    "Url": "http://stackoverflow.com/questions/280634/endswith-in-javascript"
+  }, 
+  {
+    "Title": "Is there a way to substring a string in Python?", 
+    "Tags": "python/string", 
+    "User": "Joan Venge", 
+    "Votes": "829", 
+    "Answers": "11", 
+    "Views": "946k", 
+    "Url": "http://stackoverflow.com/questions/663171/is-there-a-way-to-substring-a-string-in-python"
+  }, 
+  {
+    "Title": "Undo working copy modifications of one file in Git?", 
+    "Tags": "git/version-control/dvcs/undo", 
+    "User": "hasen", 
+    "Votes": "827", 
+    "Answers": "8", 
+    "Views": "304k", 
+    "Url": "http://stackoverflow.com/questions/692246/undo-working-copy-modifications-of-one-file-in-git"
+  }, 
+  {
+    "Title": "How do you check if a variable is an array in JavaScript? [duplicate]", 
+    "Tags": "javascript/arrays/variables", 
+    "User": "Andy McCluggage", 
+    "Votes": "825", 
+    "Answers": "24", 
+    "Views": "409k", 
+    "Url": "http://stackoverflow.com/questions/767486/how-do-you-check-if-a-variable-is-an-array-in-javascript"
+  }, 
+  {
+    "Title": "startsWith() and endsWith() functions in PHP", 
+    "Tags": "php/regex/string", 
+    "User": "Click Upvote", 
+    "Votes": "823", 
+    "Answers": "26", 
+    "Views": "504k", 
+    "Url": "http://stackoverflow.com/questions/834303/startswith-and-endswith-functions-in-php"
   }
 ]

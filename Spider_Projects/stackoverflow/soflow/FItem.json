@@ -1,5 +1,14 @@
 [
   {
+    "Title": "Why is processing a sorted array faster than an unsorted array?", 
+    "Tags": "java/c++/performance/optimization/branch-prediction", 
+    "User": "GManNickG", 
+    "Votes": "14186", 
+    "Answers": "13", 
+    "Views": "773k", 
+    "Url": "http://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-an-unsorted-array"
+  }, 
+  {
     "Title": "How do JavaScript closures work?", 
     "Tags": "javascript/closures", 
     "User": "Zaheer Ahmed", 
@@ -7,6 +16,33 @@
     "Answers": "81", 
     "Views": "765k", 
     "Url": "http://stackoverflow.com/questions/111102/how-do-javascript-closures-work"
+  }, 
+  {
+    "Title": "How can I make a page redirect using jQuery?", 
+    "Tags": "javascript/jquery/redirect", 
+    "User": "venkatachalam", 
+    "Votes": "4925", 
+    "Answers": "54", 
+    "Views": "2.8m", 
+    "Url": "http://stackoverflow.com/questions/503093/how-can-i-make-a-page-redirect-using-jquery"
+  }, 
+  {
+    "Title": "What and where are the stack and heap?", 
+    "Tags": "memory-management/language-agnostic/stack/heap", 
+    "User": "mattshane", 
+    "Votes": "4826", 
+    "Answers": "20", 
+    "Views": "783k", 
+    "Url": "http://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap"
+  }, 
+  {
+    "Title": "What does the yield keyword do in Python?", 
+    "Tags": "python/iterator/generator/yield/coroutine", 
+    "User": "Alex. S.", 
+    "Votes": "4698", 
+    "Answers": "28", 
+    "Views": "936k", 
+    "Url": "http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python"
   }, 
   {
     "Title": "The Definitive C++ Book Guide and List", 
@@ -27,6 +63,15 @@
     "Url": "http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname"
   }, 
   {
+    "Title": "The definitive guide to form-based website authentication", 
+    "Tags": "security/http/authentication/language-agnostic/article", 
+    "User": "Michiel de Mare", 
+    "Votes": "3781", 
+    "Answers": "14", 
+    "Views": "395k", 
+    "Url": "http://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication"
+  }, 
+  {
     "Title": "Does it matter which equals operator (== vs ===) I use in JavaScript comparisons?", 
     "Tags": "javascript/operators/equality/equality-operator/identity-operator", 
     "User": "bcasp", 
@@ -34,6 +79,24 @@
     "Answers": "36", 
     "Views": "797k", 
     "Url": "http://stackoverflow.com/questions/359494/does-it-matter-which-equals-operator-vs-i-use-in-javascript-comparisons"
+  }, 
+  {
+    "Title": "Difference between px, dp, dip and sp on Android?", 
+    "Tags": "android/android-layout/user-interface/units-of-measurement", 
+    "User": "capecrawler", 
+    "Votes": "3350", 
+    "Answers": "24", 
+    "Views": "713k", 
+    "Url": "http://stackoverflow.com/questions/2025282/difference-between-px-dp-dip-and-sp-on-android"
+  }, 
+  {
+    "Title": "Plain English explanation of Big O", 
+    "Tags": "algorithm/complexity-theory/computer-science/big-o/time-complexity", 
+    "User": "Arec Barrwin", 
+    "Votes": "3338", 
+    "Answers": "28", 
+    "Views": "421k", 
+    "Url": "http://stackoverflow.com/questions/487258/plain-english-explanation-of-big-o"
   }, 
   {
     "Title": "Is Java \u201cpass-by-reference\u201d or \u201cpass-by-value\u201d?", 
@@ -45,6 +108,15 @@
     "Url": "http://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value"
   }, 
   {
+    "Title": "What is the maximum length of a URL in different browsers?", 
+    "Tags": "http/url/browser/max/content-length", 
+    "User": "Sander Versluys", 
+    "Votes": "2791", 
+    "Answers": "14", 
+    "Views": "608k", 
+    "Url": "http://stackoverflow.com/questions/417142/what-is-the-maximum-length-of-a-url-in-different-browsers"
+  }, 
+  {
     "Title": "How can I prevent SQL-injection in PHP?", 
     "Tags": "php/mysql/sql/security/sql-injection", 
     "User": "Andrew G. Johnson", 
@@ -52,6 +124,15 @@
     "Answers": "28", 
     "Views": "877k", 
     "Url": "http://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php"
+  }, 
+  {
+    "Title": "What is the most efficient way to clone an object?", 
+    "Tags": "javascript/object/clone", 
+    "User": "jschrab", 
+    "Votes": "2740", 
+    "Answers": "39", 
+    "Views": "928k", 
+    "Url": "http://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-clone-an-object"
   }, 
   {
     "Title": "How can I get query string values in JavaScript?", 
@@ -63,6 +144,15 @@
     "Url": "http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript"
   }, 
   {
+    "Title": "Include a JavaScript file in another JavaScript file?", 
+    "Tags": "javascript/file/import/include", 
+    "User": "Alec Smart", 
+    "Votes": "2582", 
+    "Answers": "38", 
+    "Views": "1.4m", 
+    "Url": "http://stackoverflow.com/questions/950087/include-a-javascript-file-in-another-javascript-file"
+  }, 
+  {
     "Title": "Reference - What does this symbol mean in PHP?", 
     "Tags": "php/operators/symbols", 
     "User": "Gordon", 
@@ -70,6 +160,15 @@
     "Answers": "11", 
     "Views": "332k", 
     "Url": "http://stackoverflow.com/questions/3737139/reference-what-does-this-symbol-mean-in-php"
+  }, 
+  {
+    "Title": "Horizontally center a div in a div", 
+    "Tags": "html/css/alignment", 
+    "User": "captainsac", 
+    "Votes": "2264", 
+    "Answers": "46", 
+    "Views": "2.1m", 
+    "Url": "http://stackoverflow.com/questions/114543/horizontally-center-a-div-in-a-div"
   }, 
   {
     "Title": "Using a regular expression to validate an email address", 
@@ -81,6 +180,24 @@
     "Url": "http://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address"
   }, 
   {
+    "Title": "Regular expression to match line that doesn't contain a word?", 
+    "Tags": "regex/regex-negation", 
+    "User": "knaser", 
+    "Votes": "2180", 
+    "Answers": "18", 
+    "Views": "1.6m", 
+    "Url": "http://stackoverflow.com/questions/406230/regular-expression-to-match-line-that-doesnt-contain-a-word"
+  }, 
+  {
+    "Title": "Calling an external command in Python", 
+    "Tags": "python/shell/command/subprocess/external", 
+    "User": "freshWoWer", 
+    "Votes": "1975", 
+    "Answers": "36", 
+    "Views": "1.4m", 
+    "Url": "http://stackoverflow.com/questions/89228/calling-an-external-command-in-python"
+  }, 
+  {
     "Title": "How do I return the response from an asynchronous call?", 
     "Tags": "javascript/jquery/ajax/asynchronous", 
     "User": "Felix Kling", 
@@ -88,6 +205,15 @@
     "Answers": "11", 
     "Views": "509k", 
     "Url": "http://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call"
+  }, 
+  {
+    "Title": "event.preventDefault() vs. return false", 
+    "Tags": "javascript/jquery/javascript-events/event-handling/event-propagation", 
+    "User": "RaYell", 
+    "Votes": "1898", 
+    "Answers": "9", 
+    "Views": "527k", 
+    "Url": "http://stackoverflow.com/questions/1357118/event-preventdefault-vs-return-false"
   }, 
   {
     "Title": "How can I upload files asynchronously?", 
@@ -99,6 +225,33 @@
     "Url": "http://stackoverflow.com/questions/166221/how-can-i-upload-files-asynchronously"
   }, 
   {
+    "Title": "Generating random integers in a specific range", 
+    "Tags": "java/random/integer/range", 
+    "User": "user42155", 
+    "Votes": "1762", 
+    "Answers": "40", 
+    "Views": "2.1m", 
+    "Url": "http://stackoverflow.com/questions/363681/generating-random-integers-in-a-specific-range"
+  }, 
+  {
+    "Title": "Validate email address in JavaScript?", 
+    "Tags": "javascript/regex/validation/email/email-validation", 
+    "User": "Anonymous", 
+    "Votes": "1746", 
+    "Answers": "48", 
+    "Views": "1.1m", 
+    "Url": "http://stackoverflow.com/questions/46155/validate-email-address-in-javascript"
+  }, 
+  {
+    "Title": "What does `if __name__ == \u201c__main__\u201d:` do?", 
+    "Tags": "python/module/namespaces/main/idioms", 
+    "User": "Devoted", 
+    "Votes": "1726", 
+    "Answers": "11", 
+    "Views": "696k", 
+    "Url": "http://stackoverflow.com/questions/419163/what-does-if-name-main-do"
+  }, 
+  {
     "Title": "Split a string in C++?", 
     "Tags": "c++/split/c++-faq/stdstring", 
     "User": "Ashwin Nanjappa", 
@@ -106,6 +259,42 @@
     "Answers": "64", 
     "Views": "1.3m", 
     "Url": "http://stackoverflow.com/questions/236129/split-a-string-in-c"
+  }, 
+  {
+    "Title": "How do I copy to the clipboard in JavaScript?", 
+    "Tags": "javascript/clipboard/copy-paste", 
+    "User": "Santiago Corredoira", 
+    "Votes": "1591", 
+    "Answers": "32", 
+    "Views": "897k", 
+    "Url": "http://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript"
+  }, 
+  {
+    "Title": "Replacing all occurrences of a string in JavaScript", 
+    "Tags": "javascript", 
+    "User": "Click Upvote", 
+    "Votes": "1573", 
+    "Answers": "29", 
+    "Views": "1.1m", 
+    "Url": "http://stackoverflow.com/questions/1144783/replacing-all-occurrences-of-a-string-in-javascript"
+  }, 
+  {
+    "Title": "What are the differences between a pointer variable and a reference variable in C++?", 
+    "Tags": "c++/pointers/reference/c++-faq", 
+    "User": "prakash", 
+    "Votes": "1528", 
+    "Answers": "26", 
+    "Views": "486k", 
+    "Url": "http://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in"
+  }, 
+  {
+    "Title": "Saving Activity state on Android", 
+    "Tags": "android/android-activity/application-state", 
+    "User": "Bernard", 
+    "Votes": "1487", 
+    "Answers": "19", 
+    "Views": "468k", 
+    "Url": "http://stackoverflow.com/questions/151777/saving-activity-state-on-android"
   }, 
   {
     "Title": "Is there a CSS parent selector?", 
@@ -117,6 +306,15 @@
     "Url": "http://stackoverflow.com/questions/1014861/is-there-a-css-parent-selector"
   }, 
   {
+    "Title": "Daylight saving time and time zone best practices", 
+    "Tags": "datetime/timezone/dst/datetimeoffset", 
+    "User": "Oded", 
+    "Votes": "1439", 
+    "Answers": "28", 
+    "Views": "221k", 
+    "Url": "http://stackoverflow.com/questions/2532729/daylight-saving-time-and-time-zone-best-practices"
+  }, 
+  {
     "Title": ".prop() vs .attr()", 
     "Tags": "javascript/jquery/dom/attr/prop", 
     "User": "Neal", 
@@ -126,6 +324,15 @@
     "Url": "http://stackoverflow.com/questions/5874652/prop-vs-attr"
   }, 
   {
+    "Title": "Difference among 'public', 'default', 'protected', and 'private'", 
+    "Tags": "java/private/public/protected/access-modifiers", 
+    "User": "intrepion", 
+    "Votes": "1402", 
+    "Answers": "20", 
+    "Views": "826k", 
+    "Url": "http://stackoverflow.com/questions/215497/difference-among-public-default-protected-and-private"
+  }, 
+  {
     "Title": "How do you parse and process HTML/XML in PHP?", 
     "Tags": "php/parsing/xml-parsing/html-parsing", 
     "User": "RobertPitt", 
@@ -133,6 +340,15 @@
     "Answers": "35", 
     "Views": "259k", 
     "Url": "http://stackoverflow.com/questions/3577641/how-do-you-parse-and-process-html-xml-in-php"
+  }, 
+  {
+    "Title": "How does JavaScript .prototype work?", 
+    "Tags": "javascript/dynamic-languages/prototype-oriented", 
+    "User": "John Leidegren", 
+    "Votes": "1370", 
+    "Answers": "16", 
+    "Views": "398k", 
+    "Url": "http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work"
   }, 
   {
     "Title": "RegEx match open tags except XHTML self-contained tags", 
@@ -162,6 +378,15 @@
     "Url": "http://stackoverflow.com/questions/1132941/least-astonishment-in-python-the-mutable-default-argument"
   }, 
   {
+    "Title": "What is JSONP all about?", 
+    "Tags": "javascript/json/jsonp", 
+    "User": "Cheeso", 
+    "Votes": "1307", 
+    "Answers": "7", 
+    "Views": "261k", 
+    "Url": "http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about"
+  }, 
+  {
     "Title": "How to make a great R reproducible example?", 
     "Tags": "r/r-faq", 
     "User": "gung", 
@@ -189,6 +414,15 @@
     "Url": "http://stackoverflow.com/questions/2793150/using-java-net-urlconnection-to-fire-and-handle-http-requests"
   }, 
   {
+    "Title": "How do I pass a variable by reference?", 
+    "Tags": "python/reference/pass-by-reference/argument-passing", 
+    "User": "David Sykes", 
+    "Votes": "1266", 
+    "Answers": "17", 
+    "Views": "502k", 
+    "Url": "http://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference"
+  }, 
+  {
     "Title": "Lazy load of images in ListView", 
     "Tags": "android/image/url/android-listview/universal-image-loader", 
     "User": "lostInTransit", 
@@ -205,6 +439,15 @@
     "Answers": "8", 
     "Views": "131k", 
     "Url": "http://stackoverflow.com/questions/4172722/what-is-the-rule-of-three"
+  }, 
+  {
+    "Title": "Most elegant way to clone a JavaScript object", 
+    "Tags": "javascript/object/clone", 
+    "User": "mindeavor", 
+    "Votes": "1246", 
+    "Answers": "39", 
+    "Views": "655k", 
+    "Url": "http://stackoverflow.com/questions/728360/most-elegant-way-to-clone-a-javascript-object"
   }, 
   {
     "Title": "Do I cast the result of malloc?", 
@@ -234,6 +477,15 @@
     "Url": "http://stackoverflow.com/questions/6343166/how-to-fix-android-os-networkonmainthreadexception"
   }, 
   {
+    "Title": "What is so bad about singletons? [closed]", 
+    "Tags": "design-patterns/singleton", 
+    "User": "Ewan Makepeace", 
+    "Votes": "1171", 
+    "Answers": "36", 
+    "Views": "246k", 
+    "Url": "http://stackoverflow.com/questions/137975/what-is-so-bad-about-singletons"
+  }, 
+  {
     "Title": "What are valid values for the id attribute in HTML?", 
     "Tags": "html", 
     "User": "Mr Shark", 
@@ -250,6 +502,15 @@
     "Answers": "19", 
     "Views": "311k", 
     "Url": "http://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript"
+  }, 
+  {
+    "Title": "What is the copy-and-swap idiom?", 
+    "Tags": "c++/copy-constructor/assignment-operator/c++-faq/copy-and-swap", 
+    "User": "GManNickG", 
+    "Votes": "1101", 
+    "Answers": "5", 
+    "Views": "159k", 
+    "Url": "http://stackoverflow.com/questions/3279543/what-is-the-copy-and-swap-idiom"
   }, 
   {
     "Title": "How to avoid Java code in JSP files?", 
@@ -288,6 +549,15 @@
     "Url": "http://stackoverflow.com/questions/509211/explain-pythons-slice-notation"
   }, 
   {
+    "Title": "Modify the URL without reloading the page", 
+    "Tags": "javascript/html/url/url-rewriting/friendly-url", 
+    "User": "Jarvis", 
+    "Votes": "1057", 
+    "Answers": "19", 
+    "Views": "522k", 
+    "Url": "http://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page"
+  }, 
+  {
     "Title": "Parse JSON in JavaScript? [duplicate]", 
     "Tags": "javascript/json/parsing", 
     "User": "Anonymous", 
@@ -315,6 +585,24 @@
     "Url": "http://stackoverflow.com/questions/588004/is-floating-point-math-broken"
   }, 
   {
+    "Title": "Create Excel (.XLS and .XLSX) file from C#", 
+    "Tags": "c#/.net/excel", 
+    "User": "mistrmark", 
+    "Votes": "1025", 
+    "Answers": "35", 
+    "Views": "655k", 
+    "Url": "http://stackoverflow.com/questions/151005/create-excel-xls-and-xlsx-file-from-c-sharp"
+  }, 
+  {
+    "Title": "Where can I find documentation on formatting a date in JavaScript?", 
+    "Tags": "javascript/datetime/date", 
+    "User": "Naga Kiran", 
+    "Votes": "995", 
+    "Answers": "35", 
+    "Views": "1.2m", 
+    "Url": "http://stackoverflow.com/questions/1056728/where-can-i-find-documentation-on-formatting-a-date-in-javascript"
+  }, 
+  {
     "Title": "Why is using \u201cfor\u2026in\u201d with array iteration such a bad idea?", 
     "Tags": "javascript/arrays/for-loop", 
     "User": "lYriCAlsSH", 
@@ -322,6 +610,69 @@
     "Answers": "20", 
     "Views": "431k", 
     "Url": "http://stackoverflow.com/questions/500504/why-is-using-for-in-with-array-iteration-such-a-bad-idea"
+  }, 
+  {
+    "Title": "Prefer composition over inheritance?", 
+    "Tags": "language-agnostic/oop/inheritance/composition/aggregation", 
+    "User": "Readonly", 
+    "Votes": "957", 
+    "Answers": "31", 
+    "Views": "174k", 
+    "Url": "http://stackoverflow.com/questions/49002/prefer-composition-over-inheritance"
+  }, 
+  {
+    "Title": "How to fix: Unsupported major.minor version 51.0 error?", 
+    "Tags": "java/jvm/java-7/incompatibility", 
+    "User": "ERJAN", 
+    "Votes": "888", 
+    "Answers": "34", 
+    "Views": "970k", 
+    "Url": "http://stackoverflow.com/questions/10382929/how-to-fix-unsupported-major-minor-version-51-0-error"
+  }, 
+  {
+    "Title": "Using Auto Layout in UITableView for dynamic cell layouts & variable row heights", 
+    "Tags": "ios/uitableview/autolayout/nslayoutconstraint/nsautolayout", 
+    "User": "smileyborg", 
+    "Votes": "875", 
+    "Answers": "15", 
+    "Views": "268k", 
+    "Url": "http://stackoverflow.com/questions/18746929/using-auto-layout-in-uitableview-for-dynamic-cell-layouts-variable-row-heights"
+  }, 
+  {
+    "Title": "Sort a Map<Key, Value> by values (Java)", 
+    "Tags": "java/sorting/dictionary/collections", 
+    "User": "Abe", 
+    "Votes": "861", 
+    "Answers": "41", 
+    "Views": "815k", 
+    "Url": "http://stackoverflow.com/questions/109383/sort-a-mapkey-value-by-values-java"
+  }, 
+  {
+    "Title": "What is the best way to detect a mobile device in jQuery?", 
+    "Tags": "javascript/mobile/browser-detection", 
+    "User": "superUntitled", 
+    "Votes": "849", 
+    "Answers": "41", 
+    "Views": "761k", 
+    "Url": "http://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery"
+  }, 
+  {
+    "Title": "How do you use bcrypt for hashing passwords in PHP?", 
+    "Tags": "php/passwords/cryptography/password-protection/bcrypt", 
+    "User": "Vilx-", 
+    "Votes": "845", 
+    "Answers": "9", 
+    "Views": "230k", 
+    "Url": "http://stackoverflow.com/questions/4795385/how-do-you-use-bcrypt-for-hashing-passwords-in-php"
+  }, 
+  {
+    "Title": "What is the best algorithm for an overridden System.Object.GetHashCode?", 
+    "Tags": ".net/hashcode/gethashcode", 
+    "User": "bitbonk", 
+    "Votes": "844", 
+    "Answers": "14", 
+    "Views": "89k", 
+    "Url": "http://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode"
   }, 
   {
     "Title": "How to fix \u201cHeaders already sent\u201d error in PHP", 
@@ -333,6 +684,24 @@
     "Url": "http://stackoverflow.com/questions/8028957/how-to-fix-headers-already-sent-error-in-php"
   }, 
   {
+    "Title": "What's the simplest way to print a Java array?", 
+    "Tags": "java/arrays/printing", 
+    "User": "Alex Spurling", 
+    "Votes": "837", 
+    "Answers": "18", 
+    "Views": "932k", 
+    "Url": "http://stackoverflow.com/questions/409784/whats-the-simplest-way-to-print-a-java-array"
+  }, 
+  {
+    "Title": "Concatenate many rows into a single text string?", 
+    "Tags": "sql/string-concatenation/group-concat", 
+    "User": "JohnnyM", 
+    "Votes": "836", 
+    "Answers": "31", 
+    "Views": "983k", 
+    "Url": "http://stackoverflow.com/questions/194852/concatenate-many-rows-into-a-single-text-string"
+  }, 
+  {
     "Title": "How do you split a list into evenly sized chunks in Python?", 
     "Tags": "python/list/split/chunks", 
     "User": "jespern", 
@@ -340,6 +709,15 @@
     "Answers": "44", 
     "Views": "292k", 
     "Url": "http://stackoverflow.com/questions/312443/how-do-you-split-a-list-into-evenly-sized-chunks-in-python"
+  }, 
+  {
+    "Title": "Making a flat list out of list of lists in Python [duplicate]", 
+    "Tags": "python/list", 
+    "User": "Emma", 
+    "Votes": "810", 
+    "Answers": "8", 
+    "Views": "454k", 
+    "Url": "http://stackoverflow.com/questions/952914/making-a-flat-list-out-of-list-of-lists-in-python"
   }, 
   {
     "Title": "Passing Data between View Controllers", 
@@ -351,6 +729,24 @@
     "Url": "http://stackoverflow.com/questions/5210535/passing-data-between-view-controllers"
   }, 
   {
+    "Title": "Quitting an application - is that frowned upon?", 
+    "Tags": "android", 
+    "User": "Ted", 
+    "Votes": "785", 
+    "Answers": "36", 
+    "Views": "217k", 
+    "Url": "http://stackoverflow.com/questions/2033914/quitting-an-application-is-that-frowned-upon"
+  }, 
+  {
+    "Title": "Why use getters and setters?", 
+    "Tags": "oop/setter/getter/abstraction", 
+    "User": "Dean J", 
+    "Votes": "776", 
+    "Answers": "36", 
+    "Views": "182k", 
+    "Url": "http://stackoverflow.com/questions/1568091/why-use-getters-and-setters"
+  }, 
+  {
     "Title": "Event binding on dynamically created elements?", 
     "Tags": "javascript/jquery/events/unobtrusive-javascript", 
     "User": "Eli", 
@@ -358,6 +754,15 @@
     "Answers": "14", 
     "Views": "337k", 
     "Url": "http://stackoverflow.com/questions/203198/event-binding-on-dynamically-created-elements"
+  }, 
+  {
+    "Title": "R cannot be resolved - Android error", 
+    "Tags": "android/eclipse/android-resources/android-sdk-tools", 
+    "User": "MaurizioPz", 
+    "Votes": "758", 
+    "Answers": "101", 
+    "Views": "790k", 
+    "Url": "http://stackoverflow.com/questions/885009/r-cannot-be-resolved-android-error"
   }, 
   {
     "Title": "Secure hash and salt for PHP passwords", 
@@ -369,6 +774,15 @@
     "Url": "http://stackoverflow.com/questions/401656/secure-hash-and-salt-for-php-passwords"
   }, 
   {
+    "Title": "Parameterize an SQL IN clause", 
+    "Tags": "sql/sql-server/parameters", 
+    "User": "Jeff Atwood", 
+    "Votes": "742", 
+    "Answers": "34", 
+    "Views": "229k", 
+    "Url": "http://stackoverflow.com/questions/337704/parameterize-an-sql-in-clause"
+  }, 
+  {
     "Title": "Why can templates only be implemented in the header file?", 
     "Tags": "c++/templates/c++-faq", 
     "User": "MainID", 
@@ -376,6 +790,15 @@
     "Answers": "9", 
     "Views": "180k", 
     "Url": "http://stackoverflow.com/questions/495021/why-can-templates-only-be-implemented-in-the-header-file"
+  }, 
+  {
+    "Title": "How to clone or copy a list in Python?", 
+    "Tags": "python/list/copy/clone", 
+    "User": "aF.", 
+    "Votes": "731", 
+    "Answers": "9", 
+    "Views": "390k", 
+    "Url": "http://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list-in-python"
   }, 
   {
     "Title": "Strange out of memory issue while loading an image to a Bitmap object", 
@@ -405,6 +828,69 @@
     "Url": "http://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java"
   }, 
   {
+    "Title": "How to update the GUI from another thread in C#?", 
+    "Tags": "c#/.net/multithreading/winforms/user-interface", 
+    "User": "CruelIO", 
+    "Votes": "719", 
+    "Answers": "37", 
+    "Views": "346k", 
+    "Url": "http://stackoverflow.com/questions/661561/how-to-update-the-gui-from-another-thread-in-c"
+  }, 
+  {
+    "Title": "Is JavaScript a pass-by-reference or pass-by-value language?", 
+    "Tags": "javascript/pass-by-reference/pass-by-value", 
+    "User": "Danail Nachev", 
+    "Votes": "700", 
+    "Answers": "25", 
+    "Views": "172k", 
+    "Url": "http://stackoverflow.com/questions/518000/is-javascript-a-pass-by-reference-or-pass-by-value-language"
+  }, 
+  {
+    "Title": "\u201cNo 'Access-Control-Allow-Origin' header is present on the requested resource\u201d", 
+    "Tags": "javascript/cors/restful-authentication/same-origin-policy/flask-restless", 
+    "User": "Mr Jedi", 
+    "Votes": "698", 
+    "Answers": "13", 
+    "Views": "1.2m", 
+    "Url": "http://stackoverflow.com/questions/20035101/no-access-control-allow-origin-header-is-present-on-the-requested-resource"
+  }, 
+  {
+    "Title": "Making sure a web page is not cached, across all browsers", 
+    "Tags": "http/caching/https/http-headers", 
+    "User": "Edward Wilde", 
+    "Votes": "690", 
+    "Answers": "23", 
+    "Views": "393k", 
+    "Url": "http://stackoverflow.com/questions/49547/making-sure-a-web-page-is-not-cached-across-all-browsers"
+  }, 
+  {
+    "Title": "How to ship an Android application with a database?", 
+    "Tags": "android/android-sqlite/android-database", 
+    "User": "Heikki Toivonen", 
+    "Votes": "681", 
+    "Answers": "11", 
+    "Views": "166k", 
+    "Url": "http://stackoverflow.com/questions/513084/how-to-ship-an-android-application-with-a-database"
+  }, 
+  {
+    "Title": "What does ** (double star) and * (star) do for Python parameters?", 
+    "Tags": "python/syntax/parameter-passing/identifier/kwargs", 
+    "User": "Todd", 
+    "Votes": "681", 
+    "Answers": "9", 
+    "Views": "143k", 
+    "Url": "http://stackoverflow.com/questions/36901/what-does-double-star-and-star-do-for-python-parameters"
+  }, 
+  {
+    "Title": "What's the best method for sanitizing user input with PHP?", 
+    "Tags": "php/security/xss/sql-injection/user-input", 
+    "User": "UltimateBrent", 
+    "Votes": "677", 
+    "Answers": "13", 
+    "Views": "291k", 
+    "Url": "http://stackoverflow.com/questions/129677/whats-the-best-method-for-sanitizing-user-input-with-php"
+  }, 
+  {
     "Title": "Undefined behavior and sequence points", 
     "Tags": "c++/undefined-behavior/c++-faq/sequence-points", 
     "User": "Prasoon Saurav", 
@@ -412,6 +898,33 @@
     "Answers": "4", 
     "Views": "63k", 
     "Url": "http://stackoverflow.com/questions/4176328/undefined-behavior-and-sequence-points"
+  }, 
+  {
+    "Title": "What are the nuances of scope prototypal / prototypical inheritance in AngularJS?", 
+    "Tags": "javascript/angularjs/inheritance/prototype/prototypal-inheritance", 
+    "User": "Mark Rajcok", 
+    "Votes": "668", 
+    "Answers": "4", 
+    "Views": "103k", 
+    "Url": "http://stackoverflow.com/questions/14049480/what-are-the-nuances-of-scope-prototypal-prototypical-inheritance-in-angularjs"
+  }, 
+  {
+    "Title": "How do servlets work? Instantiation, shared variables and multithreading", 
+    "Tags": "java/multithreading/session/servlets/session-variables", 
+    "User": "Ku Jon", 
+    "Votes": "657", 
+    "Answers": "6", 
+    "Views": "163k", 
+    "Url": "http://stackoverflow.com/questions/3106452/how-do-servlets-work-instantiation-shared-variables-and-multithreading"
+  }, 
+  {
+    "Title": "How do I expire a PHP session after 30 minutes?", 
+    "Tags": "php/session/cookies", 
+    "User": "Tom", 
+    "Votes": "656", 
+    "Answers": "8", 
+    "Views": "529k", 
+    "Url": "http://stackoverflow.com/questions/520237/how-do-i-expire-a-php-session-after-30-minutes"
   }, 
   {
     "Title": "What issues should be considered when overriding equals and hashCode in Java?", 
@@ -423,6 +936,15 @@
     "Url": "http://stackoverflow.com/questions/27581/what-issues-should-be-considered-when-overriding-equals-and-hashcode-in-java"
   }, 
   {
+    "Title": "Iterating through a Collection, avoiding ConcurrentModificationException when removing in loop", 
+    "Tags": "java/collections", 
+    "User": "Claudiu", 
+    "Votes": "615", 
+    "Answers": "13", 
+    "Views": "255k", 
+    "Url": "http://stackoverflow.com/questions/223918/iterating-through-a-collection-avoiding-concurrentmodificationexception-when-re"
+  }, 
+  {
     "Title": "A comprehensive regex for phone number validation", 
     "Tags": "regex/validation/phone-number", 
     "User": "Nicholas Trandem", 
@@ -430,6 +952,15 @@
     "Answers": "35", 
     "Views": "542k", 
     "Url": "http://stackoverflow.com/questions/123559/a-comprehensive-regex-for-phone-number-validation"
+  }, 
+  {
+    "Title": "How to split a string in Java", 
+    "Tags": "java/string", 
+    "User": "riyana", 
+    "Votes": "600", 
+    "Answers": "16", 
+    "Views": "1.5m", 
+    "Url": "http://stackoverflow.com/questions/3481828/how-to-split-a-string-in-java"
   }, 
   {
     "Title": "Reference - What does this error mean in PHP?", 
@@ -448,6 +979,15 @@
     "Answers": "24", 
     "Views": "205k", 
     "Url": "http://stackoverflow.com/questions/12573816/what-is-an-undefined-reference-unresolved-external-symbol-error-and-how-do-i-fix"
+  }, 
+  {
+    "Title": "How to round a number to n decimal places in Java", 
+    "Tags": "java/decimal/rounding/digits", 
+    "User": "Alex Spurling", 
+    "Votes": "575", 
+    "Answers": "20", 
+    "Views": "873k", 
+    "Url": "http://stackoverflow.com/questions/153724/how-to-round-a-number-to-n-decimal-places-in-java"
   }, 
   {
     "Title": "UTF-8 all the way through", 
@@ -495,6 +1035,51 @@
     "Url": "http://stackoverflow.com/questions/2973202/mysql-fetch-array-mysql-fetch-assoc-mysql-fetch-row-expects-parameter-1-to"
   }, 
   {
+    "Title": "Sort Multi-dimensional Array by Value [duplicate]", 
+    "Tags": "php/arrays/sorting/multidimensional-array", 
+    "User": "stef", 
+    "Votes": "553", 
+    "Answers": "5", 
+    "Views": "349k", 
+    "Url": "http://stackoverflow.com/questions/2699086/sort-multi-dimensional-array-by-value"
+  }, 
+  {
+    "Title": "Is there a \u201cprevious sibling\u201d CSS selector?", 
+    "Tags": "css/css-selectors", 
+    "User": "Jourkey", 
+    "Votes": "549", 
+    "Answers": "11", 
+    "Views": "222k", 
+    "Url": "http://stackoverflow.com/questions/1817792/is-there-a-previous-sibling-css-selector"
+  }, 
+  {
+    "Title": "How to create a generic array in Java?", 
+    "Tags": "java/arrays/generics/reflection/instantiation", 
+    "User": "tatsuhirosatou", 
+    "Votes": "539", 
+    "Answers": "23", 
+    "Views": "373k", 
+    "Url": "http://stackoverflow.com/questions/529085/how-to-create-a-generic-array-in-java"
+  }, 
+  {
+    "Title": "How do I pass data between activities on Android?", 
+    "Tags": "android/android-intent", 
+    "User": "UMAR", 
+    "Votes": "537", 
+    "Answers": "27", 
+    "Views": "384k", 
+    "Url": "http://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-on-android"
+  }, 
+  {
+    "Title": "What does this mean? \u201c'NSUnknownKeyException', reason:This class is not key value coding-compliant for the key X\u201d", 
+    "Tags": "ios/osx/cocoa/cocoa-touch/interface-builder", 
+    "User": "Guillaume Dubois", 
+    "Votes": "535", 
+    "Answers": "48", 
+    "Views": "398k", 
+    "Url": "http://stackoverflow.com/questions/3088059/what-does-this-mean-nsunknownkeyexception-reasonthis-class-is-not-key-valu"
+  }, 
+  {
     "Title": "How does the \u201cthis\u201d keyword work?", 
     "Tags": "javascript/this", 
     "User": "Maxim Gershkovich", 
@@ -502,6 +1087,24 @@
     "Answers": "14", 
     "Views": "166k", 
     "Url": "http://stackoverflow.com/questions/3127429/how-does-the-this-keyword-work"
+  }, 
+  {
+    "Title": "How do I use extern to share variables between source files in C?", 
+    "Tags": "c/global-variables/extern", 
+    "User": "Anonymous", 
+    "Votes": "526", 
+    "Answers": "14", 
+    "Views": "329k", 
+    "Url": "http://stackoverflow.com/questions/1433204/how-do-i-use-extern-to-share-variables-between-source-files-in-c"
+  }, 
+  {
+    "Title": "How can I obfuscate(protect) JavaScript? [closed]", 
+    "Tags": "javascript/obfuscation/source-code-protection", 
+    "User": "Teifion", 
+    "Votes": "519", 
+    "Answers": "26", 
+    "Views": "254k", 
+    "Url": "http://stackoverflow.com/questions/194397/how-can-i-obfuscateprotect-javascript"
   }, 
   {
     "Title": "How to remove the space between inline-block elements?", 
@@ -513,6 +1116,33 @@
     "Url": "http://stackoverflow.com/questions/5078239/how-to-remove-the-space-between-inline-block-elements"
   }, 
   {
+    "Title": "How do I use reflection to call a generic method?", 
+    "Tags": "c#/generics/reflection", 
+    "User": "Bevan", 
+    "Votes": "491", 
+    "Answers": "7", 
+    "Views": "124k", 
+    "Url": "http://stackoverflow.com/questions/232535/how-do-i-use-reflection-to-call-a-generic-method"
+  }, 
+  {
+    "Title": "How to properly clean up Excel interop objects?", 
+    "Tags": "c#/excel/interop/com-interop", 
+    "User": "HAdes", 
+    "Votes": "488", 
+    "Answers": "32", 
+    "Views": "197k", 
+    "Url": "http://stackoverflow.com/questions/158706/how-to-properly-clean-up-excel-interop-objects"
+  }, 
+  {
+    "Title": "Use of 'prototype' vs. 'this' in JavaScript?", 
+    "Tags": "javascript/prototype/this", 
+    "User": "sw234", 
+    "Votes": "485", 
+    "Answers": "12", 
+    "Views": "65k", 
+    "Url": "http://stackoverflow.com/questions/310870/use-of-prototype-vs-this-in-javascript"
+  }, 
+  {
     "Title": "Why are these constructs (using ++) undefined behavior?", 
     "Tags": "c/increment/undefined-behavior/order-of-evaluation/sequence-points", 
     "User": "PiX", 
@@ -520,6 +1150,87 @@
     "Answers": "11", 
     "Views": "39k", 
     "Url": "http://stackoverflow.com/questions/949433/why-are-these-constructs-using-undefined-behavior"
+  }, 
+  {
+    "Title": "What is an efficient way to implement a singleton pattern in Java?", 
+    "Tags": "java/singleton/design-patterns", 
+    "User": "Riyaz Mohammed Ibrahim", 
+    "Votes": "479", 
+    "Answers": "25", 
+    "Views": "203k", 
+    "Url": "http://stackoverflow.com/questions/70689/what-is-an-efficient-way-to-implement-a-singleton-pattern-in-java"
+  }, 
+  {
+    "Title": "How to make a redirect in PHP?", 
+    "Tags": "php/redirect", 
+    "User": "Sam", 
+    "Votes": "471", 
+    "Answers": "13", 
+    "Views": "1.0m", 
+    "Url": "http://stackoverflow.com/questions/768431/how-to-make-a-redirect-in-php"
+  }, 
+  {
+    "Title": "How to calculate the difference between two dates using PHP?", 
+    "Tags": "php/datetime/datediff", 
+    "User": "Anonymous", 
+    "Votes": "468", 
+    "Answers": "28", 
+    "Views": "494k", 
+    "Url": "http://stackoverflow.com/questions/676824/how-to-calculate-the-difference-between-two-dates-using-php"
+  }, 
+  {
+    "Title": "How to join (merge) data frames (inner, outer, left, right)?", 
+    "Tags": "r/join/merge/data.frame/r-faq", 
+    "User": "Dan Goldstein", 
+    "Votes": "467", 
+    "Answers": "10", 
+    "Views": "263k", 
+    "Url": "http://stackoverflow.com/questions/1299871/how-to-join-merge-data-frames-inner-outer-left-right"
+  }, 
+  {
+    "Title": "What is the strict aliasing rule?", 
+    "Tags": "c/undefined-behavior/c++-faq/strict-aliasing/type-punning", 
+    "User": "Benoit", 
+    "Votes": "462", 
+    "Answers": "8", 
+    "Views": "102k", 
+    "Url": "http://stackoverflow.com/questions/98650/what-is-the-strict-aliasing-rule"
+  }, 
+  {
+    "Title": "Performance optimization strategies of last resort [closed]", 
+    "Tags": "performance/optimization/language-agnostic", 
+    "User": "jerryjvl", 
+    "Votes": "452", 
+    "Answers": "34", 
+    "Views": "53k", 
+    "Url": "http://stackoverflow.com/questions/926266/performance-optimization-strategies-of-last-resort"
+  }, 
+  {
+    "Title": "What is the best regular expression to check if a string is a valid URL?", 
+    "Tags": "regex/url", 
+    "User": "Vitor Silva", 
+    "Votes": "447", 
+    "Answers": "37", 
+    "Views": "210k", 
+    "Url": "http://stackoverflow.com/questions/161738/what-is-the-best-regular-expression-to-check-if-a-string-is-a-valid-url"
+  }, 
+  {
+    "Title": "How to randomize (shuffle) a JavaScript array?", 
+    "Tags": "javascript/arrays/shuffle", 
+    "User": "Click Upvote", 
+    "Votes": "439", 
+    "Answers": "25", 
+    "Views": "230k", 
+    "Url": "http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array"
+  }, 
+  {
+    "Title": "Selecting and manipulating CSS pseudo-elements such as ::before and ::after using jQuery", 
+    "Tags": "javascript/jquery/html/css/pseudo-element", 
+    "User": "JBradwell", 
+    "Votes": "438", 
+    "Answers": "14", 
+    "Views": "250k", 
+    "Url": "http://stackoverflow.com/questions/5041494/selecting-and-manipulating-css-pseudo-elements-such-as-before-and-after-usin"
   }, 
   {
     "Title": "How do I write a correct micro-benchmark in Java?", 
@@ -547,6 +1258,51 @@
     "Answers": "25", 
     "Views": "83k", 
     "Url": "http://stackoverflow.com/questions/383947/what-does-it-mean-to-program-to-an-interface"
+  }, 
+  {
+    "Title": "Are PHP short tags acceptable to use?", 
+    "Tags": "php/coding-style/php-shorttags", 
+    "User": "MDCore", 
+    "Votes": "427", 
+    "Answers": "24", 
+    "Views": "94k", 
+    "Url": "http://stackoverflow.com/questions/200640/are-php-short-tags-acceptable-to-use"
+  }, 
+  {
+    "Title": "Random number generator only generating one random number", 
+    "Tags": "c#/random", 
+    "User": "Ivan Prodanov", 
+    "Votes": "424", 
+    "Answers": "8", 
+    "Views": "89k", 
+    "Url": "http://stackoverflow.com/questions/767999/random-number-generator-only-generating-one-random-number"
+  }, 
+  {
+    "Title": "Select first row in each GROUP BY group?", 
+    "Tags": "sql/sqlite/postgresql/group-by/greatest-n-per-group", 
+    "User": "David Wolever", 
+    "Votes": "421", 
+    "Answers": "8", 
+    "Views": "326k", 
+    "Url": "http://stackoverflow.com/questions/3800551/select-first-row-in-each-group-by-group"
+  }, 
+  {
+    "Title": "Sending Email in Android using JavaMail API without using the default/built-in app", 
+    "Tags": "java/android/android-intent/javamail", 
+    "User": "Vinayak B", 
+    "Votes": "419", 
+    "Answers": "20", 
+    "Views": "276k", 
+    "Url": "http://stackoverflow.com/questions/2020088/sending-email-in-android-using-javamail-api-without-using-the-default-built-in-a"
+  }, 
+  {
+    "Title": "Java string to date conversion", 
+    "Tags": "java/string/date/time/data-conversion", 
+    "User": "littleK", 
+    "Votes": "417", 
+    "Answers": "10", 
+    "Views": "843k", 
+    "Url": "http://stackoverflow.com/questions/4216745/java-string-to-date-conversion"
   }, 
   {
     "Title": "What is object slicing?", 
@@ -585,6 +1341,123 @@
     "Url": "http://stackoverflow.com/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet"
   }, 
   {
+    "Title": "How should a model be structured in MVC?", 
+    "Tags": "php/oop/model-view-controller/architecture/model", 
+    "User": "Dietpixel", 
+    "Votes": "388", 
+    "Answers": "5", 
+    "Views": "98k", 
+    "Url": "http://stackoverflow.com/questions/5863870/how-should-a-model-be-structured-in-mvc"
+  }, 
+  {
+    "Title": "Google Maps JS API v3 - Simple Multiple Marker Example", 
+    "Tags": "javascript/google-maps/google-maps-api-3", 
+    "User": "wesbos", 
+    "Votes": "375", 
+    "Answers": "7", 
+    "Views": "423k", 
+    "Url": "http://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-multiple-marker-example"
+  }, 
+  {
+    "Title": "How to use SharedPreferences in Android to store, fetch and edit values", 
+    "Tags": "android/sharedpreferences", 
+    "User": "Muhammad Maqsoodur Rehman", 
+    "Votes": "366", 
+    "Answers": "20", 
+    "Views": "382k", 
+    "Url": "http://stackoverflow.com/questions/3624280/how-to-use-sharedpreferences-in-android-to-store-fetch-and-edit-values"
+  }, 
+  {
+    "Title": "Retrieving the last record in each group", 
+    "Tags": "sql/mysql/group-by/greatest-n-per-group", 
+    "User": "Vijay Dev", 
+    "Votes": "366", 
+    "Answers": "15", 
+    "Views": "197k", 
+    "Url": "http://stackoverflow.com/questions/1313120/retrieving-the-last-record-in-each-group"
+  }, 
+  {
+    "Title": "Why is using the JavaScript eval function a bad idea?", 
+    "Tags": "javascript/performance/security/eval", 
+    "User": "Brian Singh", 
+    "Votes": "344", 
+    "Answers": "23", 
+    "Views": "184k", 
+    "Url": "http://stackoverflow.com/questions/86513/why-is-using-the-javascript-eval-function-a-bad-idea"
+  }, 
+  {
+    "Title": "jQuery Ajax POST example with PHP", 
+    "Tags": "php/javascript/jquery/ajax/post", 
+    "User": "Thew", 
+    "Votes": "343", 
+    "Answers": "7", 
+    "Views": "722k", 
+    "Url": "http://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php"
+  }, 
+  {
+    "Title": "How do I use arrays in C++?", 
+    "Tags": "c++/arrays/pointers/multidimensional-array/c++-faq", 
+    "User": "fredoverflow", 
+    "Votes": "335", 
+    "Answers": "5", 
+    "Views": "83k", 
+    "Url": "http://stackoverflow.com/questions/4810664/how-do-i-use-arrays-in-c"
+  }, 
+  {
+    "Title": "How do I split a string so I can access item x?", 
+    "Tags": "sql/sql-server/string/sql-server-2005/split", 
+    "User": "GateKiller", 
+    "Votes": "334", 
+    "Answers": "32", 
+    "Views": "547k", 
+    "Url": "http://stackoverflow.com/questions/2647/how-do-i-split-a-string-so-i-can-access-item-x"
+  }, 
+  {
+    "Title": "Java String.equals versus == [duplicate]", 
+    "Tags": "java/string", 
+    "User": "franvergara66", 
+    "Votes": "331", 
+    "Answers": "20", 
+    "Views": "481k", 
+    "Url": "http://stackoverflow.com/questions/767372/java-string-equals-versus"
+  }, 
+  {
+    "Title": "Why isn't sizeof for a struct equal to the sum of sizeof of each member?", 
+    "Tags": "c++/c/sizeof/c++-faq", 
+    "User": "Kevin", 
+    "Votes": "330", 
+    "Answers": "10", 
+    "Views": "79k", 
+    "Url": "http://stackoverflow.com/questions/119123/why-isnt-sizeof-for-a-struct-equal-to-the-sum-of-sizeof-of-each-member"
+  }, 
+  {
+    "Title": "jQuery Ajax File Upload", 
+    "Tags": "javascript/jquery/ajax/post/file-upload", 
+    "User": "Willy", 
+    "Votes": "330", 
+    "Answers": "14", 
+    "Views": "555k", 
+    "Url": "http://stackoverflow.com/questions/2320069/jquery-ajax-file-upload"
+  }, 
+  {
+    "Title": "What is PECS (Producer Extends Consumer Super)?", 
+    "Tags": "java/generics/super/bounded-wildcard/pecs", 
+    "User": "peakit", 
+    "Votes": "323", 
+    "Answers": "7", 
+    "Views": "32k", 
+    "Url": "http://stackoverflow.com/questions/2723397/what-is-pecs-producer-extends-consumer-super"
+  }, 
+  {
+    "Title": "Is List<Dog> a subclass of List<Animal>? Why aren't Java's generics implicitly polymorphic?", 
+    "Tags": "java/generics/inheritance/polymorphism", 
+    "User": "froadie", 
+    "Votes": "319", 
+    "Answers": "11", 
+    "Views": "45k", 
+    "Url": "http://stackoverflow.com/questions/2745265/is-listdog-a-subclass-of-listanimal-why-arent-javas-generics-implicitly-p"
+  }, 
+  {
     "Title": "What is a raw type and why shouldn't we use it?", 
     "Tags": "java/generics/raw-types", 
     "User": "polygenelubricants", 
@@ -612,6 +1485,33 @@
     "Url": "http://stackoverflow.com/questions/845021/how-to-get-useful-error-messages-in-php"
   }, 
   {
+    "Title": "How to parse JSON in Java", 
+    "Tags": "java/json/parsing", 
+    "User": "Muhammad Maqsoodur Rehman", 
+    "Votes": "306", 
+    "Answers": "15", 
+    "Views": "441k", 
+    "Url": "http://stackoverflow.com/questions/2591098/how-to-parse-json-in-java"
+  }, 
+  {
+    "Title": "Cross-thread operation not valid: Control accessed from a thread other than the thread it was created on", 
+    "Tags": "c#/multithreading/winforms/invoke", 
+    "User": "Prerak K", 
+    "Votes": "304", 
+    "Answers": "12", 
+    "Views": "253k", 
+    "Url": "http://stackoverflow.com/questions/142003/cross-thread-operation-not-valid-control-accessed-from-a-thread-other-than-the"
+  }, 
+  {
+    "Title": "What should main() return in C and C++?", 
+    "Tags": "c++/c/return-value/main/return-type", 
+    "User": "Joel", 
+    "Votes": "302", 
+    "Answers": "19", 
+    "Views": "172k", 
+    "Url": "http://stackoverflow.com/questions/204476/what-should-main-return-in-c-and-c"
+  }, 
+  {
     "Title": "Access / process (nested) objects, arrays or JSON", 
     "Tags": "javascript/arrays/object/recursion", 
     "User": "Felix Kling", 
@@ -628,6 +1528,15 @@
     "Answers": "8", 
     "Views": "28k", 
     "Url": "http://stackoverflow.com/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi"
+  }, 
+  {
+    "Title": "Undefined, unspecified and implementation-defined behavior", 
+    "Tags": "c++/c/undefined-behavior/c++-faq/unspecified-behavior", 
+    "User": "Zolomon", 
+    "Votes": "278", 
+    "Answers": "8", 
+    "Views": "22k", 
+    "Url": "http://stackoverflow.com/questions/2397984/undefined-unspecified-and-implementation-defined-behavior"
   }, 
   {
     "Title": "How to pass variables and data from PHP to JavaScript?", 
@@ -657,6 +1566,15 @@
     "Url": "http://stackoverflow.com/questions/5605125/why-is-iostreameof-inside-a-loop-condition-considered-wrong"
   }, 
   {
+    "Title": "Facebook Graph Api v2.0+ - /me/friends returns empty, or only friends who also use my app", 
+    "Tags": "facebook/facebook-graph-api/facebook-ios-sdk/facebook-graph-api-v2.0", 
+    "User": "user3594351", 
+    "Votes": "248", 
+    "Answers": "6", 
+    "Views": "137k", 
+    "Url": "http://stackoverflow.com/questions/23417356/facebook-graph-api-v2-0-me-friends-returns-empty-or-only-friends-who-also-u"
+  }, 
+  {
     "Title": "What is a stack trace, and how can I use it to debug my application errors?", 
     "Tags": "java/debugging/stack-trace", 
     "User": "Rob Hruska", 
@@ -664,6 +1582,15 @@
     "Answers": "5", 
     "Views": "125k", 
     "Url": "http://stackoverflow.com/questions/3988788/what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors"
+  }, 
+  {
+    "Title": "Why is document.write considered a \u201cbad practice\u201d?", 
+    "Tags": "javascript", 
+    "User": "FlySwat", 
+    "Votes": "237", 
+    "Answers": "11", 
+    "Views": "142k", 
+    "Url": "http://stackoverflow.com/questions/802854/why-is-document-write-considered-a-bad-practice"
   }, 
   {
     "Title": "Why is my variable unaltered after I modify it inside of a function? - Asynchronous code reference", 
@@ -675,6 +1602,15 @@
     "Url": "http://stackoverflow.com/questions/23667086/why-is-my-variable-unaltered-after-i-modify-it-inside-of-a-function-asynchron"
   }, 
   {
+    "Title": "Flatten (an irregular) list of lists in Python", 
+    "Tags": "python/list/optimization/flatten", 
+    "User": "telliott99", 
+    "Votes": "222", 
+    "Answers": "29", 
+    "Views": "47k", 
+    "Url": "http://stackoverflow.com/questions/2158395/flatten-an-irregular-list-of-lists-in-python"
+  }, 
+  {
     "Title": "Simulating group_concat MySQL function in SQL Server?", 
     "Tags": "mysql/sql-server/sql-server-2005/stored-procedures/sql-server-group-concat", 
     "User": "DanM", 
@@ -682,6 +1618,24 @@
     "Answers": "8", 
     "Views": "107k", 
     "Url": "http://stackoverflow.com/questions/451415/simulating-group-concat-mysql-function-in-sql-server"
+  }, 
+  {
+    "Title": "How to deal with floating point number precision in JavaScript?", 
+    "Tags": "javascript/floating-point", 
+    "User": "Juri", 
+    "Votes": "219", 
+    "Answers": "30", 
+    "Views": "132k", 
+    "Url": "http://stackoverflow.com/questions/1458633/how-to-deal-with-floating-point-number-precision-in-javascript"
+  }, 
+  {
+    "Title": "Building a Chrome Extension - Inject code in a page using a Content script", 
+    "Tags": "javascript/google-chrome/google-chrome-extension/youtube-api/content-script", 
+    "User": "bisc8", 
+    "Votes": "218", 
+    "Answers": "4", 
+    "Views": "97k", 
+    "Url": "http://stackoverflow.com/questions/9515704/building-a-chrome-extension-inject-code-in-a-page-using-a-content-script"
   }, 
   {
     "Title": "commandLink/commandButton/ajax backing bean action/listener method not invoked", 
@@ -702,6 +1656,15 @@
     "Url": "http://stackoverflow.com/questions/5431941/why-is-while-feof-file-always-wrong"
   }, 
   {
+    "Title": "How to choose the right bean scope?", 
+    "Tags": "jsf/jsf-2/scope/managed-bean", 
+    "User": "Valter Henrique", 
+    "Votes": "212", 
+    "Answers": "2", 
+    "Views": "91k", 
+    "Url": "http://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope"
+  }, 
+  {
     "Title": "What is a Null Pointer Exception, and how do I fix it?", 
     "Tags": "java/nullpointerexception", 
     "User": "Ziggy", 
@@ -709,6 +1672,15 @@
     "Answers": "12", 
     "Views": "845k", 
     "Url": "http://stackoverflow.com/questions/218384/what-is-a-null-pointer-exception-and-how-do-i-fix-it"
+  }, 
+  {
+    "Title": "Self-references in object literal declarations", 
+    "Tags": "javascript/object-literal", 
+    "User": "kpozin", 
+    "Votes": "210", 
+    "Answers": "13", 
+    "Views": "40k", 
+    "Url": "http://stackoverflow.com/questions/4616202/self-references-in-object-literal-declarations"
   }, 
   {
     "Title": "How to avoid using Select in Excel VBA macros", 
@@ -720,6 +1692,24 @@
     "Url": "http://stackoverflow.com/questions/10714251/how-to-avoid-using-select-in-excel-vba-macros"
   }, 
   {
+    "Title": "Is storing a delimited list in a database column really that bad?", 
+    "Tags": "database/database-design/database-normalization", 
+    "User": "Mad Scientist", 
+    "Votes": "191", 
+    "Answers": "9", 
+    "Views": "32k", 
+    "Url": "http://stackoverflow.com/questions/3653462/is-storing-a-delimited-list-in-a-database-column-really-that-bad"
+  }, 
+  {
+    "Title": "What is the (function() { } )() construct in JavaScript?", 
+    "Tags": "javascript/iife", 
+    "User": "Exitos", 
+    "Votes": "189", 
+    "Answers": "12", 
+    "Views": "44k", 
+    "Url": "http://stackoverflow.com/questions/8228281/what-is-the-function-construct-in-javascript"
+  }, 
+  {
     "Title": "What is the difference between client-side and server-side programming?", 
     "Tags": "javascript/php/client-side/server-side", 
     "User": "deceze", 
@@ -729,6 +1719,15 @@
     "Url": "http://stackoverflow.com/questions/13840429/what-is-the-difference-between-client-side-and-server-side-programming"
   }, 
   {
+    "Title": "Short Description of Python Scoping Rules", 
+    "Tags": "python/scope/dynamic-languages", 
+    "User": "Charles Merriam", 
+    "Votes": "188", 
+    "Answers": "7", 
+    "Views": "112k", 
+    "Url": "http://stackoverflow.com/questions/291978/short-description-of-python-scoping-rules"
+  }, 
+  {
     "Title": "How to access the correct `this` / context inside a callback?", 
     "Tags": "javascript/callback/this", 
     "User": "Felix Kling", 
@@ -736,6 +1735,24 @@
     "Answers": "4", 
     "Views": "45k", 
     "Url": "http://stackoverflow.com/questions/20279484/how-to-access-the-correct-this-context-inside-a-callback"
+  }, 
+  {
+    "Title": "Why JSF calls getters multiple times", 
+    "Tags": "performance/jsf/el/getter", 
+    "User": "Sevas", 
+    "Votes": "187", 
+    "Answers": "8", 
+    "Views": "66k", 
+    "Url": "http://stackoverflow.com/questions/2090033/why-jsf-calls-getters-multiple-times"
+  }, 
+  {
+    "Title": "Dynamically access object property using variable", 
+    "Tags": "javascript/properties", 
+    "User": "RichW", 
+    "Votes": "187", 
+    "Answers": "6", 
+    "Views": "70k", 
+    "Url": "http://stackoverflow.com/questions/4244896/dynamically-access-object-property-using-variable"
   }, 
   {
     "Title": "When to use single quotes, double quotes, and backticks?", 
@@ -756,6 +1773,33 @@
     "Url": "http://stackoverflow.com/questions/240178/python-list-of-lists-changes-reflected-across-sublists-unexpectedly"
   }, 
   {
+    "Title": "How to use Servlets and Ajax?", 
+    "Tags": "java/ajax/jsp/servlets", 
+    "User": "Amir Rachum", 
+    "Votes": "183", 
+    "Answers": "7", 
+    "Views": "137k", 
+    "Url": "http://stackoverflow.com/questions/4112686/how-to-use-servlets-and-ajax"
+  }, 
+  {
+    "Title": "JavaScript property access: dot notation vs. brackets?", 
+    "Tags": "javascript", 
+    "User": "Mark Renouf", 
+    "Votes": "181", 
+    "Answers": "7", 
+    "Views": "60k", 
+    "Url": "http://stackoverflow.com/questions/4968406/javascript-property-access-dot-notation-vs-brackets"
+  }, 
+  {
+    "Title": "Syntax error on print with Python 3", 
+    "Tags": "python/python-3.x", 
+    "User": "Scott", 
+    "Votes": "173", 
+    "Answers": "11", 
+    "Views": "117k", 
+    "Url": "http://stackoverflow.com/questions/826948/syntax-error-on-print-with-python-3"
+  }, 
+  {
     "Title": "What is the canonical way to check for errors using the CUDA runtime API?", 
     "Tags": "cuda", 
     "User": "talonmies", 
@@ -763,6 +1807,33 @@
     "Answers": "5", 
     "Views": "32k", 
     "Url": "http://stackoverflow.com/questions/14038589/what-is-the-canonical-way-to-check-for-errors-using-the-cuda-runtime-api"
+  }, 
+  {
+    "Title": "Learning Regular Expressions [closed]", 
+    "Tags": "regex", 
+    "User": "Teifion", 
+    "Votes": "166", 
+    "Answers": "1", 
+    "Views": "53k", 
+    "Url": "http://stackoverflow.com/questions/4736/learning-regular-expressions"
+  }, 
+  {
+    "Title": "How to return value from an asynchronous callback function? [duplicate]", 
+    "Tags": "javascript/asynchronous/callback/javascript-objects", 
+    "User": "Gowri", 
+    "Votes": "164", 
+    "Answers": "3", 
+    "Views": "86k", 
+    "Url": "http://stackoverflow.com/questions/6847697/how-to-return-value-from-an-asynchronous-callback-function"
+  }, 
+  {
+    "Title": "Why is my Spring @Autowired field null?", 
+    "Tags": "java/spring/null/nullpointerexception/autowired", 
+    "User": "chrylis", 
+    "Votes": "162", 
+    "Answers": "7", 
+    "Views": "110k", 
+    "Url": "http://stackoverflow.com/questions/19896870/why-is-my-spring-autowired-field-null"
   }, 
   {
     "Title": "Skipping nextLine() after using next(), nextInt() or other nextFoo() methods", 
@@ -792,6 +1863,51 @@
     "Url": "http://stackoverflow.com/questions/17364127/how-can-i-sort-arrays-and-data-in-php"
   }, 
   {
+    "Title": "Retrieve only the queried element in an object array in MongoDB collection", 
+    "Tags": "arrays/mongodb/mongodb-query/aggregation-framework", 
+    "User": "Sebtm", 
+    "Votes": "150", 
+    "Answers": "8", 
+    "Views": "95k", 
+    "Url": "http://stackoverflow.com/questions/3985214/retrieve-only-the-queried-element-in-an-object-array-in-mongodb-collection"
+  }, 
+  {
+    "Title": "Resolve circular dependencies in C++", 
+    "Tags": "c++/compiler-errors/circular-dependency", 
+    "User": "Sandeep Datta", 
+    "Votes": "150", 
+    "Answers": "8", 
+    "Views": "81k", 
+    "Url": "http://stackoverflow.com/questions/625799/resolve-circular-dependencies-in-c"
+  }, 
+  {
+    "Title": "Evaluating a math expression given in string form", 
+    "Tags": "java/string/math", 
+    "User": "Shah", 
+    "Votes": "150", 
+    "Answers": "20", 
+    "Views": "160k", 
+    "Url": "http://stackoverflow.com/questions/3422673/evaluating-a-math-expression-given-in-string-form"
+  }, 
+  {
+    "Title": "What is this weird colon-member (\u201c : \u201d) syntax in the constructor?", 
+    "Tags": "c++/syntax/constructor/c++-faq/ctor-initializer", 
+    "User": "nils", 
+    "Votes": "148", 
+    "Answers": "11", 
+    "Views": "40k", 
+    "Url": "http://stackoverflow.com/questions/1711990/what-is-this-weird-colon-member-syntax-in-the-constructor"
+  }, 
+  {
+    "Title": "What is the explicit promise construction antipattern and how do I avoid it?", 
+    "Tags": "javascript/promise/q/bluebird/es6-promise", 
+    "User": "Benjamin Gruenbaum", 
+    "Votes": "139", 
+    "Answers": "3", 
+    "Views": "11k", 
+    "Url": "http://stackoverflow.com/questions/23803743/what-is-the-explicit-promise-construction-antipattern-and-how-do-i-avoid-it"
+  }, 
+  {
     "Title": "PHP Parse/Syntax Errors; and How to solve them?", 
     "Tags": "php/parsing/debugging/syntax-error", 
     "User": "mario", 
@@ -799,6 +1915,15 @@
     "Answers": "10", 
     "Views": "118k", 
     "Url": "http://stackoverflow.com/questions/18050071/php-parse-syntax-errors-and-how-to-solve-them"
+  }, 
+  {
+    "Title": "What is array decaying?", 
+    "Tags": "c++/c/arrays/pointers", 
+    "User": "Vamsi", 
+    "Votes": "136", 
+    "Answers": "7", 
+    "Views": "17k", 
+    "Url": "http://stackoverflow.com/questions/1461432/what-is-array-decaying"
   }, 
   {
     "Title": "How do I test one variable against multiple values?", 
@@ -819,6 +1944,15 @@
     "Url": "http://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response"
   }, 
   {
+    "Title": "What are copy elision and return value optimization?", 
+    "Tags": "c++/optimization/c++-faq/return-value-optimization/copy-elision", 
+    "User": "Luchian Grigore", 
+    "Votes": "134", 
+    "Answers": "4", 
+    "Views": "15k", 
+    "Url": "http://stackoverflow.com/questions/12953127/what-are-copy-elision-and-return-value-optimization"
+  }, 
+  {
     "Title": "PHP mail form doesn't complete sending e-mail", 
     "Tags": "php/html/email", 
     "User": "user3818620", 
@@ -826,6 +1960,60 @@
     "Answers": "19", 
     "Views": "76k", 
     "Url": "http://stackoverflow.com/questions/24644436/php-mail-form-doesnt-complete-sending-e-mail"
+  }, 
+  {
+    "Title": "Alternatives to gprof [closed]", 
+    "Tags": "profiling/profiler/gprof", 
+    "User": "neuromancer", 
+    "Votes": "132", 
+    "Answers": "7", 
+    "Views": "49k", 
+    "Url": "http://stackoverflow.com/questions/1777556/alternatives-to-gprof"
+  }, 
+  {
+    "Title": "Using regular expressions to parse HTML: why not?", 
+    "Tags": "regex/html-parsing", 
+    "User": "ntownsend", 
+    "Votes": "128", 
+    "Answers": "15", 
+    "Views": "31k", 
+    "Url": "http://stackoverflow.com/questions/590747/using-regular-expressions-to-parse-html-why-not"
+  }, 
+  {
+    "Title": "Javascript infamous Loop issue? [duplicate]", 
+    "Tags": "javascript/closures", 
+    "User": "Tower Joo", 
+    "Votes": "126", 
+    "Answers": "5", 
+    "Views": "40k", 
+    "Url": "http://stackoverflow.com/questions/1451009/javascript-infamous-loop-issue"
+  }, 
+  {
+    "Title": "Why do I get a segmentation fault when writing to a string initialized with \u201cchar *s\u201d but not \u201cchar s[]\u201d?", 
+    "Tags": "c/segmentation-fault/c-strings", 
+    "User": "Markus", 
+    "Votes": "125", 
+    "Answers": "18", 
+    "Views": "31k", 
+    "Url": "http://stackoverflow.com/questions/164194/why-do-i-get-a-segmentation-fault-when-writing-to-a-string-initialized-with-cha"
+  }, 
+  {
+    "Title": "Regular expression pattern not matching anywhere in string", 
+    "Tags": "html/regex/parsing", 
+    "User": "Salman", 
+    "Votes": "120", 
+    "Answers": "8", 
+    "Views": "40k", 
+    "Url": "http://stackoverflow.com/questions/4231382/regular-expression-pattern-not-matching-anywhere-in-string"
+  }, 
+  {
+    "Title": "MySQL pivot table", 
+    "Tags": "mysql/pivot", 
+    "User": "peku", 
+    "Votes": "116", 
+    "Answers": "7", 
+    "Views": "109k", 
+    "Url": "http://stackoverflow.com/questions/7674786/mysql-pivot-table"
   }, 
   {
     "Title": "How to add JTable in JPanel with null layout?", 
@@ -846,6 +2034,87 @@
     "Url": "http://stackoverflow.com/questions/2167916/convert-one-date-format-into-another-in-php"
   }, 
   {
+    "Title": "Can PHP PDO Statements accept the table or column name as parameter?", 
+    "Tags": "php/pdo", 
+    "User": "Jrgns", 
+    "Votes": "111", 
+    "Answers": "6", 
+    "Views": "33k", 
+    "Url": "http://stackoverflow.com/questions/182287/can-php-pdo-statements-accept-the-table-or-column-name-as-parameter"
+  }, 
+  {
+    "Title": "When is SQLiteOpenHelper onCreate() / onUpgrade() run?", 
+    "Tags": "android/sqlite/android-sqlite", 
+    "User": "Anonymous", 
+    "Votes": "99", 
+    "Answers": "4", 
+    "Views": "41k", 
+    "Url": "http://stackoverflow.com/questions/21881992/when-is-sqliteopenhelper-oncreate-onupgrade-run"
+  }, 
+  {
+    "Title": "GUI not working after rewriting to MVC", 
+    "Tags": "java/model-view-controller/user-interface/swing", 
+    "User": "trevor_nise", 
+    "Votes": "97", 
+    "Answers": "2", 
+    "Views": "27k", 
+    "Url": "http://stackoverflow.com/questions/3066590/gui-not-working-after-rewriting-to-mvc"
+  }, 
+  {
+    "Title": "Why are these numbers not equal?", 
+    "Tags": "r/floating-point/floating-accuracy/r-faq", 
+    "User": "dplanet", 
+    "Votes": "95", 
+    "Answers": "3", 
+    "Views": "10k", 
+    "Url": "http://stackoverflow.com/questions/9508518/why-are-these-numbers-not-equal"
+  }, 
+  {
+    "Title": "JSTL in JSF2 Facelets\u2026 makes sense?", 
+    "Tags": "jsf/jsf-2/jstl/facelets", 
+    "User": "Jan", 
+    "Votes": "85", 
+    "Answers": "3", 
+    "Views": "45k", 
+    "Url": "http://stackoverflow.com/questions/3342984/jstl-in-jsf2-facelets-makes-sense"
+  }, 
+  {
+    "Title": "How can I convert ereg expressions to preg in PHP?", 
+    "Tags": "php/preg-replace/preg-match/pcre/ereg", 
+    "User": "netcoder", 
+    "Votes": "77", 
+    "Answers": "3", 
+    "Views": "28k", 
+    "Url": "http://stackoverflow.com/questions/6270004/how-can-i-convert-ereg-expressions-to-preg-in-php"
+  }, 
+  {
+    "Title": "How do I print my Java object without getting \u201cSomeType@2f92e0f4\u201d?", 
+    "Tags": "java/string/object/tostring", 
+    "User": "Duncan", 
+    "Votes": "76", 
+    "Answers": "3", 
+    "Views": "44k", 
+    "Url": "http://stackoverflow.com/questions/29140402/how-do-i-print-my-java-object-without-getting-sometype2f92e0f4"
+  }, 
+  {
+    "Title": "non-static variable cannot be referenced from a static context", 
+    "Tags": "java/variables/compiler-errors/non-static", 
+    "User": "Greg", 
+    "Votes": "71", 
+    "Answers": "10", 
+    "Views": "221k", 
+    "Url": "http://stackoverflow.com/questions/2559527/non-static-variable-cannot-be-referenced-from-a-static-context"
+  }, 
+  {
+    "Title": "How do I do variable variables in Python?", 
+    "Tags": "python/variable-variables", 
+    "User": "Anonymous", 
+    "Votes": "70", 
+    "Answers": "8", 
+    "Views": "41k", 
+    "Url": "http://stackoverflow.com/questions/1373164/how-do-i-do-variable-variables-in-python"
+  }, 
+  {
     "Title": "Prototypical inheritance - writing up [duplicate]", 
     "Tags": "javascript/inheritance/prototype", 
     "User": "frrlod", 
@@ -853,6 +2122,15 @@
     "Answers": "2", 
     "Views": "8k", 
     "Url": "http://stackoverflow.com/questions/16063394/prototypical-inheritance-writing-up"
+  }, 
+  {
+    "Title": "PHP code is not being executed (I can see it on source code of page)", 
+    "Tags": "php/apache", 
+    "User": "Guilherme Cardoso", 
+    "Votes": "68", 
+    "Answers": "9", 
+    "Views": "148k", 
+    "Url": "http://stackoverflow.com/questions/5121495/php-code-is-not-being-executed-i-can-see-it-on-source-code-of-page"
   }, 
   {
     "Title": "Reference: mod_rewrite, URL rewriting and \u201cpretty links\u201d explained", 
@@ -864,6 +2142,15 @@
     "Url": "http://stackoverflow.com/questions/20563772/reference-mod-rewrite-url-rewriting-and-pretty-links-explained"
   }, 
   {
+    "Title": "What does a \u201cCannot find symbol\u201d compilation error mean?", 
+    "Tags": "java/compiler-errors/cannot-find-symbol", 
+    "User": "Stephen C", 
+    "Votes": "64", 
+    "Answers": "4", 
+    "Views": "172k", 
+    "Url": "http://stackoverflow.com/questions/25706216/what-does-a-cannot-find-symbol-compilation-error-mean"
+  }, 
+  {
     "Title": "Providing white space in a Swing GUI", 
     "Tags": "java/swing/whitespace/layout-manager", 
     "User": "Andrew Thompson", 
@@ -871,6 +2158,51 @@
     "Answers": "5", 
     "Views": "14k", 
     "Url": "http://stackoverflow.com/questions/17874717/providing-white-space-in-a-swing-gui"
+  }, 
+  {
+    "Title": "Reference: What is variable scope, which variables are accessible from where and what are \u201cundefined variable\u201d errors?", 
+    "Tags": "php/scope", 
+    "User": "deceze", 
+    "Votes": "62", 
+    "Answers": "2", 
+    "Views": "12k", 
+    "Url": "http://stackoverflow.com/questions/16959576/reference-what-is-variable-scope-which-variables-are-accessible-from-where-and"
+  }, 
+  {
+    "Title": "Scanner issue when using nextLine after nextXXX [duplicate]", 
+    "Tags": "java/java.util.scanner", 
+    "User": "Eng.Fouad", 
+    "Votes": "59", 
+    "Answers": "0", 
+    "Views": "44k", 
+    "Url": "http://stackoverflow.com/questions/7056749/scanner-issue-when-using-nextline-after-nextxxx"
+  }, 
+  {
+    "Title": "Error in finding last used cell in VBA", 
+    "Tags": "excel/vba/excel-vba", 
+    "User": "james", 
+    "Votes": "56", 
+    "Answers": "7", 
+    "Views": "42k", 
+    "Url": "http://stackoverflow.com/questions/11169445/error-in-finding-last-used-cell-in-vba"
+  }, 
+  {
+    "Title": "What causes a java.lang.ArrayIndexOutOfBoundsException and how do I prevent it?", 
+    "Tags": "java/arrays/indexoutofboundsexception", 
+    "User": "Aaron", 
+    "Votes": "54", 
+    "Answers": "9", 
+    "Views": "204k", 
+    "Url": "http://stackoverflow.com/questions/5554734/what-causes-a-java-lang-arrayindexoutofboundsexception-and-how-do-i-prevent-it"
+  }, 
+  {
+    "Title": "Example images for code and mark-up Q&As [closed]", 
+    "Tags": "java/javascript/css/image", 
+    "User": "Andrew Thompson", 
+    "Votes": "52", 
+    "Answers": "1", 
+    "Views": "3k", 
+    "Url": "http://stackoverflow.com/questions/19209650/example-images-for-code-and-mark-up-qas"
   }, 
   {
     "Title": "Reference - What does this regex mean?", 
@@ -891,6 +2223,15 @@
     "Url": "http://stackoverflow.com/questions/23446377/syntax-error-due-to-using-a-reserved-word-as-a-table-or-column-name-in-mysql"
   }, 
   {
+    "Title": "Java GUI listeners without AWT", 
+    "Tags": "java/swing/layout/awt/listener", 
+    "User": "Hidde", 
+    "Votes": "43", 
+    "Answers": "4", 
+    "Views": "3k", 
+    "Url": "http://stackoverflow.com/questions/6255106/java-gui-listeners-without-awt"
+  }, 
+  {
     "Title": "Can I mix MySQL APIs in PHP?", 
     "Tags": "php/mysql/pdo/mysqli", 
     "User": "N3mo", 
@@ -898,5 +2239,14 @@
     "Answers": "5", 
     "Views": "3k", 
     "Url": "http://stackoverflow.com/questions/17498216/can-i-mix-mysql-apis-in-php"
+  }, 
+  {
+    "Title": "How to avoid java.lang.ArrayIndexOutOfBoundsException? [duplicate]", 
+    "Tags": "java/arrays/arraylist/indexoutofboundsexception", 
+    "User": "Jarrod Roberson", 
+    "Votes": "-4", 
+    "Answers": "2", 
+    "Views": "869", 
+    "Url": "http://stackoverflow.com/questions/32568261/how-to-avoid-java-lang-arrayindexoutofboundsexception"
   }
 ]

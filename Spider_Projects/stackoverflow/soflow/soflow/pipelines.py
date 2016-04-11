@@ -10,7 +10,7 @@ import json
 import logging
 import pymongo
 from scrapy.conf import settings
-from items import VoteItem, FreqItem
+from items import FreqItem
 
 logger = logging.getLogger(__name__)
 
@@ -49,7 +49,8 @@ class DBPipeline(object):
                 x['Votes']), reverse=True)
             for line in ol:
                 col.insert(line)
-            logger.debug('Item written to MongoDB %s/%s' % (self.db, collection))
+            logger.info('Item written to MongoDB %s/%s.' %
+                        (self.db, collection))
         self.conn.close()
 
     def process_item(self, item, spider):
@@ -75,6 +76,7 @@ class JsonWriterPipeline(object):
                     x['Votes']), reverse=True)
                 res = json.dumps(ol, indent=2)
                 f.write(res)
+                logger.info('Item written to %s.json.' % (output))
 
     def process_item(self, item, spider):
         if isinstance(item, FreqItem):
