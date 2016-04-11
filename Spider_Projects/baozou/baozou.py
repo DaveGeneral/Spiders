@@ -92,7 +92,7 @@ def main():
         ###############################
     """)
     print("Baozou Gif Crawler Begins...")
-    for i in range(1, PAGE_SIZE+1):
+    for i in range(1, PAGE_SIZE + 1):
         my_spider = BaozouSpider(i)
         my_soup = my_spider.retrieve_page()
         my_spider.retrieve_content(my_soup)
