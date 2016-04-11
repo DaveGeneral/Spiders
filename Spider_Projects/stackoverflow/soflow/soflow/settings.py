@@ -18,7 +18,7 @@ NEWSPIDER_MODULE = 'soflow.spiders'
 
 ITEM_PIPELINES = {
     'soflow.pipelines.SoflowPipeline': 300,
-    'soflow.pipelines.JsonWriterPipeline': 500,
+    'soflow.pipelines.JsonWriterPipeline': 200,
 }
 
 MONGODB_SERVER = 'localhost'

@@ -11,7 +11,7 @@ class SoflowItem(scrapy.Item):
     url = scrapy.Field()
 
 
-class SoflowItem2(scrapy.Item):
+class AnotherOne(scrapy.Item):
     title = scrapy.Field()
     user = scrapy.Field()
     tags = scrapy.Field()

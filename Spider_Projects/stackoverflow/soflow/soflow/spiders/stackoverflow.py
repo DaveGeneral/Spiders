@@ -1,4 +1,4 @@
-from soflow.items import SoflowItem, SoflowItem2
+from soflow.items import SoflowItem, AnotherOne
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 
@@ -9,15 +9,12 @@ class StackSpider(CrawlSpider):
     start_urls = ['http://stackoverflow.com/questions?sort=votes',
                   'http://stackoverflow.com/questions?sort=frequent']
 
-    #  rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=votes'),
-    #  callback='parse_item', follow=True),
-    #  Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=frequent'),
-    #  callback='parse_item2', follow=True)]
+    rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=votes'),
+                  callback='parse_ques', follow=True),
+             Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=frequent'),
+                  callback='new_parse', follow=True)]
 
-    rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=votes'),
-                  callback='parse_new', follow=True)]
-
-    def parse_item(self, response):
+    def parse_ques(self, response):
         title = self.get_title(response)
         user = self.get_user(response)
         tags = self.get_tags(response)
@@ -37,7 +34,7 @@ class StackSpider(CrawlSpider):
             item['url'] = url[i]
             yield item
 
-    def parse_new(self, response):
+    def new_parse(self, response):
         title = self.get_title(response)
         user = self.get_user(response)
         tags = self.get_tags(response)
@@ -47,7 +44,7 @@ class StackSpider(CrawlSpider):
         url = self.get_url(response)
 
         for i in range(len(title)):
-            item = SoflowItem2()
+            item = AnotherOne()
             item['title'] = title[i]
             item['user'] = user[i]
             item['tags'] = tags[i]
@@ -55,7 +52,7 @@ class StackSpider(CrawlSpider):
             item['answers'] = answers[i]
             item['views'] = views[i]
             item['url'] = url[i]
-            print("Orignal", item)
+            #  print("Orignal", item)
             yield item
 
     def get_title(self, response):

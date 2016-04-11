@@ -10,7 +10,7 @@ import json
 import logging
 import pymongo
 from scrapy.conf import settings
-from items import SoflowItem, SoflowItem2
+from items import SoflowItem, AnotherOne
 
 
 logger = logging.getLogger(__name__)
@@ -23,11 +23,21 @@ class SoflowPipeline(object):
         self.port = settings['MONGODB_PORT']
         self.db = settings['MONGODB_DB']
         self.collection = settings['MONGODB_COLLECTION']
-        connection = pymongo.MongoClient(self.server, self.port)
-        db = connection[self.db]
+        self.mongolist = []
+
+    def open_spider(self, spider):
+        self.connection = pymongo.MongoClient(self.server, self.port)
+        db = self.connection[self.db]
         self.col = db[self.collection]
         self.col.drop()
-        logging.debug("Here we go")
+
+    def close_spider(self, spider):
+        ol = sorted(self.mongolist, key=lambda x: int(x['Votes']), reverse=True)
+        for line in ol:
+            self.col.insert(line)
+        logger.debug('Item written to MongoDB %s/%s' %
+                     (self.db, self.collection))
+        #  self.connection.close()
 
     def process_item(self, item, spider):
         if isinstance(item, SoflowItem):
@@ -38,12 +48,8 @@ class SoflowPipeline(object):
                                                ("Answers", item['answers']),
                                                ("Views", item['views']),
                                                ("Url", item['url'])])
-            self.col.insert(content)
-            logger.debug('Item written to MongoDB %s/%s' %
-                         (self.db, self.collection))
-            return item
-        else:
-            logger.debug("Not the first type item")
+            self.mongolist.append(content)
+        return item
 
 
 class JsonWriterPipeline(object):
@@ -62,9 +68,7 @@ class JsonWriterPipeline(object):
         self.file.close()
 
     def process_item(self, item, spider):
-        print("haha")
-        if isinstance(item, SoflowItem2):
-            print("Second show", item)
+        if isinstance(item, AnotherOne):
             content = collections.OrderedDict([("Title", item['title']),
                                                ("Tags", item['tags']),
                                                ("User", item['user']),
@@ -73,7 +77,4 @@ class JsonWriterPipeline(object):
                                                ("Views", item['views']),
                                                ("Url", item['url'])])
             self.jsonlist.append(content)
-            logger.debug("Here we append new line\n")
-            return item
-        else:
-            pass
+        return item
