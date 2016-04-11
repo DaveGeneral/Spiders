@@ -9,9 +9,9 @@ class StackSpider(CrawlSpider):
     start_urls = ['http://stackoverflow.com/questions?sort=votes',
                   'http://stackoverflow.com/questions?sort=frequent']
 
-    rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=votes'),
+    rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-10]&sort=votes'),
                   callback='parese_vote', follow=True),
-             Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=frequent'),
+             Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=frequent'),
                   callback='parse_freq', follow=True)]
 
     def parese_vote(self, response):

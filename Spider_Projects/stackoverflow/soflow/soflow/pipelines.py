@@ -32,27 +32,31 @@ class DBPipeline(object):
         self.server = settings['MONGODB_SERVER']
         self.port = settings['MONGODB_PORT']
         self.db = settings['MONGODB_DB']
-        self.collection = settings['MONGODB_COLLECTION']
-        self.mongolist = []
+        self.mongolist = {"VItem": [], "FItem": []}
 
     def open_spider(self, spider):
-        self.connection = pymongo.MongoClient(self.server, self.port)
-        db = self.connection[self.db]
-        self.col = db[self.collection]
-        self.col.drop()
+        self.conn = pymongo.MongoClient(self.server, self.port)
+        db = self.conn[self.db]
+        for collection in self.mongolist.keys():
+            col = db[collection]
+            col.drop()
 
     def close_spider(self, spider):
-        ol = sorted(self.mongolist, key=lambda x: int(
-            x['Votes']), reverse=True)
-        for line in ol:
-            self.col.insert(line)
-        logger.debug('Item written to MongoDB %s/%s' %
-                     (self.db, self.collection))
-        self.connection.close()
+        db = self.conn[self.db]
+        for collection in self.mongolist.keys():
+            col = db[collection]
+            ol = sorted(self.mongolist[collection], key=lambda x: int(
+                x['Votes']), reverse=True)
+            for line in ol:
+                col.insert(line)
+            logger.debug('Item written to MongoDB %s/%s' % (self.db, collection))
+        self.conn.close()
 
     def process_item(self, item, spider):
-        if isinstance(item, VoteItem):
-            self.mongolist.append(get_OrderDic(item))
+        if isinstance(item, FreqItem):
+            self.mongolist['FItem'].append(get_OrderDic(item))
+        else:
+            self.mongolist['VItem'].append(get_OrderDic(item))
         return item
 
 
