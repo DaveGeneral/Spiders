@@ -10,13 +10,23 @@ import json
 import logging
 import pymongo
 from scrapy.conf import settings
-from items import SoflowItem, AnotherOne
-
+from items import VoteItem, FreqItem
 
 logger = logging.getLogger(__name__)
 
 
-class SoflowPipeline(object):
+def get_OrderDic(item):
+    res = collections.OrderedDict([("Title", item['title']),
+                                   ("Tags", item['tags']),
+                                   ("User", item['user']),
+                                   ("Votes", item['votes']),
+                                   ("Answers", item['answers']),
+                                   ("Views", item['views']),
+                                   ("Url", item['url'])])
+    return res
+
+
+class DBPipeline(object):
 
     def __init__(self):
         self.server = settings['MONGODB_SERVER']
@@ -32,49 +42,39 @@ class SoflowPipeline(object):
         self.col.drop()
 
     def close_spider(self, spider):
-        ol = sorted(self.mongolist, key=lambda x: int(x['Votes']), reverse=True)
+        ol = sorted(self.mongolist, key=lambda x: int(
+            x['Votes']), reverse=True)
         for line in ol:
             self.col.insert(line)
         logger.debug('Item written to MongoDB %s/%s' %
                      (self.db, self.collection))
-        #  self.connection.close()
+        self.connection.close()
 
     def process_item(self, item, spider):
-        if isinstance(item, SoflowItem):
-            content = collections.OrderedDict([("Title", item['title']),
-                                               ("Tags", item['tags']),
-                                               ("User", item['user']),
-                                               ("Votes", item['votes']),
-                                               ("Answers", item['answers']),
-                                               ("Views", item['views']),
-                                               ("Url", item['url'])])
-            self.mongolist.append(content)
+        if isinstance(item, VoteItem):
+            self.mongolist.append(get_OrderDic(item))
         return item
 
 
 class JsonWriterPipeline(object):
 
     def __init__(self):
-        self.out = "output.json"
-        self.jsonlist = []
+        self.jsonlist = {"VItem": [], "FItem": []}
 
     def open_spider(self, spider):
-        self.file = open(self.out, 'wb')
+        pass
 
     def close_spider(self, spider):
-        ol = sorted(self.jsonlist, key=lambda x: int(x['Votes']), reverse=True)
-        res = json.dumps(ol, indent=2)
-        self.file.write(res)
-        self.file.close()
+        for output in self.jsonlist.keys():
+            with open(output + '.json', 'wb') as f:
+                ol = sorted(self.jsonlist[output], key=lambda x: int(
+                    x['Votes']), reverse=True)
+                res = json.dumps(ol, indent=2)
+                f.write(res)
 
     def process_item(self, item, spider):
-        if isinstance(item, AnotherOne):
-            content = collections.OrderedDict([("Title", item['title']),
-                                               ("Tags", item['tags']),
-                                               ("User", item['user']),
-                                               ("Votes", item['votes']),
-                                               ("Answers", item['answers']),
-                                               ("Views", item['views']),
-                                               ("Url", item['url'])])
-            self.jsonlist.append(content)
+        if isinstance(item, FreqItem):
+            self.jsonlist['FItem'].append(get_OrderDic(item))
+        else:
+            self.jsonlist['VItem'].append(get_OrderDic(item))
         return item

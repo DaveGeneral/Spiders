@@ -1,7 +1,7 @@
 import scrapy
 
 
-class SoflowItem(scrapy.Item):
+class VoteItem(scrapy.Item):
     title = scrapy.Field()
     user = scrapy.Field()
     tags = scrapy.Field()
@@ -11,11 +11,5 @@ class SoflowItem(scrapy.Item):
     url = scrapy.Field()
 
 
-class AnotherOne(scrapy.Item):
-    title = scrapy.Field()
-    user = scrapy.Field()
-    tags = scrapy.Field()
-    votes = scrapy.Field()
-    answers = scrapy.Field()
-    views = scrapy.Field()
-    url = scrapy.Field()
+class FreqItem(VoteItem):
+    pass

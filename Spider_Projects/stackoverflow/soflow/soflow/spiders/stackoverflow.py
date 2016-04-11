@@ -1,4 +1,4 @@
-from soflow.items import SoflowItem, AnotherOne
+from soflow.items import VoteItem, FreqItem
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 
@@ -10,11 +10,11 @@ class StackSpider(CrawlSpider):
                   'http://stackoverflow.com/questions?sort=frequent']
 
     rules = [Rule(LinkExtractor(allow=r'questions\?page=[0-5]&sort=votes'),
-                  callback='parse_ques', follow=True),
+                  callback='parese_vote', follow=True),
              Rule(LinkExtractor(allow=r'questions\?page=[0-2]&sort=frequent'),
-                  callback='new_parse', follow=True)]
+                  callback='parse_freq', follow=True)]
 
-    def parse_ques(self, response):
+    def parese_vote(self, response):
         title = self.get_title(response)
         user = self.get_user(response)
         tags = self.get_tags(response)
@@ -24,7 +24,7 @@ class StackSpider(CrawlSpider):
         url = self.get_url(response)
 
         for i in range(len(title)):
-            item = SoflowItem()
+            item = VoteItem()
             item['title'] = title[i]
             item['user'] = user[i]
             item['tags'] = tags[i]
@@ -34,7 +34,7 @@ class StackSpider(CrawlSpider):
             item['url'] = url[i]
             yield item
 
-    def new_parse(self, response):
+    def parse_freq(self, response):
         title = self.get_title(response)
         user = self.get_user(response)
         tags = self.get_tags(response)
@@ -44,7 +44,7 @@ class StackSpider(CrawlSpider):
         url = self.get_url(response)
 
         for i in range(len(title)):
-            item = AnotherOne()
+            item = FreqItem()
             item['title'] = title[i]
             item['user'] = user[i]
             item['tags'] = tags[i]
