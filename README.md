@@ -23,7 +23,7 @@ $ pip install -r requirements.txt
 
 ## II. Without framework
 
-#### 1. Create user and MySql database
+#### 1. Create user and Mysql database
 
 ````sh
 $ cd Spider_Projects/template
