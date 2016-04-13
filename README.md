@@ -11,13 +11,19 @@ In this repository, I try to use some wonderful python libraries and framework t
 $ virtualenv env3 /usr/local/bin/python3
 ```
 
-##### 2. Install the required libraries
+##### 2. Activate the environment
+
+```sh
+$ source env3/bin/source
+```
+
+##### 3. Install the required libraries
 
 ```sh
 $ pip install -r requirements.txt
 ```
 
-##### 3. Notes: Make sure you have installed mongodb in your system
+##### 4. Notes: Make sure you have installed mongodb in your system
 
 <br>
 
