@@ -36,7 +36,7 @@ Follow the steps in this document to create the corresonding user, password and 
 
 Here we use different models to make comparision based on cpu use, runtime etc.
 
-##### a. Douban
+##### Douban
 
 ``` sh
 $ cd Spider_Projects/douban
@@ -44,13 +44,12 @@ $ cd Spider_Projects/douban
 # Douban top 250 movies
 $ time python douban.py
 # normal: 1.62s user 0.23s system 8% cpu 21.560 total
-
 $ time python douban_mthread.py
 # multi_threads: 2.64s user 0.76s system 81% cpu 4.154 total
 ```
 
 
-##### b. Baozou
+##### Baozou
 
 ``` sh
 $ cd Spider_Projects/baozon
@@ -58,12 +57,11 @@ $ cd Spider_Projects/baozon
 # Baozou 100 page gifs
 $ time python baozou.py
 # normal: 24.04s user 9.27s system 5% cpu 10:07.52 total
-
 $ time python baozou_mprocess.py
 # multi_process: 30.62s user 10.82s system 40% cpu 1:41.19 total
 ```
 
-##### c. IMDB
+##### IMDB
 
 ``` sh
 $ cd Spider_Projects/imdb
@@ -74,10 +72,8 @@ $ time python imdb.py
 # imdb top rated genres
 $ time python genre_mthread.py
 # multi_threads: 77.37s user 16.25s system 80% cpu 1:56.39 total
-
 $ time python genre_mprocess.py
 # multi_process: 53.52s user 2.42s system 51% cpu 1:48.47 total
-
 $ time python genre_mpg.py
 # multi_process+gevent: 75.91s user 2.95s system 361% cpu 21.809 total
 ```
