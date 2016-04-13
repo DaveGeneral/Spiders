@@ -20,7 +20,7 @@ $ pip install -r requirements.txt
 
 ##### 3. Notes: Make sure you have installed mongodb in your system
 
-
+<br><br>
 
 ### II. Method without framework (Douban, Baozou and IMDB)
 
