@@ -74,7 +74,7 @@ $ time python imdb.py
 # imdb top rated genres
 $ time python genre_mthread.py  # 77.37s user 16.25s system 80% cpu 1:56.39 total
 $ time python genre_mprocess.py  # 53.52s user 2.42s system 51% cpu 1:48.47 total
-$ time python genre_mpg.py  # 75.91s user 2.95s system 361% cpu 21.809 total
+$ time python genre_mpg.py  # 58.96s user 2.12s system 341% cpu 17.879 total
 ```
 <br>
 
