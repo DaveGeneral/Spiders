@@ -4,7 +4,7 @@ In this repository, I try to use some wonderful python libraries and framework t
 
 
 
-## I. Set Environment 
+### I. Set Environment 
 
 ##### 1. Activate a virtualenv using python3 
 
@@ -22,7 +22,7 @@ $ pip install -r requirements.txt
 
 
 
-## II. Method without framework (Douban, Baozou and IMDB)
+### II. Method without framework (Douban, Baozou and IMDB)
 
 #### 1. Create user and MySql database
 
@@ -75,7 +75,7 @@ $ time python genre_mpg.py
 
 
 
-## III. Method with framework Scrapy (Stackoverflow)
+### III. Method with framework Scrapy (Stackoverflow)
 
 #### 1. Open the mongodb server 
 
