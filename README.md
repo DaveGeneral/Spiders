@@ -24,7 +24,7 @@ $ pip install -r requirements.txt
 
 ## II. Method without framework (Douban, Baozou and IMDB)
 
-### Create user and MySql database
+#### 1. Create user and MySql database
 
 ````sh
 
@@ -34,9 +34,9 @@ $ cat pre.sql
 
 Follow the steps in this document to create the corresonding user, password and database
 
-### Run the script and compare
+#### 2. Run the script and compare
 
-#### Douban(Normal and multi_threads)
+##### a. Douban(Normal and multi_threads)
 
 ``` sh
 $ cd Spider_Projects/douban
@@ -49,7 +49,7 @@ $ time python douban_mthread.py
 ```
 
 
-#### Baozou(Normal and multi_process)
+##### b. Baozou(Normal and multi_process)
 
 ``` sh
 $ cd Spider_Projects/baozou
@@ -59,7 +59,7 @@ $ time python baozou.py
 $ time python baozou_mprocess.py
 ```
 
-#### IMDB(multi_threads, multi_thread and multi_process+gevent)
+##### c. IMDB(multi_threads, multi_thread and multi_process+gevent)
 
 ``` sh
 $ cd Spider_Projects/imdb
@@ -77,14 +77,14 @@ $ time python genre_mpg.py
 
 ## III. Method with framework Scrapy (Stackoverflow)
 
-### Open the mongodb server 
+#### 1. Open the mongodb server 
 
 ```sh
 $ mongod 
 $ mongo
 ```
 
-### Run the application
+#### 2. Run the application
 
 ```sh
 $ cd Spider_Projects/stackoverflow/soflow
