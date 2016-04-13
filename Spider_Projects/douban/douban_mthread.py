@@ -15,7 +15,7 @@ import mparameter
 
 
 PAGE_SIZE = 10  # The Top 250 movies include 10 pages
-THREAD_NUM = 10  # the speed shows little increase beyond this number
+THREAD_NUM = 10
 Q_SHARE = queue.Queue()
 DB_NAME = 'Movie'
 TB_NAME = 'Douban'
@@ -161,10 +161,10 @@ def main():
     ol = [s[1] for s in ol]
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(ol)
-    #  my_file.read_out()  # Read results from output file
+    #  my_file.read_out()
     my_db = mdatabase.DB(DB_NAME, TB_NAME)
     my_db.db_insert(ol)
-    #  my_db.db_retrieval()  # Read results from mysql database
+    #  my_db.db_retrieval()
     my_db.db_close()
 
 if __name__ == '__main__':

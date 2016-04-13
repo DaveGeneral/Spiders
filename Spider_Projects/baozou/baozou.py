@@ -10,7 +10,7 @@ sys.path.append('../template')
 import mparameter
 
 
-POOL_NUM = 8  # the speed shows little increase beyond this number
+POOL_NUM = 8
 PAGE_SIZE = 100
 
 OUTDIR = 'temp'
