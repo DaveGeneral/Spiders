@@ -8,19 +8,19 @@ In this repository, I try to use some wonderful python libraries and framework t
 
 ### Set Environment 
 
-1. Activate a virtualenv using python3 
+##### 1. Activate a virtualenv using python3 
 
 ```sh		
 $ virtualenv env3 /usr/local/bin/python3
 ```
 
-2. Install the requirements
+##### 2. Install the requirements
 
 ```sh
 $ pip install -r requirements.txt
 ```
 
-3. Notes: Make sure you have installed mongodb in your system
+##### 3. Notes: Make sure you have installed mongodb in your system
 
 
 ## Use no framework (Douban, Baozou and IMDB)
@@ -44,6 +44,16 @@ $ time python douban.py
 $ time python douban_mthread.py
 ```
 
+result:
+
+
+#### Baozou(Normal and multi_process)
+
+``` sh
+$ cd Spider_Projects/douban
+$ time python douban.py
+$ time python douban_mthread.py
+```
 
 
 
