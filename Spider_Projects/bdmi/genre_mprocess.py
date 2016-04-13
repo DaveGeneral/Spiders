@@ -25,10 +25,10 @@ def Workers(item):
     ol = [s[1] for s in ol]
     my_file = mjson.RWfile(item['name'].lower() + '.json')
     my_file.write_in(ol)
-    #  my_file.read_out()  # Read results from output file
+    #  my_file.read_out()
     my_db = mdatabase.DB(DB_NAME, item['name'])
     my_db.db_insert(ol)
-    #  my_db.db_retrieval()  # Read results from mysql database
+    #  my_db.db_retrieval()
     my_db.db_close()
 
 

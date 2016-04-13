@@ -127,7 +127,6 @@ class GenreSpider(object):
         return certificate
 
     def retrieve_content(self, soup, DIC):
-        #  global DIC
         if soup != "FLAG":
             rank = self.get_rank(soup)
             name, address = self.get_nameaddress(soup)

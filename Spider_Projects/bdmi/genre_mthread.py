@@ -12,7 +12,7 @@ import mjson
 
 
 DB_NAME = 'Movie'
-Thread_NUM = 10  # thread number
+Thread_NUM = 10
 Q_SHARE = queue.Queue()
 
 
@@ -35,10 +35,10 @@ class Workers(threading.Thread):
             ol = [s[1] for s in ol]
             my_file = mjson.RWfile(item['name'].lower() + '.json')
             my_file.write_in(ol)
-            #  my_file.read_out()  # Read results from output file
+            #  my_file.read_out()
             my_db = mdatabase.DB(DB_NAME, item['name'])
             my_db.db_insert(ol)
-            #  my_db.db_retrieval()  # Read results from mysql database
+            #  my_db.db_retrieval()
             my_db.db_close()
             self.item.task_done()
 
