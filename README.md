@@ -21,7 +21,7 @@ $ pip install -r requirements.txt
 
 <br>
 
-## II. Method without framework (Douban, Baozou and IMDB)
+## II. Without framework (Douban, Baozou and IMDB)
 
 #### 1. Create user and MySql database
 
@@ -37,45 +37,47 @@ Follow the steps in this document to create the corresonding user, password and 
 
 Here we use different models to make comparision based on cpu use, runtime etc.
 
-##### a. Douban(Normal and multi_threads)
+##### a. Douban
 
 ``` sh
 $ cd Spider_Projects/douban
 
 $ time python douban.py
-# Normal: 1.62s user 0.23s system 8% cpu 21.560 total
+# normal: 1.62s user 0.23s system 8% cpu 21.560 total
 
 $ time python douban_mthread.py
-2.64s user 0.76s system 81% cpu 4.154 total
+# multi_threads: 2.64s user 0.76s system 81% cpu 4.154 total
 ```
 
 
-##### b. Baozou(Normal and multi_process)
+##### b. Baozou
 
 ``` sh
 $ cd Spider_Projects/baozou
-
 $ time python baozou.py
+# normal: 24.04s user 9.27s system 5% cpu 10:07.52 total
 
 $ time python baozou_mprocess.py
+# multi_process: 30.62s user 10.82s system 40% cpu 1:41.19 total
 ```
 
-##### c. IMDB(multi_threads, multi_thread and multi_process+gevent)
+##### c. IMDB
 
 ``` sh
 $ cd Spider_Projects/imdb
 
 $ time python genre_mthread.py
+# multi_threads:
 
 $ time python genre_mprocess.py
+# multi_process: 
 
 $ time python genre_mpg.py
-
-
+# multi_process+gevent:
 ```
 <br>
 
-## III. Method with framework Scrapy (Stackoverflow)
+## III. With framework Scrapy (Stackoverflow)
 
 #### 1. Open the mongodb server 
 
