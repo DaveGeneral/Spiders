@@ -36,14 +36,14 @@ Follow the steps in this document to create the corresonding user, password and 
 #### 2. Run the script and compare
 
 Here we use different models to make comparision based on cpu use, runtime etc.
-<br>
+
 ##### a. Douban(Normal and multi_threads)
 
 ``` sh
 $ cd Spider_Projects/douban
 
 $ time python douban.py
-1.62s user 0.23s system 8% cpu 21.560 total
+# Normal: 1.62s user 0.23s system 8% cpu 21.560 total
 
 $ time python douban_mthread.py
 2.64s user 0.76s system 81% cpu 4.154 total
