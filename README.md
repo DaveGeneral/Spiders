@@ -1,7 +1,7 @@
 # Web Spider by Python
 
 In this repository, I try to use some wonderful python libraries and framework to achieve tricky web crawlers. 
-<br>
+<br><br>
 
 ## I. Set Environment 
 
@@ -34,6 +34,7 @@ $ cat pre.sql
 Follow the steps in this document to create the corresonding user, password and database
 
 #### 2. Run the script and compare
+<br>
 
 ##### a. Douban(Normal and multi_threads)
 
