@@ -42,10 +42,8 @@ Here we use different models to make comparision based on cpu use, runtime etc.
 $ cd Spider_Projects/douban
 
 # Douban top 250 movies
-$ time python douban.py
-# normal: 1.62s user 0.23s system 8% cpu 21.560 total
-$ time python douban_mthread.py
-# multi_threads: 2.64s user 0.76s system 81% cpu 4.154 total
+$ time python douban.py  # 1.62s user 0.23s system 8% cpu 21.560 total
+$ time python douban_mthread.py  # 2.64s user 0.76s system 81% cpu 4.154 total
 ```
 
 
