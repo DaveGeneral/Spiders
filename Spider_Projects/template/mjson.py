@@ -11,7 +11,7 @@ class RWfile(object):
         self.fname = fname
 
     def write_in(self, raw):
-        clean = json.dumps(raw, indent=INDENT_SIZE)
+        clean = json.dumps(raw, indent=INDENT_SIZE, ensure_ascii=False)
         with open(self.fname, 'w') as f:
             f.write(clean)
         print("Write data to %s" % (self.fname))
