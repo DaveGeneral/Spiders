@@ -1,9 +1,9 @@
 # Web Spider by Python
 
-In this repository, I try to use some wonderful python libraries and framework to achieve tricky web crawlers. 
+In this repository, I try to use some wonderful python libraries and framework to achieve tricky web crawlers. Using requests and beautifulsoup, I crawled three different server - douban, baozou and imdb. Meanwhile, I used scrapy framework to crawl stackoverflow most voted and frequently asked questions.
 <br><br>
 
-## I. Set Environment 
+## I. Environment settings 
 
 ##### 1. Activate a virtualenv using python3 
 
@@ -21,12 +21,11 @@ $ pip install -r requirements.txt
 
 <br>
 
-## II. Without framework (Douban, Baozou and IMDB)
+## II. Without framework
 
 #### 1. Create user and MySql database
 
 ````sh
-
 $ cd Spider_Projects/template
 $ cat pre.sql
 ```
@@ -41,6 +40,7 @@ Here we use different models to make comparision based on cpu use, runtime etc.
 
 ``` sh
 $ cd Spider_Projects/douban
+# Douban top 250 movies
 
 $ time python douban.py
 # normal: 1.62s user 0.23s system 8% cpu 21.560 total
@@ -54,6 +54,8 @@ $ time python douban_mthread.py
 
 ``` sh
 $ cd Spider_Projects/baozou
+# Baozou 100 page gifs
+
 $ time python baozou.py
 # normal: 24.04s user 9.27s system 5% cpu 10:07.52 total
 
@@ -65,20 +67,23 @@ $ time python baozou_mprocess.py
 
 ``` sh
 $ cd Spider_Projects/imdb
+# imdb top 250 movies
+time python imdb.py
+
+# imdb top rated genres
 
 $ time python genre_mthread.py
-# multi_threads:
+# multi_threads: 77.37s user 16.25s system 80% cpu 1:56.39 total
 
 $ time python genre_mprocess.py
-# multi_process: 
+# multi_process: 53.52s user 2.42s system 51% cpu 1:48.47 total
 
 $ time python genre_mpg.py
-# multi_process+gevent:
+# multi_process+gevent: 75.91s user 2.95s system 361% cpu 21.809 total
 ```
 <br>
 
-## III. With framework Scrapy (Stackoverflow)
-
+## III. With Scrapy 
 #### 1. Open the mongodb server 
 
 ```sh
