@@ -32,10 +32,11 @@ $ cat pre.sql
 ```
 
 Follow the steps in this document to create the corresonding user, password and database
-
+<br>
 #### 2. Run the script and compare
-Here we use different models to make comparision based on cpu use, runtime etc.
 
+Here we use different models to make comparision based on cpu use, runtime etc.
+<br>
 ##### a. Douban(Normal and multi_threads)
 
 ``` sh
