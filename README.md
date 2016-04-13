@@ -4,7 +4,7 @@ In this repository, I try to use some wonderful python libraries and framework t
 
 
 
-## Set Environment 
+## I. Set Environment 
 
 ##### 1. Activate a virtualenv using python3 
 
@@ -21,7 +21,8 @@ $ pip install -r requirements.txt
 ##### 3. Notes: Make sure you have installed mongodb in your system
 
 
-## Method without framework (Douban, Baozou and IMDB)
+
+## II. Method without framework (Douban, Baozou and IMDB)
 
 ### Create user and MySql database
 ````sh
@@ -30,7 +31,7 @@ $ cd Spider_Projects/template
 $ cat pre.sql
 ```
 
-follow the steps in this document to create the corresonding user, password and database
+Follow the steps in this document to create the corresonding user, password and database
 
 ### Run the script and compare
 
@@ -73,7 +74,7 @@ $ time python genre_mpg.py
 
 
 
-## Method with framework Scrapy (Stackoverflow)
+## III. Method with framework Scrapy (Stackoverflow)
 
 ### Open the mongodb server 
 
