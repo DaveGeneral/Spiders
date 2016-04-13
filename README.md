@@ -1,8 +1,7 @@
 # Web Spider by Python
 
 In this repository, I try to use some wonderful python libraries and framework to achieve tricky web crawlers. 
-
-
+<br>
 
 ### I. Set Environment 
 
@@ -20,7 +19,7 @@ $ pip install -r requirements.txt
 
 ##### 3. Notes: Make sure you have installed mongodb in your system
 
-<br><br>
+<br>
 
 ### II. Method without framework (Douban, Baozou and IMDB)
 
@@ -72,8 +71,7 @@ $ time python genre_mpg.py
 
 
 ```
-
-
+<br>
 
 ### III. Method with framework Scrapy (Stackoverflow)
 
