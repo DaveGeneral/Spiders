@@ -8,7 +8,7 @@ In this repository, I try to use some wonderful python libraries and framework t
 ##### 1. Activate a virtualenv using python3
 
 ```sh
-$ virtualenv env3 /usr/local/bin/python3
+$ virtualenv env3 -p /usr/local/bin/python3
 ```
 
 ##### 2. Activate the environment
