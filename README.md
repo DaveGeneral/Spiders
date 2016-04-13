@@ -53,10 +53,8 @@ $ time python douban_mthread.py  # 2.64s user 0.76s system 81% cpu 4.154 total
 $ cd Spider_Projects/baozon
 
 # Baozou 100 page gifs
-$ time python baozou.py
-# normal: 24.04s user 9.27s system 5% cpu 10:07.52 total
-$ time python baozou_mprocess.py
-# multi_process: 30.62s user 10.82s system 40% cpu 1:41.19 total
+$ time python baozou.py  # 24.04s user 9.27s system 5% cpu 10:07.52 total
+$ time python baozou_mprocess.py  # 30.62s user 10.82s system 40% cpu 1:41.19 total
 ```
 
 ##### IMDB
@@ -68,12 +66,9 @@ $ cd Spider_Projects/imdb
 $ time python imdb.py
 
 # imdb top rated genres
-$ time python genre_mthread.py
-# multi_threads: 77.37s user 16.25s system 80% cpu 1:56.39 total
-$ time python genre_mprocess.py
-# multi_process: 53.52s user 2.42s system 51% cpu 1:48.47 total
-$ time python genre_mpg.py
-# multi_process+gevent: 75.91s user 2.95s system 361% cpu 21.809 total
+$ time python genre_mthread.py  # 77.37s user 16.25s system 80% cpu 1:56.39 total
+$ time python genre_mprocess.py  # 53.52s user 2.42s system 51% cpu 1:48.47 total
+$ time python genre_mpg.py  # 75.91s user 2.95s system 361% cpu 21.809 total
 ```
 <br>
 
