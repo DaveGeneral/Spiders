@@ -25,6 +25,7 @@ $ pip install -r requirements.txt
 ## II. Method without framework (Douban, Baozou and IMDB)
 
 ### Create user and MySql database
+
 ````sh
 
 $ cd Spider_Projects/template
@@ -88,7 +89,6 @@ $ mongo
 ```sh
 $ cd Spider_Projects/stackoverflow/soflow
 $ scrapy crawl stack
-$ 
 ```
 
 
