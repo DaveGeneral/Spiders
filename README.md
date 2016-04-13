@@ -14,7 +14,7 @@ $ virtualenv env -p /usr/local/bin/python3
 ##### 2. Activate the environment
 
 ```sh
-$ source env/bin/source
+$ source env/bin/activate
 ```
 
 ##### 3. Install the required libraries
