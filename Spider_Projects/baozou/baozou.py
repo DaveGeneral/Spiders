@@ -11,7 +11,7 @@ import mparameter
 
 
 POOL_NUM = 8  # the speed shows little increase beyond this number
-PAGE_SIZE = 10
+PAGE_SIZE = 100
 
 OUTDIR = 'temp'
 OUTPATH = os.getcwd()

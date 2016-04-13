@@ -40,6 +40,7 @@ follow the steps in this document to create the corresonding user, password and 
 
 ``` sh
 $ cd Spider_Projects/douban
+
 $ time python douban.py
 1.62s user 0.23s system 8% cpu 21.560 total
 
@@ -47,21 +48,49 @@ $ time python douban_mthread.py
 2.64s user 0.76s system 81% cpu 4.154 total
 ```
 
-result:
-
 
 #### Baozou(Normal and multi_process)
 
 ``` sh
-$ cd Spider_Projects/douban
-$ time python douban.py
-$ time python douban_mthread.py
+$ cd Spider_Projects/baozou
+
+$ time python baozou.py
+
+$ time python baozou_mprocess.py
+```
+
+#### IMDB(multi_threads, multi_thread and multi_process+gevent)
+
+``` sh
+$ cd Spider_Projects/imdb
+
+$ time python genre_mthread.py
+
+$ time python genre_mprocess.py
+
+$ time python genre_mpg.py
+
+
 ```
 
 
 
 ## Use framework Scrapy (Stackoverflow)
 
+### Open the mongodb server 
+
+```sh
+$ mongod 
+$ mongo
+```
+
+### Run the application
+
+```sh
+$ cd Spider_Projects/stackoverflow/soflow
+$ scrapy crawl stack
+$ 
+```
 
 
 
