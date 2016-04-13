@@ -1,6 +1,6 @@
 # Web Spider by Python
 
-In this repository, I try to use some wonderful python libraries and framework to achieve tricky web crawlers...
+In this repository, I try to use some wonderful python libraries and framework to achieve tricky web crawlers. 
 
 
 
@@ -23,42 +23,32 @@ $ pip install -r requirements.txt
 3. Notes: Make sure you have installed mongodb in your system
 
 
-### Create DB
+## Use no framework (Douban, Baozou and IMDB)
 
-```sh
-$ python manage.py create_db
-$ python manage.py db init
-$ python manage.py db migrate
-$ python manage.py create_admin
-$ python manage.py create_data
+### Create user and MySql database
+````sh
+
+$ cd Spider_Projects/template
+$ cat pre.sql
 ```
 
-### Run the Application
+follow the steps in this document to create the corresonding user, password and database
 
-```sh
-$ python manage.py runserver
+### Run the script and compare
+
+#### Douban(Normal and multi_threads)
+
+``` sh
+$ cd Spider_Projects/douban
+$ time python douban.py
+$ time python douban_mthread.py
 ```
 
-So access the application at the address [http://localhost:5000/](http://localhost:5000/)
 
-> Want to specify a different port?
 
-> ```sh
-> $ python manage.py runserver -h 0.0.0.0 -p 8080
-> ```
 
-### Testing
+## Use framework Scrapy (Stackoverflow)
 
-Without coverage:
 
-```sh
-$ python manage.py test
-```
-
-With coverage:
-
-```sh
-$ python manage.py cov
-```
 
 
