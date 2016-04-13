@@ -4,9 +4,7 @@ In this repository, I try to use some wonderful python libraries and framework t
 
 
 
-## Quick Start
-
-### Set Environment 
+## Set Environment 
 
 ##### 1. Activate a virtualenv using python3 
 
@@ -14,7 +12,7 @@ In this repository, I try to use some wonderful python libraries and framework t
 $ virtualenv env3 /usr/local/bin/python3
 ```
 
-##### 2. Install the requirements
+##### 2. Install the required libraries
 
 ```sh
 $ pip install -r requirements.txt
@@ -23,7 +21,7 @@ $ pip install -r requirements.txt
 ##### 3. Notes: Make sure you have installed mongodb in your system
 
 
-## Use no framework (Douban, Baozou and IMDB)
+## Method without framework (Douban, Baozou and IMDB)
 
 ### Create user and MySql database
 ````sh
@@ -75,7 +73,7 @@ $ time python genre_mpg.py
 
 
 
-## Use framework Scrapy (Stackoverflow)
+## Method with framework Scrapy (Stackoverflow)
 
 ### Open the mongodb server 
 
