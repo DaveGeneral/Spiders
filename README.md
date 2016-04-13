@@ -3,11 +3,11 @@
 In this repository, I try to use some wonderful python libraries and framework to achieve tricky web crawlers. Using requests and beautifulsoup, I crawled three different server - douban, baozou and imdb. Meanwhile, I used scrapy framework to crawl stackoverflow most voted and frequently asked questions.
 <br><br>
 
-## I. Environment settings 
+## I. Environment settings
 
-##### 1. Activate a virtualenv using python3 
+##### 1. Activate a virtualenv using python3
 
-```sh		
+```sh
 $ virtualenv env3 /usr/local/bin/python3
 ```
 
@@ -72,11 +72,11 @@ $ time python genre_mpg.py  # 75.91s user 2.95s system 361% cpu 21.809 total
 ```
 <br>
 
-## III. With Scrapy 
-#### 1. Open the mongodb server 
+## III. With Scrapy
+#### 1. Open the mongodb server
 
 ```sh
-$ mongod 
+$ mongod
 $ mongo
 ```
 
