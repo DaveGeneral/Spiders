@@ -58,7 +58,7 @@ else:
         name.append(image.get_attribute('alt'))
         img.append(image.get_attribute('src'))
     DIC = {}
-    OUTPUT = 'output.json'
+    OUTPUT = 'output_selphan.json'
     for i in range(len(name)):
         content = collections.OrderedDict([("Name", name[i]),
                                            ("Following", following[i]),
