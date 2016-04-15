@@ -28,7 +28,7 @@ safe_login.click()  # uncheck safe login
 time.sleep(1)
 sbtn.submit()
 
-time.sleep(5)  # wait for page load
+time.sleep(3)  # wait for page load
 
 if driver.current_url == origin_url:
     print("Error happens, log in fails")
@@ -36,7 +36,7 @@ else:
     print("Log in successfully")
     driver.get("http://weibo.com/2065392673/fans"
                "?from=100505&wvr=6&mod=headfans&current=fans#place")
-    time.sleep(1)
+    time.sleep(3)
     numbers = driver.find_elements_by_xpath('//em[@class="count"]')
     images = driver.find_elements_by_xpath('//dt[@class="mod_pic"]/a/img')
     name = []
