@@ -48,5 +48,6 @@ def main():
     pool.join()
     print("IMDB Mutiple Genre Crawler Ends...")
 
+
 if __name__ == '__main__':
     main()

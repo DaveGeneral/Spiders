@@ -78,5 +78,6 @@ def main():
     my_file = mjson.RWfile(OUTPUT)
     my_file.write_in(ol)
 
+
 if __name__ == '__main__':
     main()

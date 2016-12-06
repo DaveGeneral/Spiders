@@ -31,5 +31,6 @@ def main():
         Q_SHARE.put(i)
     Q_SHARE.join()
 
+
 if __name__ == '__main__':
     main()
